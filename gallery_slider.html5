@@ -1,0 +1,49 @@
+
+
+<?php $this->counter = 0; ?> 
+<div class="<?php echo $this->cssID[1]?>">
+
+	<div id="Carousel<?php echo $this->id;?>" class="carousel slide">
+		<div class="carousel-inner"> 
+			<?php foreach ($this->body as $class=>$row): ?>
+				<?php foreach ($row as $col): ?>
+				<?php if ($col->addImage): ?>
+				<?php $this->counter += 1; ?>   
+					<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
+						
+						<div class="carousel-caption">
+						    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
+						    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
+						</div>
+							  
+						<?php if ($col->href): ?><a href="<?php echo $col->href; ?>"><?php endif; ?>
+							<img src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
+						<?php if ($col->href): ?> </a><?php endif; ?> 
+							
+					</div>
+				<?php endif; ?>
+				<?php endforeach; ?> 
+			<?php endforeach; ?>
+		</div>  
+		
+		<!-- Carousel indicators -->
+		<?php if ($this->counter > 1) :?>
+			<ol class="carousel-indicators">
+				<?php for ($i = 0; $i < $this->counter; $i++): ?>
+				    <li data-target="#Carousel<?php echo $this->id;?>" data-slide-to="<?php echo $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
+			    <?php endfor; ?>
+			</ol>
+		<?php endif; ?>	
+		
+		<!-- Carousel nav -->
+		<?php if ($this->counter > 1) :?>
+		  <a class="left carousel-control" href="#Carousel<?php echo $this->id;?>" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		  </a>
+		  <a class="right carousel-control" href="#Carousel<?php echo $this->id;?>" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		  </a>
+		<?php endif; ?>
+	</div>
+</div>
+

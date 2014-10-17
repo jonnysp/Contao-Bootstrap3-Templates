@@ -1,0 +1,21 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <a class="btn btn-primary" href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>">
+  	<img src="<?php echo $this->icon; ?>"  alt="" class="mime_icon">
+  	<?php echo $this->link; ?> 
+  	<span class="badge"><?php echo $this->filesize; ?></span>
+  </a>
+<br><br>
+
+
+<?php $this->endblock(); ?>
+
+
+
+
+
+
+
+

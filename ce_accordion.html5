@@ -1,0 +1,57 @@
+ 
+ <div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default';  else: echo $this->class; endif ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <div class="panel-heading" <?php if ($this->headlineStyle): ?> style="<?php echo $this->headlineStyle; ?>"<?php endif; ?>>
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse<?php echo $this->id; ?>">
+          <?php echo $this->headline; ?>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse<?php echo $this->id; ?>" class="panel-collapse collapse">
+      <div class="panel-body">
+ 
+ 
+	  	  <?php if (!$this->addBefore): ?>
+		    <?php echo $this->text; ?>
+		  <?php endif; ?>
+		
+			<?php 
+				if(strpos($this->floatClass, 'float_left') !== false ){
+					$this->floatClass = 'pull-left';
+				}elseif(strpos($this->floatClass, 'float_right') !== false ){
+					$this->floatClass = 'pull-right';
+				}else{
+					$this->floatClass = '';
+				}
+			?>
+		
+	
+		  <?php if ($this->addImage): ?>
+		    <figure class="img-thumbnail <?php echo $this->floatClass; ?>" style="<?php echo $this->margin; ?>">
+		      <?php if ($this->href): ?>
+		        <a href="<?php echo $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?php echo $this->linkTitle; ?>"<?php endif; ?><?php echo $this->attributes; ?>>
+		      <?php endif; ?>
+		      <img class="img-responsive" src="<?php echo $this->src; ?>"<?php echo $this->imgSize; ?> alt="<?php echo $this->alt; ?>"<?php if ($this->title): ?> title="<?php echo $this->title; ?>"<?php endif; ?>>
+		      <?php if ($this->href): ?>
+		        </a>
+		      <?php endif; ?>
+		      <?php if ($this->caption): ?>
+		        <div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?php echo $this->caption; ?></div>
+		      <?php endif; ?>
+		
+		    </figure>
+		  <?php endif; ?>
+		
+		  <?php if ($this->addBefore): ?>
+		    <?php echo $this->text; ?>
+		  <?php endif; ?>
+	
+ 
+ 
+      </div>
+    </div>
+  </div>
+  
+  
+  
+

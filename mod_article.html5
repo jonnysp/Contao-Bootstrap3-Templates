@@ -1,0 +1,40 @@
+
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->printable): ?>
+    <!-- indexer::stop -->
+    <div class="pull-right btn-group">
+
+      <?php if ($this->printButton): ?>
+        <a class="btn btn-default" href="<?php echo $this->print; ?>" rel="nofollow" title="<?php echo $this->printTitle; ?>" onclick="window.print();return false"><span class="glyphicon glyphicon-print"></span></a>
+      <?php endif; ?>
+
+      <?php if ($this->pdfButton): ?>
+        <a class="btn btn-default" href="<?php echo $this->href; ?>" rel="nofollow" title="<?php echo $this->pdfTitle; ?>"><span class="glyphicon glyphicon-file"></span></a>
+      <?php endif; ?>
+
+      <?php if ($this->facebookButton): ?>
+        <a class="btn btn-default" href="share/?p=facebook&amp;u=<?php echo $this->encUrl; ?>&amp;t=<?php echo $this->encTitle; ?>" rel="nofollow" title="<?php echo $this->facebookTitle; ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+      <?php endif; ?>
+
+      <?php if ($this->twitterButton): ?>
+        <a class="btn btn-default" href="share/?p=twitter&amp;u=<?php echo $this->encUrl; ?>&amp;t=<?php echo $this->encTitle; ?>" rel="nofollow" title="<?php echo $this->twitterTitle; ?>" onclick="window.open(this.href,'','width=640,height=380,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><span class="glyphicon glyphicon-heart-empty"></span></a>
+      <?php endif; ?>
+
+      <?php if ($this->gplusButton): ?>
+        <a class="btn btn-default" href="share/?p=gplus&amp;u=<?php echo $this->encUrl; ?>&amp;t=<?php echo $this->encTitle; ?>" rel="nofollow" title="<?php echo $this->gplusTitle; ?>" onclick="window.open(this.href,'','width=600,height=200,modal=yes,left=100,top=50,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');return false"><span class="glyphicon glyphicon-plus"></span></a>
+      <?php endif; ?>
+
+    </div>
+    <!-- indexer::continue -->
+  <?php endif; ?>
+
+  <?php echo implode('', $this->elements); ?>
+
+  <?php if ($this->backlink): ?>
+    <!-- indexer::stop -->
+    <a class="btn btn-default pull-right" href="<?php echo $this->backlink; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
+    <!-- indexer::continue -->
+  <?php endif; ?>
+
+</div>

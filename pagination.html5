@@ -1,0 +1,35 @@
+
+<!-- indexer::stop -->
+<div style="display:block;text-align:center;">
+
+  <ul class="pagination">
+    <?php if ($this->hasFirst): ?>
+      <li class="first"><a href="<?php echo $this->first['href']; ?>" class="first" title="<?php echo $this->first['title']; ?>"><span class="glyphicon glyphicon-fast-backward"></span></a></li>
+    <?php endif; ?>
+
+    <?php if ($this->hasPrevious): ?>
+      <li class="previous"><a href="<?php echo $this->previous['href']; ?>" class="previous" title="<?php echo $this->previous['title']; ?>"><span class="glyphicon glyphicon-backward"></span></a></li>
+    <?php endif; ?>
+
+    <?php echo $this->items; ?>
+
+    <?php if ($this->hasNext): ?>
+      <li class="next"><a href="<?php echo $this->next['href']; ?>" class="next" title="<?php echo $this->next['title']; ?>"><span class="glyphicon glyphicon-forward"></span></a></li>
+    <?php endif; ?>
+
+    <?php if ($this->hasLast): ?>
+      <li class="last"><a href="<?php echo $this->last['href']; ?>" class="last" title="<?php echo $this->last['title']; ?>"><span class="glyphicon glyphicon-fast-forward"></span></a></li>
+    <?php endif; ?>
+  </ul>
+  <p><?php echo $this->total; ?></p>
+</div>
+<!-- indexer::continue -->
+
+<script>
+$(function() {
+	$('.current').parent('li').addClass('active');
+});
+
+</script>
+
+

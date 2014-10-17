@@ -1,0 +1,28 @@
+
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<a id="up" href="<?php echo $this->request; ?>#top" style="display:none;margin-top:-10px;" title="<?php echo $this->title; ?>" class="btn btn-default" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
+</div>
+<!-- indexer::continue -->
+
+<script>
+	$( document ).ready(function() {
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				$('#up').fadeIn();
+			} else {
+				$('#up').fadeOut();
+			}
+		});	
+		$('#up').click(function(){
+			$('html, body').animate({scrollTop : 0},500);
+			return false;
+		});
+	});
+</script>
+
+
+
+
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="<?php echo $this->language; ?>">
+<head>
+
+  <?php $this->block('head'); ?>
+    <meta charset="<?php echo $this->charset; ?>">
+    <title><?php echo $this->title; ?></title>
+    <base href="<?php echo $this->base; ?>">
+
+    <?php $this->block('meta'); ?>
+      <meta name="robots" content="<?php echo $this->robots; ?>">
+      <meta name="description" content="<?php echo $this->description; ?>">
+      <meta name="keywords" content="<?php echo $this->keywords; ?>">
+      <meta name="generator" content="Contao Open Source CMS">
+    <?php $this->endblock(); ?>
+
+    <?php echo $this->viewport; ?>
+    <?php echo $this->framework; ?>
+    <?php echo $this->stylesheets; ?>
+    <?php echo $this->mooScripts; ?>
+    <?php echo $this->head; ?>
+
+    <?php $this->block('html5shiv'); ?>
+      <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo $GLOBALS['TL_ASSETS']['HTML5SHIV']; ?>/html5shiv-printshiv.js"></script><![endif]-->
+    <?php $this->endblock(); ?>
+    
+  <?php $this->endblock(); ?>
+
+</head>
+<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>>
+
+
+<?php $this->block('body'); ?>
+
+
+
+<div class="container" id="page">
+ 
+ 
+
+			<?php $this->block('header'); ?>
+		       <?php if ($this->header): ?>  
+				<div class="row">
+					<div class="col-sm-12">
+	                <!--beginn section header-->
+	                <?php echo $this->header; ?> 
+	                <!--end section header-->
+					</div>
+				</div>
+               <?php endif; ?>
+    		<?php $this->endblock(); ?> 
+
+ 		
+      <?php $this->block('container'); ?>   
+          <div class="row" id="container">
+              
+     
+                <?php $this->block('left'); ?>         
+                    <?php if ($this->left): ?>
+                        <div class="col-sm-3" id="left">
+                           <!--beginn section left-->
+                          <?php echo $this->left; ?>
+                           <!--end section left-->
+                         </div> 
+                    <?php endif; ?>
+                <?php $this->endblock(); ?>              
+          
+
+                <?php $this->block('main'); ?>
+                   <?php if (!$this->left and !$this->right): ?>
+                      <div class="col-sm-12">
+                          <!--beginn section main-->
+                          <?php echo $this->main; ?>
+                        <!--end section main-->
+                      </div> 
+                  <?php elseif ($this->left and !$this->right) : ?>
+                      <div class="col-sm-9">
+                          <!--beginn section main-->
+                          <?php echo $this->main; ?>
+                        <!--end section main-->
+                      </div> 
+                  <?php elseif (($this->left and $this->right) or (!$this->left and $this->right)): ?>
+                      <div class="col-sm-6">
+                          <!--beginn section main-->
+                          <?php echo $this->main; ?>
+                        <!--end section main-->
+                     </div>
+                  <?php endif; ?>         
+                <?php $this->endblock(); ?>
+        
+                 
+     
+              <?php $this->block('right'); ?>
+                <?php if ($this->left and $this->right): ?>
+                    <div class="col-sm-3">
+                      <!--beginn section right-->
+                        <?php echo $this->right; ?>
+                      <!--end section right-->
+                     </div>
+                <?php elseif (!$this->left and $this->right): ?>
+                    <div class="col-sm-6">
+                       <!--beginn section right-->
+                        <?php echo $this->right; ?>
+                      <!--end section right-->
+                    </div>
+                <?php endif; ?> 
+              <?php $this->endblock(); ?>
+    
+
+   
+          </div>  
+      <?php $this->endblock(); ?>  
+
+ 
+ 
+
+      <?php $this->block('footer'); ?>
+         <?php if ($this->footer): ?>
+		    <div class="row">  
+		          <div class="col-sm-12">
+		            <!--beginn section footer-->
+		            <?php echo $this->footer; ?>
+		            <!--beginn section footer-->
+		          </div>
+		       </div>    
+		     <?php endif; ?> 
+      <?php $this->endblock(); ?>
+
+ 
+ </div> 
+<?php $this->endblock(); ?>
+
+<?php echo $this->mootools; ?>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?php $this->extend('block_searchable'); ?>
+
+
+<?php $this->block('content'); ?>
+
+  <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+  <hr>
+  <?php echo implode('', $this->comments); ?>
+  <?php echo $this->pagination; ?>
+
+
+<?php $this->endblock(); ?>

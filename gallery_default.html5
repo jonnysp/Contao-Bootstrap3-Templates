@@ -1,0 +1,19 @@
+
+<div class="<?php echo $this->cssID[1]; ?>">
+	<div class="row">
+	  <?php foreach ($this->body as $class=>$row): ?>
+	    <?php foreach ($row as $col): ?>
+	     <div class="col-xs-6  col-sm-<?php echo round((12 / sizeof($row) + 1)); ?> col-md-<?php echo round(12 / sizeof($row)); ?>">
+	      <?php if ($col->addImage): ?>
+	         <?php if ($col->href): ?>
+	              <a class="thumbnail" href="<?php echo $col->href; ?>"<?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><img src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>"></a>
+	         <?php else: ?>
+	              <div class="thumbnail" ><img src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>"></div>
+	         <?php endif; ?>
+	      <?php endif; ?>
+	       </div>
+	    <?php endforeach; ?>
+	  <?php endforeach; ?>
+	</div>
+</div>
+

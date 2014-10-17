@@ -1,0 +1,4 @@
+<!-- indexer::stop -->
+  <?php $this->block('content'); ?>
+  <?php $this->endblock(); ?>
+<!-- indexer::continue -->

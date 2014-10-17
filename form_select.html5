@@ -1,0 +1,66 @@
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('label'); ?>
+  <?php if ($this->label): ?>
+    <label for="ctrl_<?php echo $this->id; ?>" class="col-sm-3 control-label <?php if ($this->class): ?><?php echo $this->class; ?><?php endif; ?>">
+      <?php if ($this->mandatory): ?>
+         <?php echo $this->label; ?> <span class="hidden"><?php echo $this->mandatoryField; ?></span> <span class="mandatory">*</span>
+      <?php else: ?>
+        <?php echo $this->label; ?>
+      <?php endif; ?>
+    </label>
+  <?php endif; ?>
+<?php $this->endblock(); ?>
+
+
+
+
+
+
+
+<?php $this->block('field'); ?>
+
+
+ <?php if ($this->addSubmit): ?>
+ 	<div class="input-group">
+		  <select name="<?php echo $this->name; ?>" id="ctrl_<?php echo $this->id; ?>" class="form-control <?php echo $this->class; ?>"<?php echo $this->getAttributes(); ?>>
+		    <?php foreach ($this->getOptions() as $option): ?>
+		      <?php if ($option['type'] == 'group_start'): ?>
+		        <optgroup label="<?php echo $option['label']; ?>">
+		      <?php endif; ?>
+		      <?php if ($option['type'] == 'option'): ?>
+		        <option value="<?php echo $option['value']; ?>"<?php echo $option['selected']; ?>><?php echo $option['label']; ?></option>
+		      <?php endif; ?>
+		      <?php if ($option['type'] == 'group_end'): ?>
+		        </optgroup>
+		      <?php endif; ?>
+		    <?php endforeach; ?>
+		  </select>
+	      <span class="input-group-btn">
+	           <input type="submit" id="ctrl_<?php echo $this->id; ?>_submit" class="btn btn-default" value="<?php echo $this->slabel; ?>">
+	      </span>
+    </div>
+  <?php else : ?>
+
+	  <select name="<?php echo $this->name; ?>" id="ctrl_<?php echo $this->id; ?>" class="form-control <?php echo $this->class; ?>"<?php echo $this->getAttributes(); ?>>
+	    <?php foreach ($this->getOptions() as $option): ?>
+	      <?php if ($option['type'] == 'group_start'): ?>
+	        <optgroup label="<?php echo $option['label']; ?>">
+	      <?php endif; ?>
+	      <?php if ($option['type'] == 'option'): ?>
+	        <option value="<?php echo $option['value']; ?>"<?php echo $option['selected']; ?>><?php echo $option['label']; ?></option>
+	      <?php endif; ?>
+	      <?php if ($option['type'] == 'group_end'): ?>
+	        </optgroup>
+	      <?php endif; ?>
+	    <?php endforeach; ?>
+	  </select>
+
+ <?php endif; ?>
+
+  <?php if ($this->hasErrors()): ?>
+    <span class="label label-danger"><?php echo $this->getErrorAsString(); ?></span>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+

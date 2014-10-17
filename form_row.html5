@@ -1,0 +1,10 @@
+
+  <div class="form-group <?php if ($this->class): ?> <?php echo $this->class; ?><?php endif; ?>">
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+	 <div class="col-sm-9">
+	    <?php $this->block('field'); ?>
+	    <?php $this->endblock(); ?>
+    </div>
+  </div>
+

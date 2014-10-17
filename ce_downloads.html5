@@ -1,0 +1,25 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php echo $this->v2warning; ?>
+
+  <?php if ($this->headline): ?>
+	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+	
+
+<div class="row">
+    <?php foreach ($this->files as $file): ?>
+    	
+    <div class="col-xs-6 col-sm-4 col-md-3">
+    <div class="well" style="text-align:center;">
+       <a href="<?php echo $file['href']; ?>" title="<?php echo $file['title']; ?>"><span class="glyphicon glyphicon-file" style="font-size:70px;"> </span><br><?php echo $file['link']; ?> <br/><span class="size">(<?php echo $file['filesize']; ?>)</span></a>
+    </div>
+    </div>
+
+    <?php endforeach; ?>
+    
+</div>
+<hr>
+<?php $this->endblock(); ?>
