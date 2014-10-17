@@ -1,21 +1,13 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
+<div class="<?php echo $this->class; ?>" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
   <a class="btn btn-primary" href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>">
   	<img src="<?php echo $this->icon; ?>"  alt="" class="mime_icon">
   	<?php echo $this->link; ?> 
   	<span class="badge"><?php echo $this->filesize; ?></span>
   </a>
-<br><br>
 
-
+</div>
 <?php $this->endblock(); ?>
-
-
-
-
-
-
-
-
