@@ -17,7 +17,7 @@
 <?php $this->block('field'); ?>
 
 
-  <textarea name="<?php echo $this->name; ?>" id="ctrl_<?php echo $this->id; ?>" class="form-control <?php if ($this->class) echo ' ' . $this->class; ?>" rows="<?php echo $this->rows; ?>" cols="<?php echo $this->cols; ?>"<?php echo $this->getAttributes(); ?>><?php echo $this->value; ?></textarea>
+  <textarea style="resize: vertical; min-height:34px;" name="<?php echo $this->name; ?>" id="ctrl_<?php echo $this->id; ?>" class="form-control <?php if ($this->class) echo ' ' . $this->class; ?>" rows="<?php echo $this->rows; ?>" cols="<?php echo $this->cols; ?>"<?php echo $this->getAttributes(); ?>><?php echo $this->value; ?></textarea>
 
   <?php if ($this->hasErrors()): ?>
     <span class="label label-danger"><?php echo $this->getErrorAsString(); ?></span>
