@@ -1,14 +1,16 @@
-<!-- indexer::stop -->
-<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="hidden"><?php echo $this->skipNavigation; ?></a>
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	
+	<!-- indexer::stop -->
+	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="hidden"><?php echo $this->skipNavigation; ?></a>
+	<nav class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default';  else: echo $this->class; endif ?>" >
+	  <?php if ($this->headline): ?>
+	   <div class="panel-heading">
+	    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    </div>
+	  <?php endif; ?>
+	  <?php echo $this->items; ?>
+	</nav>
+	<a id="<?php echo $this->skipId; ?>" class="hidden">&nbsp;</a>
+	<!-- indexer::continue -->
 
-<nav class="panel panel-default <?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-  <?php if ($this->headline): ?>
-   <div class="panel-heading">
-    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-    </div>
-  <?php endif; ?>
-  <?php echo $this->items; ?>
-</nav>
-<a id="<?php echo $this->skipId; ?>" class="hidden">&nbsp;</a>
-<!-- indexer::continue -->
-
+</div>
