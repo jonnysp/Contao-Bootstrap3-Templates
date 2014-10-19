@@ -1,0 +1,17 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+	<?php if ($this->headline): ?>
+		<h1><?php echo $this->headline; ?></h1>
+	<?php endif; ?>
+
+	<ul>
+	  <?php echo $this->items; ?>
+	</ul>
+
+</div>
+
+
+<?php $this->endblock(); ?>

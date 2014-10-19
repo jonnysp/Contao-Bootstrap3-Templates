@@ -1,0 +1,56 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?> two_column tableform login block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+
+    <?php if ($this->message): ?>
+        <div class="alert alert-danger"><?php echo $this->message; ?></div>
+    <?php endif; ?>
+
+
+  <form class="form-horizontal" <?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="tl_login" method="post">
+      <input type="hidden" name="FORM_SUBMIT" value="tl_login">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+
+
+	<div class="form-group">
+	    <label for="username" class="col-sm-3 control-label"><?php echo $this->username; ?></label>
+	    <div class="col-sm-9">
+	      <input type="text" class="form-control" placeholder="<?php echo $this->username; ?>" name="username" id="username"  value="<?php echo $this->value; ?>">
+	    </div>
+	</div>
+
+
+	<div class="form-group">
+	    <label for="password" class="col-sm-3 control-label"><?php echo $this->password; ?></label>
+	    <div class="col-sm-9">
+	      <input type="password" class="form-control" name="password" id="password"  placeholder="<?php echo $this->password; ?>">
+	    </div>
+	</div>
+
+        <?php if ($this->autologin): ?>
+		  <div class="form-group">
+		    <div class="col-sm-offset-3 col-sm-9">
+		      <div class="checkbox">
+		        <label for="autologin">
+		          <input type="checkbox" name="autologin" id="autologin" value="1"> <?php echo $this->autoLabel; ?>
+		        </label>
+		      </div>
+		    </div>
+		  </div>  
+        <?php endif; ?>
+        
+		<div class="form-group">
+		    <div class="col-sm-offset-3 col-sm-9">
+				<input type="submit" class="btn btn-default" value="<?php echo $this->slabel; ?>">
+		    </div>
+		</div>
+		
+  </form>
+
+</div>
+<!-- indexer::continue -->
