@@ -1,5 +1,5 @@
 
-<div class="arc_<?php echo $this->archive->id; ?> <?php echo $this->class; ?>">
+<div class="clearfix arc_<?php echo $this->archive->id; ?> <?php echo $this->class; ?>">
 
   <h2><?php echo $this->linkHeadline; ?></h2>
 
