@@ -1,0 +1,57 @@
+
+<div class="arc_<?php echo $this->archive->id; ?> <?php echo $this->class; ?>">
+
+  <h2><?php echo $this->linkHeadline; ?></h2>
+
+  <?php if ($this->hasMetaFields): ?>
+    <p class="lead"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time> <?php echo $this->author; ?> <?php echo $this->commentCount; ?></p>
+  <?php endif; ?>
+
+
+	<?php if (!$this->addBefore): ?>
+		<?php echo $this->teaser; ?>
+	<?php endif; ?>
+
+
+	<?php
+		if(strpos($this->floatClass, 'float_left') !== false ){
+			$this->floatClass = 'pull-left';
+		}elseif(strpos($this->floatClass, 'float_right') !== false ){
+			$this->floatClass = 'pull-right';
+		}else{
+			$this->floatClass = '';
+		}
+	?>
+	
+	<?php if ($this->addImage): ?>
+		<figure class="img-thumbnail <?php echo $this->floatClass; ?>" style="<?php echo $this->margin; ?>">
+		
+		<?php if ($this->href): ?>
+			<a href="<?php echo $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?php echo $this->linkTitle; ?>"<?php endif; ?><?php echo $this->attributes; ?>>
+		<?php endif; ?>
+		
+		<img class="img-responsive" src="<?php echo $this->src; ?>"<?php echo $this->imgSize; ?> alt="<?php echo $this->alt; ?>"<?php if ($this->title): ?> title="<?php echo $this->title; ?>"<?php endif; ?>>
+		
+		<?php if ($this->href): ?>
+			</a>
+		<?php endif; ?>
+		<?php if ($this->caption): ?>
+			<div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?php echo $this->caption; ?></div>
+		<?php endif; ?>
+		</figure>
+	<?php endif; ?>
+
+
+	<?php if ($this->addBefore): ?>
+		<?php echo $this->teaser; ?>
+	<?php endif; ?>
+
+
+
+  <?php if ($this->text || $this->teaser): ?>
+    <a class="btn btn-default" href="<?php echo $this->link; ?>" title="…"><?php echo $GLOBALS['TL_LANG']['MSC']['more']; ?></a>
+  <?php endif; ?>
+  
+  <hr>
+
+</div>

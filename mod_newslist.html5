@@ -3,9 +3,9 @@
 <?php $this->block('content'); ?>
 
   <?php if (empty($this->articles)): ?>
-    <p class="empty"><?php echo $this->empty; ?></p>
+    <div class="alert alert-danger"><?php echo $this->empty; ?></div>
   <?php else: ?>
-    <div class="list-group"><?php echo implode('', $this->articles); ?></div>
+    <?php echo implode('', $this->articles); ?>
     <?php echo $this->pagination; ?>
   <?php endif; ?>
 

@@ -2,7 +2,8 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
   
-<div id="ce_slider" class="carousel slide <?php echo $this->class; ?>" data-ride="carousel" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+<div id="ce_slider" data-interval="<?php echo $this->sliderSpeed?>"  class="carousel slide <?php echo $this->class; ?>" data-ride="carousel" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
  
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
