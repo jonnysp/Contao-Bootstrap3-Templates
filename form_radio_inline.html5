@@ -18,14 +18,14 @@
 
 
 	<?php foreach ($this->getOptions() as $option): ?>
-	
-	<div class="radio-inline">
-		<label id="lbl_<?php echo $option['id']; ?>" for="opt_<?php echo $option['id']; ?>">
+
+		<label class="radio-inline" id="lbl_<?php echo $option['id']; ?>" for="opt_<?php echo $option['id']; ?>">
 		  <input type="radio" name="<?php echo $option['name']; ?>" id="opt_<?php echo $option['id']; ?>" value="<?php echo $option['value']; ?>"<?php echo $option['checked']; ?><?php echo $option['attributes']; ?>> 
 		  <?php echo $option['label']; ?>
 		</label> 
-	</div>
+
 	<?php endforeach; ?>
+	<br>
 
 
   <?php if ($this->hasErrors()): ?>

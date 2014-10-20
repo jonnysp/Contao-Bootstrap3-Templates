@@ -1,0 +1,19 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php foreach($this->faq as $category): ?>
+  
+    <h2><?php echo $category['headline']; ?></h2>
+    
+ 	<div class="list-group <?php echo $category['class']; ?>">   
+      <?php foreach ($category['items'] as $faq): ?>
+       	<a class="list-group-item <?php echo $faq['class']; ?>" href="<?php echo $faq['href']; ?>" title="<?php echo $faq['title']; ?>"><?php echo $faq['question']; ?></a>
+      <?php endforeach; ?>
+	</div>
+	
+  <?php endforeach; ?>
+
+<?php $this->endblock(); ?>
+
+

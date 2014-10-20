@@ -20,13 +20,12 @@
     <input type="hidden" name="<?php echo $this->name; ?>" value="">
 
     <?php foreach ($this->getOptions() as $option): ?>
-		 <div class="checkbox-inline">
-		  <label id="lbl_<?php echo $option['id']; ?>" for="opt_<?php echo $option['id']; ?>">
+		  <label class="checkbox-inline" id="lbl_<?php echo $option['id']; ?>" for="opt_<?php echo $option['id']; ?>">
 		    <input type="checkbox" name="<?php echo $option['name']; ?>" id="opt_<?php echo $option['id']; ?>" value="<?php echo $option['value']; ?>"<?php echo $option['checked']; ?><?php echo $option['attributes']; ?>> 
 		    <?php echo $option['label']; ?>
 		  </label>
-		</div>
     <?php endforeach; ?>
+    <br>
 
   <?php if ($this->hasErrors()): ?>
     <span class="label label-danger"><?php echo $this->getErrorAsString(); ?></span>
