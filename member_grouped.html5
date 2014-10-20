@@ -1,0 +1,80 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+  <form class="form-horizontal" <?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="<?php echo $this->formId; ?>" method="post" enctype="<?php echo $this->enctype; ?>">
+      <input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formId; ?>">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+
+      <?php if ($this->personal): ?>
+        <fieldset>
+          <legend><?php echo $this->personalData; ?></legend>
+          <?php echo implode('', $this->personal); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->address): ?>
+        <fieldset>
+          <legend><?php echo $this->addressDetails; ?></legend>
+         <?php echo implode('', $this->address); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->contact): ?>
+        <fieldset>
+          <legend><?php echo $this->contactDetails; ?></legend>
+          <?php echo implode('', $this->contact); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->login): ?>
+        <fieldset>
+          <legend><?php echo $this->loginDetails; ?></legend>
+          <?php echo implode('', $this->login); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->profile): ?>
+        <fieldset>
+          <legend><?php echo $this->profileDetails; ?></legend>
+          <?php echo implode('', $this->profile); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->newsletter): ?>
+        <fieldset>
+          <legend><?php echo $this->newsletterDetails; ?></legend>
+          <?php echo implode('', $this->newsletter); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->helpdesk): ?>
+        <fieldset>
+          <legend><?php echo $this->helpdeskDetails; ?></legend>
+          <?php echo implode('', $this->helpdesk); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->captcha): ?>
+        <fieldset>
+          <legend><?php echo $this->captchaDetails; ?></legend>
+          <?php echo $this->captcha; ?>
+        </fieldset>
+      <?php endif; ?>
+
+	  <div class="form-group">
+	    <div class="col-sm-offset-3 col-sm-9">
+	      <input type="submit" class="btn btn-default" value="<?php echo $this->slabel; ?>">
+	    </div>
+	  </div>
+
+      
+
+  </form>
+
+</div>
+<!-- indexer::continue -->

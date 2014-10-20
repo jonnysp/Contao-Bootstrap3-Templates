@@ -1,6 +1,7 @@
 
+
 <!-- indexer::stop -->
-<div class="<?php echo $this->class; ?> two_column tableform login block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
@@ -28,7 +29,7 @@
 	<div class="form-group">
 	    <label for="password" class="col-sm-3 control-label"><?php echo $this->password; ?></label>
 	    <div class="col-sm-9">
-	      <input type="password" class="form-control" name="password" id="password"  placeholder="<?php echo $this->password; ?>">
+	      <input type="password" class="form-control" name="password" id="password"  placeholder="<?php echo $this->password; ?>" value="">
 	    </div>
 	</div>
 

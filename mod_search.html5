@@ -1,0 +1,19 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+  
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+  <?php echo $this->form; ?>
+
+  <hr>
+	
+  <?php if ($this->header): ?>
+    <div class="alert alert-info"><?php echo $this->header; ?> (<?php echo $this->duration; ?>)</div>
+  <?php endif; ?>
+
+  <?php echo $this->results . $this->pagination; ?>
+
+<?php $this->endblock(); ?>

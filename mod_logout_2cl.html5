@@ -1,0 +1,24 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+  <form action="<?php echo $this->action; ?>" id="tl_logout" method="post">
+
+      <input type="hidden" name="FORM_SUBMIT" value="tl_logout" />
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}" />
+     
+    <?php echo $this->loggedInAs; ?><br />
+    <?php echo $this->lastLogin; ?><br />
+    
+	<input type="submit" class="btn btn-default" value="<?php echo $this->slabel; ?>" />
+
+
+
+  </form>
+
+</div>
+<!-- indexer::continue -->

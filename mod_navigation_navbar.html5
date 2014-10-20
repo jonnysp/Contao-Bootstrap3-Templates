@@ -14,7 +14,7 @@
 	    <a class="navbar-brand" href="#"><?php echo $this->headline; ?></a>
 	  <?php endif; ?> 
     </div>
-    
+
 	<div class="collapse navbar-collapse" id="navbar-collapse_<?php echo $this->id; ?>">
 		<ul class="nav navbar-nav">
 			<?php echo $this->items; ?>

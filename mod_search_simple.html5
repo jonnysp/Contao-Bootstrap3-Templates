@@ -1,0 +1,35 @@
+
+<form class="form-horizontal" <?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> method="get">
+
+    <?php if ($this->id): ?>
+      <input type="hidden" name="id" value="<?php echo $this->id; ?>">
+    <?php endif; ?>
+
+	<div class="form-group">
+		<label class="col-sm-3 control-label" for="ctrl_keywords_<?php echo $this->uniqueId; ?>"><?php echo $this->keywordLabel; ?></label>
+		<div class="col-sm-9">
+			<div class="input-group">
+				<input type="search" name="keywords" id="ctrl_keywords_<?php echo $this->uniqueId; ?>" class="form-control" value="<?php echo $this->keyword; ?>">
+				<span class="input-group-btn">
+					    <input type="submit" id="ctrl_submit_<?php echo $this->uniqueId; ?>" class="btn btn-default" value="<?php echo $this->search; ?>">
+				</span>
+			</div>
+		</div>
+	</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

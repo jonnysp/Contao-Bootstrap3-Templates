@@ -1,0 +1,25 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default';  else: echo $this->class; endif ?> ">
+
+	<?php if ($this->headline): ?>
+		<div class="panel-heading">
+		    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		</div>
+	<?php endif; ?>
+
+  <?php if (!empty($this->newsletters)): ?>
+    <div class="list-group">
+      <?php foreach($this->newsletters as $newsletter): ?>
+        <a class="list-group-item" href="<?php echo $newsletter['href']; ?>" title="<?php echo $newsletter['title']; ?>"> <span class="badge pull-right"><?php echo $newsletter['datim']; ?></span> <?php echo $newsletter['subject']; ?></a>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+
+</div>
+
+<?php $this->endblock(); ?>
+
+

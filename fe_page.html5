@@ -32,12 +32,8 @@
 
 <?php $this->block('body'); ?>
 
-
-
 <div class="container" id="page">
  
- 
-
 			<?php $this->block('header'); ?>
 		       <?php if ($this->header): ?>  
 				<div class="row">
@@ -112,8 +108,6 @@
       <?php $this->endblock(); ?>  
 
  
- 
-
       <?php $this->block('footer'); ?>
          <?php if ($this->footer): ?>
 		    <div class="row">  
