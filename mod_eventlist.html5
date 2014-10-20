@@ -1,7 +1,7 @@
 <?php $this->extend('block_unsearchable'); ?>
 
 <?php $this->block('content'); ?>
- <div class="list-group">
+ <div>
   <?php echo $this->events; ?>
 </div>
   <?php echo $this->pagination; ?>
