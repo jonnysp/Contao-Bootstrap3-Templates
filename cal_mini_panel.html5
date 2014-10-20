@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+ 	<?php if ($this->nextHref): ?><a class="pull-right" href="<?php echo $this->nextHref; ?>" rel="nofollow" title="<?php echo $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
+	<?php if ($this->prevHref): ?><a class="pull-left" href="<?php echo $this->prevHref; ?>" rel="nofollow" title="<?php echo $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>
+  	<?php echo $this->current; ?>
+  </div>
+	<table class="table table-striped table-condensed">
+	<thead>
+	  <tr>
+	    <?php foreach ($this->days as $i=>$day): ?>
+	      <th class="text-center <?php echo $day['class']; ?>"><?php echo utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?php echo utf8_substr($day['name'], $this->substr); ?></span></th>
+	    <?php endforeach; ?>
+	  </tr>
+	</thead>
+	<tbody class="text-center">
+	  <?php foreach ($this->weeks as $class=>$week): ?>
+	    <tr class="<?php echo $class; ?>">
+	      <?php foreach ($week as $day): ?>
+	        <?php if ($day['href']): ?>
+	          <td class="<?php echo $day['class']; ?>"><a href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
+	        <?php else: ?>
+	          <td class="<?php echo $day['class']; ?>"><?php echo $day['label']; ?></td>
+	        <?php endif; ?>
+	      <?php endforeach; ?>
+	    </tr>
+	  <?php endforeach; ?>
+	</tbody>
+	</table>
+</div>
+
+
+
+
+

@@ -1,8 +1,4 @@
 
-<?php if ($this->headline): ?>
-   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-<?php endif; ?>
-
 <h3 class="text-center"><?php echo $this->current; ?></h3>
 
 <div class="table-responsive">
