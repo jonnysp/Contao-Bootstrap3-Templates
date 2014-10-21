@@ -1,0 +1,16 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+	<div class="list-group ">
+		<?php foreach ($this->items as $item): ?>
+		  <a href="<?php echo $item['link']; ?>" target="_blank" class="list-group-item clearfix rss_default<?php echo $item['class']; ?>">
+		      <h4 class="list-group-item-heading"><?php echo $item['title']; ?></h4>
+		      <p class="list-group-item-text" style="text-align: justify;"><?php echo $item['description']; ?></p>
+		  </a>
+		 <?php endforeach; ?>
+ 	</div> 
+
+  <?php echo $this->pagination; ?>
+
+<?php $this->endblock(); ?>
