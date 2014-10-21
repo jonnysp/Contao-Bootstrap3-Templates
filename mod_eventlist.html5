@@ -1,9 +1,0 @@
-<?php $this->extend('block_unsearchable'); ?>
-
-<?php $this->block('content'); ?>
- <div>
-  <?php echo $this->events; ?>
-</div>
-  <?php echo $this->pagination; ?>
-
-<?php $this->endblock(); ?>
