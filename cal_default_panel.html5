@@ -7,7 +7,7 @@
 			<thead>
 			  <tr>
 			    <?php foreach ($this->days as $i=>$day): ?>
-			      <th class="text-center <?php echo $day['class']; ?>"><?php echo utf8_substr($day['name'], 0, $this->substr); ?><span class="text-muted"><?php echo utf8_substr($day['name'], $this->substr); ?></span></th>
+			      <th class="text-center <?php echo $day['class']; ?>"><?php echo utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?php echo utf8_substr($day['name'], $this->substr); ?></span></th>
 			    <?php endforeach; ?>
 			  </tr>
 			</thead>
