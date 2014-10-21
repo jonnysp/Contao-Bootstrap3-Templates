@@ -1,12 +1,12 @@
+
 <div class="<?php echo $this->class; ?>" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
   
-   <?php if ($this->headline): ?>
-	    <<?php echo $this->hl; ?>><?php echo $this->newsHeadline; ?></<?php echo $this->hl; ?>>
-		
-		<?php if ($this->hasSubHeadline): ?>
-			<small><?php echo $this->subHeadline; ?></small>
-		<?php endif; ?>
-
+   <?php if ($this->newsHeadline): ?>
+	    <h1><?php echo $this->newsHeadline; ?>
+			<?php if ($this->hasSubHeadline): ?>
+				<small><?php echo $this->subHeadline; ?></small>
+			<?php endif; ?>
+		</h1>
    <?php endif; ?>
 	  
   <?php if ($this->hasMetaFields): ?>
@@ -16,9 +16,7 @@
   <?php if ($this->text): ?>
     <?php echo $this->text; ?>
   <?php else: ?>
-    <div class="ce_text block">
-      <?php echo $this->teaser; ?>
-    </div>
+	<?php echo $this->teaser; ?>
   <?php endif; ?>
 
   <?php if ($this->enclosure): ?>

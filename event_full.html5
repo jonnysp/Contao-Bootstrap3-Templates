@@ -1,59 +1,29 @@
 
-<div class="list-group-item <?php echo $this->class; ?>">
+<div class="event layout_full block<?php echo $this->class; ?>">
 
-	<div class="media">
-			<div class="pull-left">
-			
-				<div class="well" style="text-align:center; margin:0; padding:6px;">
-					<h4 style="margin:-5px -5px 6px -5px;"><strong class="label label-danger"><?php echo date('d.m.Y',$this->startDate);  ?></strong></h4>
-			
-					<div  style="font-size: 17px;"><strong><?php echo date('H:i',$this->startTime);  ?> Uhr</strong></div>
-				
-					<?php //echo $this->author; ?> <?php //echo $this->commentCount; ?>
-				</div>
-					
-			</div>	
-	
-		  
-	  <div class="media-body">
-	  
-	    <h4 class="media-heading"><?php echo $this->title; ?></h4>
-  			
+  <h1><?php echo $this->title; ?></h1>
+  <div class="lead"><?php echo $this->date; ?></div>
 
-		  <?php if ($this->recurring): ?>
-		    <p class="recurring"><?php echo $this->recurring; if ($this->until): ?> <?php echo $this->until; endif; ?>.</p>
-		  <?php endif; ?>
-		
-		  <?php if ($this->details): ?>
-		    <?php echo $this->details; ?>
-		  <?php else: ?>
-		    <div class="ce_text block">
-		      <?php echo $this->teaser; ?>
-		    </div>
-		  <?php endif; ?>
-		
-		  <?php if ($this->location): ?>
-		    <p class="location"><?php echo $this->locationLabel; ?>: <?php echo $this->location; ?></p>
-		  <?php endif; ?>
-		
-		  <?php if ($this->enclosure): ?>
-		    <div class="enclosure">
-		      <?php foreach ($this->enclosure as $enclosure): ?>
-		        <p><img src="<?php echo $enclosure['icon']; ?>" width="18" height="18" alt="<?php echo $enclosure['mime']; ?>" class="mime_icon"> <a href="<?php echo $enclosure['href']; ?>" title="<?php echo $enclosure['title']; ?>"><?php echo $enclosure['link']; ?> <span class="size">(<?php echo $enclosure['filesize']; ?>)</span></a></p>
-		      <?php endforeach; ?>
-		    </div>
-		  <?php endif; ?>
+  <?php if ($this->recurring): ?>
+    <p class="recurring"><?php echo $this->recurring; if ($this->until): ?> <?php echo $this->until; endif; ?>.</p>
+  <?php endif; ?>
 
+  <?php if ($this->details): ?>
+    	<?php echo $this->details; ?>
+  <?php else: ?>
+      	<?php echo $this->teaser; ?>
+  <?php endif; ?>
 
-	  </div>
-	
+  <?php if ($this->location): ?>
+    <p class="location"><?php echo $this->locationLabel; ?>: <?php echo $this->location; ?></p>
+  <?php endif; ?>
 
-	</div>
-
+  <?php if ($this->enclosure): ?>
+    <div class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <p><img src="<?php echo $enclosure['icon']; ?>" width="18" height="18" alt="<?php echo $enclosure['mime']; ?>" class="mime_icon"> <a href="<?php echo $enclosure['href']; ?>" title="<?php echo $enclosure['title']; ?>"><?php echo $enclosure['link']; ?> <span class="size">(<?php echo $enclosure['filesize']; ?>)</span></a></p>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
 
 </div>
-
-
-
-
-
