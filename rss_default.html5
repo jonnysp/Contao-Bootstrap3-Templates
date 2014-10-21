@@ -2,36 +2,37 @@
 
 <?php $this->block('content'); ?>
 
-<div class="panel panel-default">
-
- <div class="panel-heading">
-    <h3 class="panel-title">
-    	<a href="<?php echo $this->link; ?>" target="_blank"><?php echo $this->title; ?></a>
-    </h3>
-  </div>
-  
-  <div class="panel-body" style="text-align: justify;">
-
-    <?php if ($this->image): ?>
-      <a  href="<?php echo $this->href; ?>" title="<?php echo $this->alt; ?>"><img class="img-responsive thumbnail" src="<?php echo $this->src; ?>" alt="<?php echo $this->alt; ?>"></a>
-    <?php endif; ?>
-    <?php if ($this->description): ?>
-      <div class="description"><?php echo $this->description; ?></div>
-    <?php endif; ?>
-
-  </div>
-  
-	<div class="list-group ">
-		<?php foreach ($this->items as $item): ?>
-		  <a href="<?php echo $item['link']; ?>" target="_blank" class="list-group-item clearfix rss_default<?php echo $item['class']; ?>">
-		      <h4 class="list-group-item-heading"><?php echo $item['title']; ?></h4>
-		      <p class="list-group-item-text" style="text-align: justify;"><?php echo $item['description']; ?></p>
-		  </a>
-		 <?php endforeach; ?>
- 	</div> 
-  
+<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	
+	<div class="panel panel-default">
+	
+		 <div class="panel-heading">
+		    <h3 class="panel-title">
+		    	<a href="<?php echo $this->link; ?>" target="_blank"><?php echo $this->title; ?></a>
+		    </h3>
+		  </div>
+		  
+		  <div class="panel-body" style="text-align: justify;">
+			    <?php if ($this->image): ?>
+			      <a  href="<?php echo $this->href; ?>" title="<?php echo $this->alt; ?>"><img class="img-responsive thumbnail" src="<?php echo $this->src; ?>" alt="<?php echo $this->alt; ?>"></a>
+			    <?php endif; ?>
+			    <?php if ($this->description): ?>
+			      <div class="description"><?php echo $this->description; ?></div>
+			    <?php endif; ?>
+		  </div>
+		  
+			<div class="list-group ">
+				<?php foreach ($this->items as $item): ?>
+				  <a href="<?php echo $item['link']; ?>" target="_blank" class="list-group-item clearfix rss_default<?php echo $item['class']; ?>">
+				      <h4 class="list-group-item-heading"><?php echo $item['title']; ?></h4>
+				      <p class="list-group-item-text" style="text-align: justify;"><?php echo $item['description']; ?></p>
+				  </a>
+				 <?php endforeach; ?>
+		 	</div> 
+	</div>
+	
+	<?php echo $this->pagination; ?>
 </div>
 
-<?php echo $this->pagination; ?>
 
 <?php $this->endblock(); ?>

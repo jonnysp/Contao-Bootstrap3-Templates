@@ -13,13 +13,7 @@
 <?php $this->endblock(); ?>
 
 
-
-
-
-
-
 <?php $this->block('field'); ?>
-
 
  <?php if ($this->addSubmit): ?>
  	<div class="input-group">

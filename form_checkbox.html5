@@ -13,8 +13,6 @@
 <?php $this->endblock(); ?>
 
 
-
-
 <?php $this->block('field'); ?>
 
     <input type="hidden" name="<?php echo $this->name; ?>" value="">

@@ -7,7 +7,6 @@
     <p class="lead"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time> <?php echo $this->author; ?> <?php echo $this->commentCount; ?></p>
   <?php endif; ?>
 
-
 	<?php if (!$this->addBefore): ?>
 		<?php echo $this->teaser; ?>
 	<?php endif; ?>

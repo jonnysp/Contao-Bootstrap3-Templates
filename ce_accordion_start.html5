@@ -1,4 +1,6 @@
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
+  
  <div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default';  else: echo $this->class; endif ?>  <?php echo $this->class; ?>" <?php echo $this->cssID; ?> <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
     
     <div class="panel-heading" <?php if ($this->headlineStyle): ?> style="<?php echo $this->headlineStyle; ?>"<?php endif; ?>>

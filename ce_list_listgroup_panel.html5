@@ -1,7 +1,7 @@
 <?php $this->extend('block_searchable'); ?>
 <?php $this->block('content'); ?>
 
-<div <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
 	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default';  else: echo $this->class; endif ?> ">
 	
