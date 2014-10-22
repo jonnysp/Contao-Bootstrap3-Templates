@@ -22,14 +22,14 @@
  <?php elseif ($this->isVideo): ?> 
  
  	<div class="thumbnail">
- 		<div class="embed-responsive embed-responsive-16by9">
+
 		     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?php echo $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
 		      <?php foreach ($this->files as $file): ?>
 		        <source type="<?php echo $file->mime; ?>" src="<?php echo $file->path; ?>" title="<?php echo $file->title; ?>">
 		      <?php endforeach; ?>
 		      Your browser does not support the video tag.
 		    </video>
-    	</div>
+
     </div>	
   
   <?php else: ?>

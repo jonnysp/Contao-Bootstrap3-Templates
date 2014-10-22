@@ -1,3 +1,5 @@
+
+
 <div class="table-responsive">
 	<table class="table table-striped table-condensed">
 	<thead>
@@ -16,11 +18,11 @@
 	  <?php foreach ($this->weeks as $class=>$week): ?>
 	    <tr class="<?php echo $class; ?>">
 	      <?php foreach ($week as $day): ?>
-	        <?php if ($day['href']): ?>
-	          <td class="<?php echo $day['class']; ?>"><a href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
-	        <?php else: ?>
-	          <td class="<?php echo $day['class']; ?>"><?php echo $day['label']; ?></td>
-	        <?php endif; ?>
+	       		<?php if ($day['href']): ?>
+			       <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'warning'; endif ?> success"><a class="text-success" href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
+			    <?php else: ?>
+			       <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'warning'; endif ?>"><?php echo $day['label']; ?></td>
+			    <?php endif; ?>
 	      <?php endforeach; ?>
 	    </tr>
 	  <?php endforeach; ?>
