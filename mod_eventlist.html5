@@ -1,0 +1,14 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+	  
+	  <?php echo $this->events; ?>
+
+		<div class="panel-footer">
+			<?php echo $this->pagination; ?>
+		</div>
+    </div>
+</div>
+<?php $this->endblock(); ?>

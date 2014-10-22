@@ -11,8 +11,8 @@
 
 <!-- indexer::continue -->
 
-<div id="flashContent">
-	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="<?php echo $this->width; ?>" height="<?php echo $this->height; ?>"  id="<?php echo $this->flashId; ?>_container" align="middle">
+<div class="thumbnail" id="flashContent">
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="<?php echo $this->height; ?>"  id="<?php echo $this->flashId; ?>_container" align="middle">
 		<param name="movie" value="<?php echo $this->href; ?>" />
 		<param name="quality" value="high" />
 		<param name="play" value="true" />
@@ -25,7 +25,7 @@
 		<param name="allowScriptAccess" value="sameDomain" />
 	
 		<!--[if !IE]>-->
-		<object type="application/x-shockwave-flash" data="<?php echo $this->href; ?>" width="<?php echo $this->width; ?>" height="<?php echo $this->height; ?>">
+		<object type="application/x-shockwave-flash" data="<?php echo $this->href; ?>" width="100%" height="<?php echo $this->height; ?>">
 			<param name="movie" value="3_graphics.swf" />
 			<param name="quality" value="high" />
 			<param name="play" value="true" />
@@ -49,6 +49,5 @@
 
 <!-- indexer::stop -->
 </div>
-
 
 <?php $this->endblock(); ?>

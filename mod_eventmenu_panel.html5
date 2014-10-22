@@ -1,0 +1,52 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+		<?php if ($this->headline): ?>
+			   <div class="panel-heading">
+			    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+			    </div>
+		<?php endif; ?>
+	
+		<?php foreach ($this->items as $year=>$months): ?>
+		
+		
+		  <div class="panel-body">
+		  
+			  <ul class="level_1">
+			    <?php foreach ($this->items as $year=>$months): ?>
+			      
+			      <li class="year submenu">
+			        
+			        <?php if ($year == $this->activeYear): ?>
+			          <span class="active"><?php echo $year; ?></span>
+			        <?php else: ?>
+			          <a href="<?php echo $this->url; ?>year=<?php echo $year; ?>"><?php echo $year; ?></a>
+			        <?php endif; ?>
+			        
+			        
+			        <ul class="level_2">
+			          <?php foreach ($months as $month): ?>
+			            <?php if($month['isActive']): ?>
+			              <li class="active<?php if ($month['class']): ?> <?php echo $month['class']; endif; ?>"><span class="active"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></span></li>
+			            <?php else: ?>
+			              <li<?php if ($month['class']): ?> class="<?php echo $month['class']; ?>"<?php endif; ?>><a href="<?php echo $this->url; ?>month=<?php echo $month['date']; ?>" title="<?php echo $month['title']; ?>"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></a></li>
+			            <?php endif; ?>
+			          <?php endforeach; ?>
+			        </ul>
+			        
+			        
+			      </li>
+			    <?php endforeach; ?>
+			  </ul>
+			  
+		  </div>
+		  
+		<?php endforeach; ?> 
+	</div>
+
+</div>
+<?php $this->endblock(); ?>

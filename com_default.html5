@@ -1,12 +1,10 @@
 
 
-<div class="panel panel-default<?php echo $this->class; ?>" id="<?php echo $this->id; ?>">
+<div class="panel panel-default <?php echo $this->class; ?>" id="<?php echo $this->id; ?>">
   <div class="panel-heading">Eintrag von <?php if ($this->website): ?><a href="<?php echo $this->website; ?>" rel="nofollow" target="_blank"><?php endif; ?><?php echo $this->name; ?><?php if ($this->website): ?></a><?php endif; ?> | <time datetime="<?php echo $this->datetime; ?>" class=""><?php echo $this->date; ?></time></div>
   <div class="panel-body" style="text-align:justify;">
-    
-    
+
     <?php echo $this->comment; ?>
-    
     
     <?php if ($this->addReply): ?>
     <div class="reply">
