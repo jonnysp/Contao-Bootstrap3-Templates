@@ -8,8 +8,7 @@
 	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 	<?php endif; ?>
 	
-		<?php foreach ($this->items as $year=>$months): ?>
-		
+
 			  <ul class="level_1">
 			    <?php foreach ($this->items as $year=>$months): ?>
 			      
@@ -35,8 +34,6 @@
 			      </li>
 			    <?php endforeach; ?>
 			  </ul>
-
-		<?php endforeach; ?> 
 
 </div>
 <?php $this->endblock(); ?>

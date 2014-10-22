@@ -5,15 +5,14 @@
 
 
 	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+	
 		<?php if ($this->headline): ?>
-			   <div class="panel-heading">
-			    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-			    </div>
+			<div class="panel-heading">
+				<<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+			</div>
 		<?php endif; ?>
 	
-		<?php foreach ($this->items as $year=>$months): ?>
-		
-		
+
 		  <div class="panel-body">
 		  
 			  <ul class="level_1">
@@ -44,8 +43,7 @@
 			  </ul>
 			  
 		  </div>
-		  
-		<?php endforeach; ?> 
+
 	</div>
 
 </div>
