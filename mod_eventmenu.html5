@@ -1,0 +1,47 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+	
+		<?php if ($this->headline): ?>
+			<div class="panel-heading">
+				<<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+			</div>
+		<?php endif; ?>
+	
+
+			  <ul class="level_1 list-group">
+			    <?php foreach ($this->items as $year=>$months): ?>
+			      
+			      <li class="year submenu list-group-item <?php if ($year == $this->activeYear): ?> active <?php endif; ?>">
+	
+			        <?php if ($year == $this->activeYear): ?>
+			          <span><?php echo $year; ?></span>
+			        <?php else: ?>
+			          <a href="<?php echo $this->url; ?>year=<?php echo $year; ?>"><?php echo $year; ?></a>
+			        <?php endif; ?>
+			        
+			        
+			        <ul class="level_2 list-group">
+			          <?php foreach ($months as $month): ?>
+			            <?php if($month['isActive']): ?>
+			              <li class="list-group-item active<?php if ($month['class']): ?> <?php echo $month['class']; endif; ?>"><span class="active"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></span></li>
+			            <?php else: ?>
+			              <li class="list-group-item <?php echo $month['class']; ?>"><a href="<?php echo $this->url; ?>month=<?php echo $month['date']; ?>" title="<?php echo $month['title']; ?>"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></a></li>
+			            <?php endif; ?>
+			          <?php endforeach; ?>
+			        </ul>
+		
+			      </li>
+			      
+			    <?php endforeach; ?>
+			  </ul>
+			  
+
+	</div>
+
+</div>
+<?php $this->endblock(); ?>
