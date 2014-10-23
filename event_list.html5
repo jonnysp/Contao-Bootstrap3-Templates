@@ -1,0 +1,35 @@
+
+<?php if ($this->header): ?>
+    <dt style="z-index:10; position:relative;">
+    <h3 class="time<?php echo $this->classHeader; ?>">
+    	<span class="label label-primary"><time datetime="<?php echo $this->datetime; ?>" class="date"><?php echo $this->firstDate; ?></time><?php if ($this->firstDay): ?> <span class="day">(<?php echo $this->firstDay; ?>)</span><?php endif; ?></span>
+    </h3>
+    </dt>
+<?php endif; ?>
+  
+  
+  
+<dd>
+ 	  
+	<div class="popover right <?php echo $this->classList; ?>  style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+	
+
+		<div class="arrow" style="z-index:20;"></div>
+    	<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
+		
+		<h3 class="popover-title">
+			<?php if ($this->time || $this->span): ?>
+				<span class="badge pull-right"><?php echo $this->time . $this->span; ?></span>
+			<?php endif; ?>
+		<a href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?> (<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?php echo $this->time; endif; ?>)"<?php echo $this->target; ?>><?php echo $this->link; ?></a></h3>
+			
+		<div class="popover-content">
+		 	<?php echo $this->details; ?>
+		</div>
+		 	
+	</div>
+	
+</dd>
+
+
+

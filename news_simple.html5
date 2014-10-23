@@ -1,0 +1,26 @@
+
+<?php if ($this->date): ?>
+    <dt style="z-index:10; position:relative;">
+    <h3>
+    	<span class="label label-primary">
+    		<time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time> 
+    	</span>
+    </h3>
+    </dt>
+<?php endif; ?>
+  
+
+<dd>
+	<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+		<div class="arrow" style="z-index:20;"></div>
+    	<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
+		<div class="popover-content">
+		 	<?php echo $this->linkHeadline; ?>
+		</div>
+	</div>
+	
+</dd>
+
+
+
+
