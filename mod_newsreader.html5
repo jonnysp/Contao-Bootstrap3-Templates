@@ -1,17 +1,17 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
+ 
 <div style="position:relative;">
 	<div class="bg-primary" style="bottom:0px;right:90%;margin-right:13px;position: absolute;top: 0;width: 2px;"></div>
 	<dl>
-		<?php echo $this->event; ?>
+		<?php echo $this->articles; ?>
 	</dl>
 </div>
+ 
+ 
 
-
-<br>
   <!-- indexer::stop -->
   <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
   <!-- indexer::continue -->
@@ -24,6 +24,5 @@
       <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
     </div>
   <?php endif; ?>
-  
-</div>
+
 <?php $this->endblock(); ?>
