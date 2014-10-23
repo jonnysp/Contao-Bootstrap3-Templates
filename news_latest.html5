@@ -1,11 +1,14 @@
+<?php if($this->date): ?>
 <dt style="z-index:10; position:relative;">
-	<h3>
-		<span class="label label-primary">
-			<time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time>
-		</span>
-	</h3>
+    <h3>
+<span class="label label-primary">
+    <time datetime="<?php echo $this->datetime; ?>">
+    	<?php echo $this->date; ?>
+    </time> 
+</span>
+    </h3>
 </dt>
-
+<?php endif ?>
 
 <dd class="layout_latest arc_<?php echo $this->archive->id; ?> block<?php echo $this->class; ?>">
  	  
