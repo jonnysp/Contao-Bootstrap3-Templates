@@ -14,14 +14,16 @@
 </dt>
 
   
- 
 <dd>
  	  
 	<div class="popover right <?php echo $this->classList; ?>" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
 	
 
 		<div class="arrow" style="z-index:20;"></div>
-    	<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
+
+
+
+<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
 		
 		<h3 class="popover-title">
 		
@@ -32,23 +34,32 @@
 		    </span>
 		  <?php endif; ?>
 		  
-		  <?php echo $this->newsHeadline; ?>
+		 <?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
+		 
+		 <?php echo $this->newsHeadline; ?>
 		</h3>
 			
 		<div class="popover-content">
 
+
 		  <?php if ($this->hasSubHeadline): ?>
-		    <p class="lead"><?php echo $this->subHeadline; ?></p>
+		  	<h2 class="page-header text-center" style="margin-top:0px;"><?php echo $this->subHeadline; ?></h2>
+
+		    
 		  <?php endif; ?>
-		  
+
+
 		  <?php if ($this->text): ?>
-		    <?php echo $this->text; ?>
+		    	
+		    	<?php echo $this->text; ?>
+		  
 		  <?php else: ?>
 		     
 		     
-		     <?php if (!$this->addBefore): ?>
+		     	<?php if (!$this->addBefore): ?>
 			    	<?php echo $this->teaser; ?>
 			  	<?php endif; ?>
+		
 		
 				<?php 
 					if(strpos($this->floatClass, 'float_left') !== false ){
@@ -80,13 +91,8 @@
 				    <?php echo $this->teaser; ?>
 				  <?php endif; ?>
 
-
-		      
-		      
-		      
-		      
-		      
 		  <?php endif; ?>
+		  
 
 		  <?php if ($this->enclosure): ?>
 		    <div class="enclosure">

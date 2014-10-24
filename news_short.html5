@@ -26,7 +26,9 @@
 		<?php if ($this->hasMetaFields): ?>
 			 <span class="badge pull-right"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time> <?php echo $this->author; ?> <?php echo $this->commentCount; ?></span>
   		<?php endif; ?>
-		
+		  
+			<?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
+			
 			<?php echo $this->linkHeadline; ?>	
 		</h3>
 			
