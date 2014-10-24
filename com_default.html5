@@ -1,24 +1,25 @@
 
 
 <div class="media <?php echo $this->class; ?>" id="<?php echo $this->id; ?>">
-	<div class="pull-left text-center bg-primary img-circle" style="height:60px;width:60px;line-height:60px;font-size:25px;"> 
+	<div class="pull-left text-center bg-primary img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;"> 
 	  <span class="glyphicon glyphicon-user"></span>
 	</div>
   <div class="media-body">
+  	<span class="text-muted"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time></span>
     <h4 class="media-heading">Eintrag von <?php if ($this->website): ?><a href="<?php echo $this->website; ?>" rel="nofollow" target="_blank"><?php endif; ?><?php echo $this->name; ?><?php if ($this->website): ?></a><?php endif; ?></h4>
    	<?php echo $this->comment; ?>
-   	<small><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time></small>
-
-
+   
+	<hr>
 	    <?php if ($this->addReply): ?>
 			<div class="media">
-				<div class="pull-left text-center bg-primary img-circle" style="height:60px;width:60px;line-height:60px;font-size:25px;"> 
+				<div class="pull-left text-center bg-info img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;"> 
 				  <span class="glyphicon glyphicon-share-alt"></span>
 				</div>
 				<div class="media-body">
 				<h4 class="media-heading"><?php echo $this->rby; ?> <?php echo $this->author->name; ?></h4>
 				
 					<?php echo $this->reply; ?>
+					<hr>
 				</div>
 			</div>
 	  	<?php endif; ?>
