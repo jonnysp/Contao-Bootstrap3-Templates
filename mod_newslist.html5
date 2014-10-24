@@ -11,8 +11,10 @@
 		<dl>
 		    <?php echo implode('', $this->articles); ?>
 		</dl>
-		<?php echo $this->pagination; ?>
+		
 	</div>
+	<?php echo $this->pagination; ?>
+	
   <?php endif; ?>
 
 <?php $this->endblock(); ?>

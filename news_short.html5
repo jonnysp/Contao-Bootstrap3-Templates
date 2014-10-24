@@ -1,16 +1,16 @@
-
-
-<?php if($this->date): ?>
 <dt style="z-index:10; position:relative;">
     <h3>
-<span class="label label-primary">
-    <time datetime="<?php echo $this->datetime; ?>">
-    	<?php echo $this->date; ?>
-    </time> 
-</span>
+		<span class="label label-primary">
+		    <time datetime="<?php echo $this->datetime; ?>">
+		    <?php if($this->date): ?>
+		    	<?php echo $this->date; ?>
+		    <?php else: ?>	
+		    	<?php echo $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
+		    <?php endif ?>	
+		    </time> 
+		</span>
     </h3>
 </dt>
-<?php endif ?>
 
   
 <dd class="layout_short arc_<?php echo $this->archive->id; ?> block<?php echo $this->class; ?>">
@@ -34,7 +34,7 @@
 		  <?php echo $this->teaser; ?>
 		
 		  <?php if ($this->text || $this->teaser): ?>
-		    <p class="more"><?php echo $this->more; ?></p>
+		    <a class="btn btn-default" href="<?php echo $this->link; ?>"><?php echo $GLOBALS['TL_LANG']['MSC']['more']; ?></a>
 		  <?php endif; ?>
 		
 		</div>
@@ -42,6 +42,8 @@
 	</div>
 	
 </dd>
+
+
 
 
 

@@ -22,8 +22,6 @@
             	</div>
           </div>
 
-
-
           <div class="form-group">
              <?php $this->fields['email']->strClass = "col-sm-3 control-label" ?>
              <?php echo $this->fields['email']->generateLabel(); ?>
@@ -32,7 +30,6 @@
 	            <?php echo $this->fields['email']->generateWithError(); ?>
 	            </div>
           </div>
-          
           
          <div class="form-group">
              <?php $this->fields['website']->strClass = "col-sm-3 control-label" ?>
@@ -43,23 +40,18 @@
 	            </div>
           </div>
                  
- 
           <?php if (isset($this->fields['captcha'])): ?>
-         
-           <div class="form-group">
-				<label for="ctrl_captcha" class="col-sm-3 control-label">
-				<?php echo $this->fields['captcha']->generateQuestion(); ?><span class="mandatory">*</span>
-				</label>
-
-	           <div class="col-sm-9">
-	            	<?php $this->fields['captcha']->strClass = "form-control" ?>
-	            	<?php echo $this->fields['captcha']->generateWithError(); ?>
-	            </div>
-          </div>
-                 
-            
+	           <div class="form-group">
+					<label for="ctrl_captcha" class="col-sm-3 control-label">
+					<?php echo $this->fields['captcha']->generateQuestion(); ?><span class="mandatory">*</span>
+					</label>
+	
+		           <div class="col-sm-9">
+		            	<?php $this->fields['captcha']->strClass = "form-control" ?>
+		            	<?php echo $this->fields['captcha']->generateWithError(); ?>
+		            </div>
+	          </div>
           <?php endif; ?>
-
 
           <div class="form-group">
             <label for="ctrl_<?php echo $this->fields['comment']->id; ?>"  class="col-sm-3 control-label">
@@ -71,13 +63,11 @@
 			</div>
           </div>
 
-
 	    <div class="form-group">
 			<div class="col-sm-offset-3 col-sm-9">
 		          <?php echo $this->fields['notify']->generateWithError(); ?>
 		    </div>
         </div>
-
 
 		<div class="form-group">
 			<div class="col-sm-offset-3 col-sm-9">

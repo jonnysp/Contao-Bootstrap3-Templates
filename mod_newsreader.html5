@@ -9,8 +9,6 @@
 		<?php echo $this->articles; ?>
 	</dl>
 </div>
- 
- 
 
   <!-- indexer::stop -->
   <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
