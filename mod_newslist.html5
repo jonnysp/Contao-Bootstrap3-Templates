@@ -6,7 +6,7 @@
     <p class="empty"><?php echo $this->empty; ?></p>
   <?php else: ?>
   
-	<div style="position:relative;">
+	<div class="clearfix" style="position:relative;">
 		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:13px;position: absolute;top: 0;width: 2px;"></div>
 		<dl>
 		    <?php echo implode('', $this->articles); ?>
