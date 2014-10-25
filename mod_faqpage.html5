@@ -2,17 +2,39 @@
 
 <?php $this->block('content'); ?>
 
+<?php $faq_counter = 0; ?>
+
+
   <?php foreach($this->faq as $category): ?>
+ <?php $faq_counter += 1; ?>
+
+
     <article class="<?php echo $category['class']; ?>">
      
       <h2><?php echo $category['headline']; ?></h2>
-	  <hr>
-      <?php foreach ($category['items'] as $faq): ?>
-       
-        <section class="<?php echo $faq->class; ?>">
-          
-          <h3 id="<?php echo $faq->alias; ?>"><?php echo $faq->question; ?></h3>
 
+
+ <div class="panel-group" id="categorie_<?php echo $faq_counter; ?>">
+  	  
+	  
+      <?php foreach ($category['items'] as $faq): ?>
+ 
+
+  
+  <div class="panel panel-default <?php echo $faq->class; ?>">
+    <div class="panel-heading">
+      <h4 class="panel-title"id="<?php echo $faq->alias; ?>">
+        <a data-toggle="collapse" data-parent="#categorie_<?php echo $faq_counter; ?>" href="#faq_<?php echo $faq->id; ?>">
+        
+        <span class="badge pull-right"><?php echo $faq->info; ?></span>
+        
+			<?php echo $faq->question; ?>
+        </a>
+      </h4>
+    </div>
+    <div id="faq_<?php echo $faq->id; ?>" class="panel-collapse collapse">
+      <div class="panel-body">
+     
 	      <?php if (!$faq->addBefore): ?>
 	        <?php echo $faq->answer; ?>
 	      <?php endif; ?>
@@ -27,6 +49,8 @@
 			$faq->floatClass = '';
 		}
 		?>
+		
+		
 		
 		<?php if ($faq->addImage): ?>
 			<figure class="img-thumbnail <?php echo $faq->floatClass; ?>" style="<?php echo $faq->margin; ?>">
@@ -50,6 +74,8 @@
         <?php echo $faq->answer; ?>
       <?php endif; ?>
 
+   <div class="clearfix"></div>
+
 
 
           <?php if ($faq->enclosure): ?>
@@ -60,16 +86,19 @@
             </div>
           <?php endif; ?>
 
-          <p class="text-muted"><?php echo $faq->info; ?></p>
-          <div class="clearfix"></div>
-          <hr>
-        </section>
-        
+ 
+     
+      </div>
+    </div>
+  </div>
+  
       <?php endforeach; ?>
-
+      
+</div>
+ 
     </article>
     
-    <p class="btn btn-default pull-right"><a href="<?php echo $this->request; ?>#top"><?php echo $this->topLink; ?></a></p>
+    <a class="btn btn-default pull-right" href="<?php echo $this->request; ?>#top"><?php echo $this->topLink; ?></a>
    	<div class="clearfix"></div>
     
   <?php endforeach; ?>

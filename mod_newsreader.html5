@@ -2,27 +2,31 @@
 
 <?php $this->block('content'); ?>
 
- 
-<div class="clearfix" style="position:relative;">
-	<div class="bg-primary" style="bottom:0px;right:90%;margin-right:13px;position: absolute;top: 0;width: 2px;"></div>
-	<dl>
-		<?php echo $this->articles; ?>
-	</dl>
-</div>
+	 <?php if ($this->headline): ?>
+	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	<?php endif; ?>
 
-  <!-- indexer::stop -->
-  <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
-  <!-- indexer::continue -->
 
-<div class="clearfix"></div>
+	<div class="clearfix" style="position:relative;">
+		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
+		<dl>
+			<?php echo $this->articles; ?>
+		</dl>
+	</div>
 
-  <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
-    <div class="ce_comments block">
-      <<?php echo $this->hlc; ?>><?php echo $this->addComment; ?></<?php echo $this->hlc; ?>>
-      <?php echo implode('', $this->comments); ?>
-      <?php echo $this->pagination; ?>
-      <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
-    </div>
-  <?php endif; ?>
+	  <!-- indexer::stop -->
+	  <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
+	  <!-- indexer::continue -->
+
+	<div class="clearfix"></div>
+	
+	  <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
+	    <div class="ce_comments block">
+	      <<?php echo $this->hlc; ?>><?php echo $this->addComment; ?></<?php echo $this->hlc; ?>>
+	      <?php echo implode('', $this->comments); ?>
+	      <?php echo $this->pagination; ?>
+	      <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+	    </div>
+	  <?php endif; ?>
 
 <?php $this->endblock(); ?>

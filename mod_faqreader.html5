@@ -46,7 +46,8 @@
       <?php if ($this->addBefore): ?>
         <?php echo $this->answer; ?>
       <?php endif; ?>
-
+      
+	<div class="clearfix"></div>
 
     <?php if ($this->enclosure): ?>
       <div class="enclosure">
