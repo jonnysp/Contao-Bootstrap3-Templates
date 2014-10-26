@@ -1,7 +1,9 @@
 
 <div class="media <?php echo $this->class; ?>" id="<?php echo $this->id; ?>">
-	<div class="pull-left text-center bg-primary img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;"> 
-		<span class="glyphicon glyphicon-user"></span>
+	<div class="pull-left"> 
+		<div class="text-center bg-primary img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;" >
+			<span class="glyphicon glyphicon-user"></span>
+		</div>
 	</div>
 	<div class="media-body">
 		<span class="text-muted"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time></span>
@@ -10,8 +12,10 @@
 		<hr>
 		<?php if ($this->addReply): ?>
 			<div class="media">
-				<div class="pull-left text-center bg-info img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;"> 
-				  <span class="glyphicon glyphicon-share-alt"></span>
+				<div class="pull-left"> 
+					  <div class="text-center bg-info img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;" >
+					  		<span class="glyphicon glyphicon-share-alt"></span>
+					  </div>
 				</div>
 				<div class="media-body">
 				<h4 class="media-heading"><?php echo $this->rby; ?> <?php echo $this->author->name; ?></h4>

@@ -12,16 +12,17 @@
 			    </div>
 		<?php endif; ?>
 		
-
-			<ul class="level_1 list-group">
-			    <?php foreach ($this->items as $year=>$month): ?>
-			      <?php if($month['isActive']): ?>
-			        <li class="list-group-item active<?php if ($month['class']): ?> <?php echo $month['class']; endif; ?>"><span class="active"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></span></li>
-			      <?php else: ?>
-			        <li class="list-group-item <?php echo $month['class']; ?>"><a href="<?php echo $month['href']; ?>" title="<?php echo $month['title']; ?>"><?php echo $month['link']; ?><?php if ($this->showQuantity): ?> (<?php echo $month['quantity']; ?>)<?php endif; ?></a></li>
-			      <?php endif; ?>
-			    <?php endforeach; ?>
-			</ul>
+		<div class="list-group">
+			<?php foreach ($this->items as $year=>$month): ?>
+				
+				<a href="<?php echo $month['href']; ?>" title="<?php echo $month['title']; ?>" class="list-group-item <?php if($month['isActive']): ?> active <?php endif; ?>">
+					<?php if ($this->showQuantity): ?> <span class="badge"><?php echo $month['quantity']; ?></span><?php endif; ?>
+				
+					<?php echo $month['link']; ?>
+				</a>
+			
+			<?php endforeach; ?>
+		</div>
 
 	</div>  
 </div>
