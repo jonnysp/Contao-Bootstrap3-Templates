@@ -1,21 +1,21 @@
 
 <div class="media <?php echo $this->class; ?>" id="<?php echo $this->id; ?>">
 	<div class="pull-left"> 
-		<div class="text-center bg-primary img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;" >
+		<div class="text-center bg-primary img-circle" style="height:40px;width:40px;line-height:40px;font-size:20px;">
 			<span class="glyphicon glyphicon-user"></span>
 		</div>
 	</div>
 	<div class="media-body">
 		<span class="text-muted"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time></span>
-		<h4 class="media-heading">Eintrag von <?php if ($this->website): ?><a href="<?php echo $this->website; ?>" rel="nofollow" target="_blank"><?php endif; ?><?php echo $this->name; ?><?php if ($this->website): ?></a><?php endif; ?></h4>
+		<h4 class="media-heading">Eintrag von <?php echo $this->name; ?> <?php if ($this->website): ?><a href="<?php echo $this->website; ?>" rel="nofollow" target="_blank"><span class="glyphicon glyphicon-link"></span></a><?php endif; ?></h4>
 		<?php echo $this->comment; ?>
 		<hr>
 		<?php if ($this->addReply): ?>
 			<div class="media">
 				<div class="pull-left"> 
-					  <div class="text-center bg-info img-circle" style="height:50px;width:50px;line-height:50px;font-size:20px;" >
-					  		<span class="glyphicon glyphicon-share-alt"></span>
-					  </div>
+					<div class="text-center bg-info img-circle" style="height:40px;width:40px;line-height:40px;font-size:20px;">
+						<span class="glyphicon glyphicon-share-alt"></span>
+					</div>
 				</div>
 				<div class="media-body">
 				<h4 class="media-heading"><?php echo $this->rby; ?> <?php echo $this->author->name; ?></h4>
