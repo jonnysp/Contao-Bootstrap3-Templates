@@ -1,0 +1,49 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if (empty($this->items)): ?>
+    <p class="empty"><?php echo $this->empty; ?></p>
+  <?php else: ?>
+  
+
+  
+ <div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+	
+		<?php if ($this->headline): ?>
+			<div class="panel-heading">
+				<<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+			</div>
+		<?php endif; ?>
+	
+
+		<div class="list-group">
+			<?php foreach ($this->items as $year=>$months): ?>
+				
+				<a href="<?php echo $this->url; ?>year=<?php echo $year; ?>" class="list-group-item <?php if ($year == $this->activeYear): ?> active <?php endif; ?>">
+					<?php echo $year; ?>
+				</a>
+				
+				<?php foreach ($months as $month): ?>
+				<a title="<?php echo $month['title']; ?>" href="<?php echo $this->url; ?>month=<?php echo $month['date']; ?>" class="list-group-item <?php if($month['isActive']): ?> active <?php endif; ?>">
+					<?php if ($this->showQuantity): ?> <span class="badge"><?php echo $month['quantity']; ?></span><?php endif; ?>
+					<span class="glyphicon glyphicon-chevron-right"></span> <?php echo $month['link']; ?>
+				</a>
+				<?php endforeach; ?>
+				
+			<?php endforeach; ?>
+		</div>
+		
+
+	</div>
+
+</div> 
+  
+  
+
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
