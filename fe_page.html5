@@ -23,7 +23,6 @@
     <?php $this->block('html5shiv'); ?>
       <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo $GLOBALS['TL_ASSETS']['HTML5SHIV']; ?>/html5shiv-printshiv.js"></script><![endif]-->
     <?php $this->endblock(); ?>
-    
   <?php $this->endblock(); ?>
 
 </head>
@@ -32,8 +31,12 @@
 
 <?php $this->block('body'); ?>
 
+<div class="container">
+	<?php echo $this->sections('top'); ?>
+</div>
+
 <div class="container" id="page">
- 
+
 			<?php $this->block('header'); ?>
 		       <?php if ($this->header): ?>  
 				<div class="row">
@@ -46,7 +49,12 @@
                <?php endif; ?>
     		<?php $this->endblock(); ?> 
 
- 		
+
+
+	<?php echo $this->sections('before'); ?>
+  
+
+
       <?php $this->block('container'); ?>   
           <div class="row" id="container">
               
@@ -68,18 +76,21 @@
                           <!--beginn section main-->
                           <?php echo $this->main; ?>
                         <!--end section main-->
+                        <?php echo $this->sections('main'); ?>
                       </div> 
                   <?php elseif ($this->left and !$this->right) : ?>
                       <div class="col-sm-9">
                           <!--beginn section main-->
                           <?php echo $this->main; ?>
                         <!--end section main-->
+                        <?php echo $this->sections('main'); ?>
                       </div> 
                   <?php elseif (($this->left and $this->right) or (!$this->left and $this->right)): ?>
                       <div class="col-sm-6">
                           <!--beginn section main-->
                           <?php echo $this->main; ?>
                         <!--end section main-->
+                        <?php echo $this->sections('main'); ?>
                      </div>
                   <?php endif; ?>         
                 <?php $this->endblock(); ?>
@@ -105,8 +116,13 @@
 
    
           </div>  
-      <?php $this->endblock(); ?>  
+      <?php $this->endblock(); ?> 
 
+
+      
+	<?php echo $this->sections('after'); ?>
+ 
+ 
  
       <?php $this->block('footer'); ?>
          <?php if ($this->footer): ?>
@@ -120,8 +136,12 @@
 		     <?php endif; ?> 
       <?php $this->endblock(); ?>
 
- 
- </div> 
+</div> 
+
+<div class="container">
+<?php echo $this->sections('bottom'); ?>
+</div>
+
 <?php $this->endblock(); ?>
 
 <?php echo $this->mootools; ?>
