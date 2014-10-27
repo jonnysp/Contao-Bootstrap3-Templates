@@ -2,24 +2,42 @@
 
 <?php $this->block('content'); ?>
 
+<div class="<?php echo $this->class;?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
 	<?php if ($this->headline): ?>
 	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 	<?php endif; ?>
 
 
   <?php if (empty($this->articles)): ?>
-    <p class="empty"><?php echo $this->empty; ?></p>
+   
+  	<div class="clearfix" style="position:relative;">
+		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
+		<dl>
+			<dd>	   
+				<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+					<div class="arrow" style="z-index:20;"></div>
+			    	<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
+					<div class="popover-content">
+						<?php echo $this->empty; ?>
+					</div>
+				</div>		   
+			</dd>	   
+		</dl>
+	</div>   
+
   <?php else: ?>
   
-	<div class="clearfix" style="position:relative;">
+  	<div class="clearfix" style="position:relative;">
 		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
 		<dl>
 		    <?php echo implode('', $this->articles); ?>
 		</dl>
-		
 	</div>
 	<?php echo $this->pagination; ?>
 	
   <?php endif; ?>
+  
+</div>
 
 <?php $this->endblock(); ?>

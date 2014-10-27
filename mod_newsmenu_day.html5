@@ -1,0 +1,43 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+ 	<?php if ($this->nextHref): ?><a class="pull-right" href="<?php echo $this->nextHref; ?>" rel="nofollow" title="<?php echo $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
+	<?php if ($this->prevHref): ?><a class="pull-left" href="<?php echo $this->prevHref; ?>" rel="nofollow" title="<?php echo $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>
+  	<?php echo $this->current; ?>
+  </div>
+	<div class="table-responsive">  
+		<table class="table table-condensed">
+			<thead>
+			  <tr>
+			     <?php foreach ($this->days as $day): ?>
+			      <th class="text-center"><?php echo utf8_substr($day, 0, 2); ?></th>
+			    <?php endforeach; ?>
+			  </tr>
+			</thead>
+	
+			<tbody class="text-center">
+			  <?php foreach ($this->weeks as $class=>$week): ?>
+			    <tr class="<?php echo $class; ?>">
+			      <?php foreach ($week as $day): ?>
+			        <?php if ($day['href']): ?>
+			          <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?> info"><a class="text-info" href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
+			        <?php else: ?>
+			          <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo $day['label']; ?></td>
+			        <?php endif; ?>
+			      <?php endforeach; ?>
+			    </tr>
+			  <?php endforeach; ?>
+			</tbody>
+		
+		</table>
+	</div>
+</div>
+
+
+
+<?php $this->endblock(); ?>
