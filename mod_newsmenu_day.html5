@@ -25,9 +25,9 @@
 			    <tr class="<?php echo $class; ?>">
 			      <?php foreach ($week as $day): ?>
 			        <?php if ($day['href']): ?>
-			          <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?> info"><a class="text-info" href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="badge" href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
 			        <?php else: ?>
-			          <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo $day['label']; ?></td>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo $day['label']; ?></td>
 			        <?php endif; ?>
 			      <?php endforeach; ?>
 			    </tr>
