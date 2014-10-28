@@ -2,9 +2,10 @@
 
 <?php $this->block('content'); ?>
 
-<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	
-	<div class="panel panel-default">
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
 	
 		 <div class="panel-heading">
 		    <h3 class="panel-title">
