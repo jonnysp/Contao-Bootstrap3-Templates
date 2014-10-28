@@ -7,7 +7,32 @@
 	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 	<?php endif; ?>
 
-	<div class="clearfix" style="position:relative;">
+<?php if(trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_emptyDay'] ||
+		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_emptyWeek'] ||
+		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_emptyMonth'] ||
+		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_emptyYear'] ||
+		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_empty'] ): ?>
+
+
+  	<div class="clearfix" style="position:relative;">
+		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
+		<dl>
+			<dd>	   
+				<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+					<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;"></div>
+					<div class="arrow"></div>
+					<div class="popover-content">
+						<?php echo $this->events; ?>
+					</div>
+				</div>		   
+			</dd>	   
+		</dl>
+	</div>   
+
+  <?php else: ?>
+  
+  
+  	<div class="clearfix" style="position:relative;">
 		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
 		<dl>
 		    <?php echo $this->events; ?>
@@ -15,6 +40,10 @@
 	
 		<?php echo $this->pagination; ?>
 	</div>
+  
+
+<?php endif; ?>
+
 
 </div>
 <?php $this->endblock(); ?>
