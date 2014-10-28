@@ -15,8 +15,8 @@
 		<dl>
 			<dd>	   
 				<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
-					<div class="arrow" style="z-index:20;"></div>
-			    	<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;z-index: 10;"></div>
+					<div class="bg-primary" style ="border-radius: 50%;height: 20px;position: absolute; margin-left:-25px;margin-top:-10px;top: 50%;width: 20px;"></div>
+					<div class="arrow"></div>
 					<div class="popover-content">
 						<?php echo $this->empty; ?>
 					</div>
