@@ -1,7 +1,7 @@
 
 <!-- indexer::stop -->
 <nav class="navbar navbar-default <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-	<div class="container">
+	<div class="container-fluid">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse_<?php echo $this->id; ?>">
 	        <span class="sr-only">Toggle navigation</span>

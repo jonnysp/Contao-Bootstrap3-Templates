@@ -13,12 +13,13 @@
 	      <meta name="keywords" content="<?php echo $this->keywords; ?>">
 	      <meta name="generator" content="Contao Open Source CMS">
 	    <?php $this->endblock(); ?>
-	    
+
 	    <?php echo $this->viewport; ?>
 	    <?php echo $this->head; ?>
 	    <?php echo $this->stylesheets; ?>
-	    <?php echo $this->framework; ?>	
+	    <?php echo $this->framework; ?>	    
 	    <?php echo $this->mooScripts; ?>
+
 
     <?php $this->block('html5shiv'); ?>
       <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo $GLOBALS['TL_ASSETS']['HTML5SHIV']; ?>/html5shiv-printshiv.js"></script><![endif]-->
@@ -32,11 +33,11 @@
 
 <?php $this->block('body'); ?>
 
-	<div class="container">
+	<div class="container-fluid">
 		<?php echo $this->sections('top'); ?>
 	</div>
 
-	<div class="container" id="page">
+	<div class="container-fluid" id="page">
 	
 				<?php $this->block('header'); ?>
 			       <?php if ($this->header): ?>  
@@ -136,7 +137,7 @@
 	
 	</div> 
 
-	<div class="container">
+	<div class="container-fluid">
 		<?php echo $this->sections('bottom'); ?>
 	</div>
 

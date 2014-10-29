@@ -1,8 +1,9 @@
 
 <!-- indexer::stop -->
-<nav class="navbar navbar-default <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-	<div class="container">
+<nav class="navbar navbar-inverse <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="container-fluid">   
 	    <div class="navbar-header">
+	      
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse_<?php echo $this->id; ?>">
 	        <span class="sr-only">Toggle navigation</span>
 	        <span class="icon-bar"></span>
@@ -14,13 +15,13 @@
 		    <a class="navbar-brand" href="#"><?php echo $this->headline; ?></a>
 		  <?php endif; ?> 
 	    </div>
-	
+	    
 		<div class="collapse navbar-collapse" id="navbar-collapse_<?php echo $this->id; ?>">
 			<ul class="nav navbar-nav">
 				<?php echo $this->items; ?>
 			</ul>
 		</div>
-	</div>
+	</div>		
 </nav>
 <!-- indexer::continue -->
 
