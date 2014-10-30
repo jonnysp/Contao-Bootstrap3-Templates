@@ -1,4 +1,4 @@
-<div class="item panel panel-default">
+<div class="panel panel-default">
   <div class="panel-heading text-center">
  	<?php if ($this->nextHref): ?><a class="pull-right" href="<?php echo $this->nextHref; ?>" rel="nofollow" title="<?php echo $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
 	<?php if ($this->prevHref): ?><a class="pull-left" href="<?php echo $this->prevHref; ?>" rel="nofollow" title="<?php echo $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>

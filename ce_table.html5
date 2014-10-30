@@ -2,7 +2,7 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
 	 <?php if ($this->headline): ?>
 	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>

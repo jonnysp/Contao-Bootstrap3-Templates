@@ -1,7 +1,9 @@
 <?php $this->extend('block_searchable'); ?>
 <?php $this->block('content'); ?>
 
-	<div class="item thumbnail <?php echo $this->class; ?>" <?php echo $this->cssID; ?> <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div <?php echo $this->cssID; ?> <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	
+	<div class="thumbnail <?php echo $this->class; ?>">
 		
 		<?php if (!$this->addBefore): ?>
 			<div class="caption">
@@ -38,5 +40,7 @@
 		<?php endif; ?>
 		
 	</div>
+	
+</div>
 
 <?php $this->endblock(); ?>
