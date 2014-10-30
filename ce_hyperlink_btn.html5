@@ -9,7 +9,7 @@
 	  <?php endif; ?>
 
 	  <?php echo $this->embed_pre; ?>
-		<a href="<?php echo $this->href; ?>" class="<?php if ($this->class): ?> <?php echo $this->class; ?><?php endif; ?> " title="<?php echo $this->linkTitle; ?>"<?php echo $this->attribute; ?><?php echo $this->target; ?>>
+		<a href="<?php echo $this->href; ?>" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" title="<?php echo $this->linkTitle; ?>"<?php echo $this->attribute; ?><?php echo $this->target; ?>>
 		  <?php echo $this->link; ?>
 		</a>
 	  <?php echo $this->embed_post; ?>
