@@ -1,9 +1,4 @@
-<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-	
-	<?php if ($this->headline): ?>
-		<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-	<?php endif; ?>
-	  
+
 	<div class="row">
 	  <?php foreach ($this->body as $class=>$row): ?>
 	    <?php foreach ($row as $col): ?>
@@ -19,6 +14,4 @@
 	    <?php endforeach; ?>
 	  <?php endforeach; ?>
 	</div>
-
-</div>
 

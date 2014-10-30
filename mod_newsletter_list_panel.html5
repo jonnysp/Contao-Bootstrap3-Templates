@@ -2,9 +2,7 @@
 
 <?php $this->block('content'); ?>
 
-<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-
-	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
+	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
 		<?php if ($this->headline): ?>
 			<div class="panel-heading">
@@ -21,7 +19,7 @@
 	  <?php endif; ?>
 
 	</div>
-</div>
+
 <?php $this->endblock(); ?>
 
 
