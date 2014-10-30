@@ -1,3 +1,2 @@
-
-  <?php $this->block('content'); ?>
-  <?php $this->endblock(); ?>
+	<?php $this->block('content'); ?>
+	<?php $this->endblock(); ?>

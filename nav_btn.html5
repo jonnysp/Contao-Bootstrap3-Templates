@@ -2,14 +2,13 @@
 
 	  <?php foreach ($this->items as $item): ?>
 	     <div class="btn-group">
-	      <a class="btn btn-default <?php echo str_replace("trail","active", $item['class']); ?><?php if ($item['subpages'] > 0): ?> dropdown-toggle <?php endif; ?>" href="<?php echo $item['href']; ?>" title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>"   <?php if ($item['subpages'] > 0): ?> data-toggle="dropdown" <?php endif; ?><?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?> <?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?> <?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>>
-	      	<?php echo $item['link']; ?>
-	      	<?php if ($item['subpages'] > 0): ?>
-	      	<span class="caret"></span>
-	      	<?php endif; ?>
-	      </a>
+		      <a class="btn btn-default <?php echo str_replace("trail","active", $item['class']); ?><?php if ($item['subpages'] > 0): ?> dropdown-toggle <?php endif; ?>" href="<?php echo $item['href']; ?>" title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>"   <?php if ($item['subpages'] > 0): ?> data-toggle="dropdown" <?php endif; ?><?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?> <?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?> <?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>>
+		      	<?php echo $item['link']; ?>
+		      	<?php if ($item['subpages'] > 0): ?>
+		      		<span class="caret"></span>
+		      	<?php endif; ?>
+		      </a>
      	  <?php echo $item['subitems']; ?>
-
 		 </div>
 	  <?php endforeach; ?>
 
@@ -18,20 +17,11 @@
 	<ul class="<?php echo $this->level; ?> dropdown-menu">	 	  
 		  <?php foreach ($this->items as $item): ?>
 		     <li class="<?php echo str_replace("trail","active", $item['class']); ?>">
-		     <a href="<?php echo $item['href']; ?>" title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>" class="<?php if ($item['class']): ?> <?php echo $item['class']; ?><?php endif; ?>"<?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a></li>
+		     <a href="<?php echo $item['href']; ?>" title="<?php echo $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>" class="<?php if ($item['class']): ?> <?php echo $item['class']; ?><?php endif; ?>"<?php if ($item['accesskey'] != ''): ?> accesskey="<?php echo $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?php echo $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a>
+		     </li>
 		  <?php endforeach; ?> 
 	</ul>	
 
 <?php endif; ?>
-
-
-
-
-
-
-
-
-
-
 
 

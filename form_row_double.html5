@@ -1,5 +1,4 @@
 
-
   <div class="form-group <?php if ($this->class): ?> <?php echo $this->class; ?><?php endif; ?>">
     <?php $this->block('label'); ?>
     <?php $this->endblock(); ?>
@@ -9,12 +8,8 @@
 	    <?php $this->endblock(); ?>
     </div>
     
-    
-
     <?php $this->block('label2'); ?>
     <?php $this->endblock(); ?>
-
-
 
     <div class=" <?php if ($this->addSubmit): ?> col-sm-4 <?php else: ?> col-sm-3 <?php endif; ?>">
 	    <?php $this->block('field2'); ?>
@@ -22,8 +17,4 @@
     </div>
 
   </div>
-
-
-
-
 

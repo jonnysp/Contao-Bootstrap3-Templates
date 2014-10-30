@@ -7,8 +7,7 @@
     </dt>
 <?php endif; ?>
   
-  
-  
+
 <dd>
  	  
 	<div class="popover right <?php echo $this->classList; ?>"  style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
@@ -29,6 +28,3 @@
 	</div>
 	
 </dd>
-
-
-

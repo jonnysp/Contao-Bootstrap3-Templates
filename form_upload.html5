@@ -13,9 +13,7 @@
 <?php $this->endblock(); ?>
 
 
-
 <?php $this->block('field'); ?>
-
 
 	<?php if ($this->addSubmit): ?>
  	<div class="input-group">
@@ -31,9 +29,5 @@
   <?php if ($this->hasErrors()): ?>
     <p class="error"><?php echo $this->getErrorAsString(); ?></p>
   <?php endif; ?>
-
-
   
 <?php $this->endblock(); ?>
-
-

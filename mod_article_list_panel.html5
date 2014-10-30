@@ -17,6 +17,3 @@
 	</div>
 
 <?php $this->endblock(); ?>
-
-
-

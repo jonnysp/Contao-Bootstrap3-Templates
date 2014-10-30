@@ -1,6 +1,5 @@
 <?php $this->extend('block_searchable'); ?>
 <?php $this->block('content'); ?>
-
 	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	
 		  <?php if ($this->headline): ?>
@@ -14,8 +13,5 @@
 	      <li class="list-group-item <?php echo $item['class']; ?>"><?php echo $item['content']; ?></li>
 	    <?php endforeach; ?>
 	  </<?php echo $this->tag; ?>>
-	  
 	</div>  
-
-
 <?php $this->endblock(); ?>

@@ -1,6 +1,5 @@
 <?php $this->extend('form_row'); ?>
 
-
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
      <label class="col-sm-3 control-label <?php if ($this->class): ?><?php echo $this->class; ?><?php endif; ?>">

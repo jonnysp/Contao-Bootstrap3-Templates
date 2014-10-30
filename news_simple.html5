@@ -12,7 +12,6 @@
     </h3>
 </dt>
   
-
 <dd>
 	<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
 		
@@ -20,15 +19,9 @@
 		<div class="arrow"></div>
 
 		<div class="popover-content">
-		
 			<?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
 		 	<?php echo $this->linkHeadline; ?>
-		 	
 		</div>
 	</div>
 	
 </dd>
-
-
-
-

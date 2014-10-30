@@ -18,7 +18,6 @@
 
 <?php $this->block('field'); ?>
 
-
  <?php if ($this->addSubmit): ?>
  	<div class="input-group">
 	 <input type="text" name="<?php echo $this->name; ?>" id="ctrl_<?php echo $this->id; ?>" class="form-control<?php if ($this->class) echo ' ' . $this->class; ?>" value=""<?php echo $this->getAttributes(); ?>>
@@ -36,7 +35,5 @@
   <?php if ($this->hasErrors()): ?>
     <span class="label label-danger"><?php echo $this->getErrorAsString(); ?></span>
   <?php endif; ?>
-  
 
-  
 <?php $this->endblock(); ?>

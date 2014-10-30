@@ -13,7 +13,6 @@
 	    <?php endforeach; ?>
 	</div>
 
-
 </div>
 
 <?php $this->endblock(); ?>

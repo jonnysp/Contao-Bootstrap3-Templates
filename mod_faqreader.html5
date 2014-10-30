@@ -16,13 +16,13 @@
 
 
 		<?php
-		if(strpos($this->floatClass, 'float_left') !== false ){
-			$this->floatClass = 'pull-left';
-		}elseif(strpos($this->floatClass, 'float_right') !== false ){
-			$this->floatClass = 'pull-right';
-		}else{
-			$this->floatClass = '';
-		}
+  		if(strpos($this->floatClass, 'float_left') !== false ){
+  			$this->floatClass = 'pull-left';
+  		}elseif(strpos($this->floatClass, 'float_right') !== false ){
+  			$this->floatClass = 'pull-right';
+  		}else{
+  			$this->floatClass = '';
+  		}
 		?>
 		
 		<?php if ($this->addImage): ?>

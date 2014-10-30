@@ -12,7 +12,6 @@
     </h3>
 </dt>
 
-  
 <dd class="layout_short arc_<?php echo $this->archive->id; ?> block<?php echo $this->class; ?>">
  	  
 	<div class="popover right" style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
@@ -33,18 +32,9 @@
 			
 		<div class="popover-content">
 		  <?php echo $this->teaser; ?>
-		
 		  <?php if ($this->text || $this->teaser): ?>
 		    <a class="btn btn-default" href="<?php echo $this->link; ?>"><?php echo $GLOBALS['TL_LANG']['MSC']['more']; ?></a>
 		  <?php endif; ?>
-		
 		</div>
-	
-	</div>
-	
+	</div>	
 </dd>
-
-
-
-
-

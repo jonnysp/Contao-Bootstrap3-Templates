@@ -13,7 +13,6 @@
 		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_emptyYear'] ||
 		trim(strip_tags($this->events)) == $GLOBALS['TL_LANG']['MSC']['cal_empty'] ): ?>
 
-
   	<div class="clearfix" style="position:relative;">
 		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
 		<dl>
@@ -31,7 +30,6 @@
 
   <?php else: ?>
   
-  
   	<div class="clearfix" style="position:relative;">
 		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
 		<dl>
@@ -41,7 +39,6 @@
 		<?php echo $this->pagination; ?>
 	</div>
   
-
 <?php endif; ?>
 
 

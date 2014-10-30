@@ -2,10 +2,9 @@
 
 <?php $this->block('label'); ?>
 
-<div class="col-sm-3">&nbsp;</div>
+	<div class="col-sm-3">&nbsp;</div>
 
 <?php $this->endblock(); ?>
-
 
 
 <?php $this->block('field'); ?>
@@ -17,9 +16,5 @@
     <input type="submit" id="ctrl_<?php echo $this->id; ?>" class="btn btn-default <?php if ($this->class) echo ' ' . $this->class; ?>" value="<?php echo specialchars($this->slabel); ?>"<?php echo $this->getAttributes(); ?>>
   <?php endif; ?>
 
-    
 <?php $this->endblock(); ?>
-
-
-
 

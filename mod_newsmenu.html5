@@ -2,9 +2,11 @@
 
 <?php $this->block('content'); ?>
 
-  <?php if (empty($this->items)): ?>
+<?php if (empty($this->items)): ?>
+
     <p class="empty"><?php echo $this->empty; ?></p>
-  <?php else: ?>
+
+<?php else: ?>
 
  <div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
@@ -39,9 +41,7 @@
 	</div>
 
 </div> 
-  
-  
 
-  <?php endif; ?>
+<?php endif; ?>
 
 <?php $this->endblock(); ?>

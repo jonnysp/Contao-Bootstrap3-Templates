@@ -1,5 +1,4 @@
 
-
 <!-- indexer::stop -->
 <div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
@@ -7,11 +6,9 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
   <?php endif; ?>
 
-
     <?php if ($this->message): ?>
         <div class="alert alert-danger"><?php echo $this->message; ?></div>
     <?php endif; ?>
-
 
   <form class="form-horizontal" <?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="tl_login" method="post">
       <input type="hidden" name="FORM_SUBMIT" value="tl_login">
