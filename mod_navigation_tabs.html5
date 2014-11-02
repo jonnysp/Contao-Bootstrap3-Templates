@@ -5,10 +5,10 @@
 	<?php endif; ?>
 
 	<!-- indexer::stop -->
-	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="hidden"><?php echo $this->skipNavigation; ?></a>
+	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
 		<ul class="nav nav-tabs <?php echo $this->class; ?>">
 		  <?php echo $this->items; ?>
 		</ul>
-	<a id="<?php echo $this->skipId; ?>" class="hidden">&nbsp;</a>
+	<a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
 	<!-- indexer::continue -->
 </div>

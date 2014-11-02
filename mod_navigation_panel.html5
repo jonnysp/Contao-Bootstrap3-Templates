@@ -1,6 +1,6 @@
 
 	<!-- indexer::stop -->
-	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="hidden"><?php echo $this->skipNavigation; ?></a>
+	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
 	<nav class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	  <?php if ($this->headline): ?>
 	   <div class="panel-heading">
@@ -9,6 +9,6 @@
 	  <?php endif; ?>
 	  <?php echo $this->items; ?>
 	</nav>
-	<a id="<?php echo $this->skipId; ?>" class="hidden">&nbsp;</a>
+	<a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
 	<!-- indexer::continue -->
 

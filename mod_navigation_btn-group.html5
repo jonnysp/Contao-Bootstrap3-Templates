@@ -4,11 +4,11 @@
 <?php endif; ?>
 
 <!-- indexer::stop -->
-<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="hidden"><?php echo $this->skipNavigation; ?></a>
+<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
 <div class="btn-group <?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <?php echo $this->items; ?>
 </div>
-<a id="<?php echo $this->skipId; ?>" class="hidden">&nbsp;</a>
+<a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
 <!-- indexer::continue -->
 
 
