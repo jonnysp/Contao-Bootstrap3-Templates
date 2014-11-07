@@ -36,7 +36,7 @@
 		 <?php echo $this->newsHeadline; ?>
 		</h3>
 			
-		<div class="popover-content">
+		<div class="popover-content clearfix">
 
 
 		  <?php if ($this->hasSubHeadline): ?>

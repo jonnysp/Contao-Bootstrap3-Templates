@@ -18,7 +18,7 @@
     	<div class="bg-primary img-circle" style ="position: absolute; height: 20px;width: 20px;top: 50%;margin-left:-25px;margin-top:-10px;"></div>
 		<div class="arrow"></div>
 
-		<div class="popover-content">
+		<div class="popover-content clearfix">
 			<?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
 		 	<?php echo $this->linkHeadline; ?>
 		</div>
