@@ -6,12 +6,10 @@
 	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 	<?php endif; ?>
 
-	<div class="clearfix" style="position:relative;">
-		<div class="bg-primary" style="bottom:0px;right:90%;margin-right:12px;position: absolute;top: 0;width: 2px;"></div>
-		<dl>
-			<?php echo $this->articles; ?>
-		</dl>
-	</div>
+
+	<?php echo $this->articles; ?>
+
+	<br>
 
 	  <!-- indexer::stop -->
 	  <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>

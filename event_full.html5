@@ -1,17 +1,12 @@
 
 
-<dt style="z-index:10; position:relative;">
- <h3>
+
+ <h3 class="text-center">
   	<span class="label label-primary"><?php echo $this->date; ?></span>
   </h3>
-</dt>
 
-  
-<dd>
-
-	<div class="popover right <?php echo $this->classList; ?>" style="display:block;z-index:30; max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+	<div class="popover bottom <?php echo $this->classList; ?>" style="display:block;position:relative;min-width:100%;">
 	
-    	<div class="bg-primary img-circle" style ="position: absolute; height: 20px;width: 20px;top: 50%;margin-left:-25px;margin-top:-10px;"></div>
 		<div class="arrow"></div>
 		
 		<h3 class="popover-title">
@@ -93,6 +88,4 @@
 		</div>
 		 	
 	</div>
-	
-</dd>
 

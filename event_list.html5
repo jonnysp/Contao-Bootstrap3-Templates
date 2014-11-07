@@ -1,18 +1,13 @@
 
 <?php if ($this->header): ?>
-    <dt style="z-index:10; position:relative;">
     <h3 class="time<?php echo $this->classHeader; ?>">
     	<span class="label label-primary"><time datetime="<?php echo $this->datetime; ?>" class="date"><?php echo $this->firstDate; ?></time><?php if ($this->firstDay): ?> <span class="day">(<?php echo $this->firstDay; ?>)</span><?php endif; ?></span>
     </h3>
-    </dt>
 <?php endif; ?>
   
 
-<dd>
- 	  
-	<div class="popover right <?php echo $this->classList; ?>"  style="display:block;z-index:30;max-width:90%; position:relative; margin-left:10%;margin-top:15px;">
+	<div class="popover right <?php echo $this->classList; ?>"  style="display:block;position:relative;min-width:100%;">
 	
-    	<div class="bg-primary img-circle" style ="position: absolute; height: 20px;width: 20px;top: 50%;margin-left:-25px;margin-top:-10px;"></div>
 		<div class="arrow"></div>
 		
 		<h3 class="popover-title">
@@ -27,4 +22,3 @@
 		 	
 	</div>
 	
-</dd>
