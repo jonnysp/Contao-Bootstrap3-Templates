@@ -1,6 +1,9 @@
 
     <h3 class="text-center">
 		<span class="label label-primary">
+		
+			<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
+		    
 		    <time datetime="<?php echo $this->datetime; ?>">
 		    <?php if($this->date): ?>
 		    	<?php echo $this->date; ?>
@@ -17,16 +20,18 @@
 	<div class="popover bottom <?php echo $this->classList; ?>" style="display:block;min-width:100%; position:relative;">
 	
 		<div class="arrow"></div>
+
 		
-		<h3 class="popover-title">
-		  <?php if ($this->hasMetaFields): ?>
-		    <span class="badge pull-right"><time datetime="<?php echo $this->datetime; ?>"><?php echo $this->date; ?></time> <?php echo $this->author; ?> <?php echo $this->commentCount; ?></span>
-		  <?php endif; ?>
+		<?php if ($this->hasMetaFields): ?>	
+			<h3 class="popover-title clearfix">
+					<?php if($this->date): ?><time datetime="<?php echo $this->datetime; ?>"><span class="glyphicon glyphicon-time"></span> <?php echo $this->date; ?></time><?php endif; ?>
+					<span class="pull-right">
+						<?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?php echo $this->author; ?><?php endif; ?> <?php echo $this->commentCount; ?>
+		            </span> 
+			</h3>
+		<?php endif; ?>	
 		
-		  	<?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
-		 
-			<?php echo $this->linkHeadline; ?>
-		</h3>
+		
 		
 		<div class="popover-content clearfix">
 

@@ -1,5 +1,8 @@
-	<h3 class="text-center">
+    <h3 class="text-center">
 		<span class="label label-primary">
+		
+			<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
+		    
 		    <time datetime="<?php echo $this->datetime; ?>">
 		    <?php if($this->date): ?>
 		    	<?php echo $this->date; ?>
@@ -9,13 +12,12 @@
 		    </time> 
 		</span>
     </h3>
-
-	<div class="popover bottom" style="display:block;min-width:100%; position:relative;">
+    
+	<div class="popover bottom" style="display:block;min-width:100%;position:relative;">
 		
 		<div class="arrow"></div>
 
 		<div class="popover-content clearfix">
-			<?php if($this->featured) :?><span class="text-primary glyphicon glyphicon-star"></span><?php endif ?>
 		 	<?php echo $this->linkHeadline; ?>
 		</div>
 	</div>
