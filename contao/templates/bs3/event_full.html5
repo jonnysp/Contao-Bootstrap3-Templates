@@ -1,7 +1,7 @@
 
 
 
- <h3 class="text-center">
+   <h3 class="text-center">
   	<span class="label label-primary"><?php echo $this->date; ?></span>
   </h3>
 
@@ -9,28 +9,37 @@
 	
 		<div class="arrow"></div>
 		
-		<h3 class="popover-title">
+		<?php if ($this->time || $this->span || $this->location): ?>
+			<h3 class="popover-title clearfix">
+			
+				<?php if ($this->location): ?>
+				    <span class="pull-right"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $this->locationLabel; ?>: <?php echo $this->location; ?></span>
+				<?php endif; ?>
+				  
+				<?php if ($this->time || $this->span): ?>
+					<span class="glyphicon glyphicon-time"></span> <?php echo $this->time . $this->span; ?>
+				<?php endif; ?>
+				
+				
+			</h3>
+		<?php endif; ?>
+
 		
-			<?php if ($this->time || $this->span): ?>
-				<span class="badge pull-right"><?php echo $this->time . $this->span; ?></span>
-			<?php endif; ?>
-			
-			  <?php if ($this->location): ?>
-			    <span class="badge pull-right"><?php echo $this->locationLabel; ?>: <?php echo $this->location; ?></span>
-			  <?php endif; ?>
-  
-  
-	  		<?php if ($this->href):?>
-				<a href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>" <?php echo $this->target; ?> >
-					<?php echo $this->title; ?>
-				</a>
-			<?php else: ?>
-				<?php echo $this->title; ?>
-			
-			<?php endif ?>
-		</h3>
 			
 		<div class="popover-content clearfix">
+		
+			<h3 class="page-header">
+				<?php if ($this->href):?>
+					<a href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>" <?php echo $this->target; ?> >
+						<?php echo $this->title; ?>
+					</a>
+				<?php else: ?>
+					<?php echo $this->title; ?>
+				<?php endif ?>
+			</h3>
+		
+		
+		
 		 	  <?php if ($this->details): ?>
 				<?php echo $this->details; ?>
 			  <?php else: ?>

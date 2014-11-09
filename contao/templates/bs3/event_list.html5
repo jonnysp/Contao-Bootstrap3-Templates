@@ -1,22 +1,24 @@
 
 <?php if ($this->header): ?>
-    <h3 class="time<?php echo $this->classHeader; ?>">
+    <h3 class="text-center time<?php echo $this->classHeader; ?>">
     	<span class="label label-primary"><time datetime="<?php echo $this->datetime; ?>" class="date"><?php echo $this->firstDate; ?></time><?php if ($this->firstDay): ?> <span class="day">(<?php echo $this->firstDay; ?>)</span><?php endif; ?></span>
     </h3>
 <?php endif; ?>
   
 
-	<div class="popover right <?php echo $this->classList; ?>"  style="display:block;position:relative;min-width:100%;">
+	<div class="popover bottom <?php echo $this->classList; ?>"  style="display:block;position:relative;min-width:100%;">
 	
 		<div class="arrow"></div>
-		
-		<h3 class="popover-title">
-			<?php if ($this->time || $this->span): ?>
-				<span class="badge pull-right"><?php echo $this->time . $this->span; ?></span>
-			<?php endif; ?>
-		<a href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?> (<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?php echo $this->time; endif; ?>)"<?php echo $this->target; ?>><?php echo $this->link; ?></a></h3>
-			
+
+		<?php if ($this->time || $this->span): ?>
+			<h3 class="popover-title">
+				<span class="glyphicon glyphicon-time"></span> <?php echo $this->time . $this->span; ?>
+			</h3>
+		<?php endif; ?>
+
 		<div class="popover-content clearfix">
+			<a href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?> (<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?php echo $this->time; endif; ?>)"<?php echo $this->target; ?>><?php echo $this->link; ?></a>
+		
 		 	<?php echo $this->details; ?>
 		</div>
 		 	
