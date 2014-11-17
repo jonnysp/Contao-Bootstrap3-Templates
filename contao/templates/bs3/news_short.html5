@@ -31,6 +31,13 @@
 		<?php endif; ?>
 			
 		<div class="popover-content clearfix">
+				
+			<h3 class="page-header"><?php echo $this->newsHeadline; ?><br>
+				  <?php if ($this->hasSubHeadline): ?>
+				  	<small class="lead"><?php echo $this->subHeadline; ?></small>
+				  <?php endif; ?>
+			</h3>
+		
 		  <?php echo $this->teaser; ?>
 		  <?php if ($this->text || $this->teaser): ?>
 		    <a class="btn btn-default" href="<?php echo $this->link; ?>"><?php echo $GLOBALS['TL_LANG']['MSC']['more']; ?></a>

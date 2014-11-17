@@ -35,6 +35,13 @@
 		
 		<div class="popover-content clearfix">
 
+		
+			<h3 class="page-header"><?php echo $this->newsHeadline; ?><br>
+				  <?php if ($this->hasSubHeadline): ?>
+				  	<small class="lead"><?php echo $this->subHeadline; ?></small>
+				  <?php endif; ?>
+			</h3>
+
 			<?php if (!$this->addBefore): ?>
 			    	<?php echo $this->teaser; ?>
 			<?php endif; ?>
