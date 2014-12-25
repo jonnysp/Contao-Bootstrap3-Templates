@@ -1,5 +1,5 @@
 <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9">
+    <div class="col-sm-offset-4 col-sm-8">
 		<div class="help-block">
       		<?php echo $this->generate(); ?>
     	</div>

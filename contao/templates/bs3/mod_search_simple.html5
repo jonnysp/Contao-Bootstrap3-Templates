@@ -6,8 +6,8 @@
     <?php endif; ?>
 
 	<div class="form-group">
-		<label class="col-sm-3 control-label" for="ctrl_keywords_<?php echo $this->uniqueId; ?>"><?php echo $this->keywordLabel; ?></label>
-		<div class="col-sm-9">
+		<label class="col-sm-4 control-label" for="ctrl_keywords_<?php echo $this->uniqueId; ?>"><?php echo $this->keywordLabel; ?></label>
+		<div class="col-sm-8">
 			<div class="input-group">
 				<input type="search" name="keywords" id="ctrl_keywords_<?php echo $this->uniqueId; ?>" class="form-control" value="<?php echo $this->keyword; ?>">
 				<span class="input-group-btn">

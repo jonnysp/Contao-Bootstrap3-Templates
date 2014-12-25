@@ -16,23 +16,23 @@
 
 
 	<div class="form-group">
-	    <label for="username" class="col-sm-3 control-label"><?php echo $this->username; ?></label>
-	    <div class="col-sm-9">
+	    <label for="username" class="col-sm-4 control-label"><?php echo $this->username; ?></label>
+	    <div class="col-sm-8">
 	      <input type="text" class="form-control" placeholder="<?php echo $this->username; ?>" name="username" id="username"  value="<?php echo $this->value; ?>">
 	    </div>
 	</div>
 
 
 	<div class="form-group">
-	    <label for="password" class="col-sm-3 control-label"><?php echo $this->password; ?></label>
-	    <div class="col-sm-9">
+	    <label for="password" class="col-sm-4 control-label"><?php echo $this->password; ?></label>
+	    <div class="col-sm-8">
 	      <input type="password" class="form-control" name="password" id="password"  placeholder="<?php echo $this->password; ?>" value="">
 	    </div>
 	</div>
 
         <?php if ($this->autologin): ?>
 		  <div class="form-group">
-		    <div class="col-sm-offset-3 col-sm-9">
+		    <div class="col-sm-offset-4 col-sm-8">
 		      <div class="checkbox">
 		        <label for="autologin">
 		          <input type="checkbox" name="autologin" id="autologin" value="1"> <?php echo $this->autoLabel; ?>
@@ -43,7 +43,7 @@
         <?php endif; ?>
         
 		<div class="form-group">
-		    <div class="col-sm-offset-3 col-sm-9">
+		    <div class="col-sm-offset-4 col-sm-8">
 				<input type="submit" class="btn btn-default" value="<?php echo $this->slabel; ?>">
 		    </div>
 		</div>

@@ -3,7 +3,7 @@
     <?php $this->block('label'); ?>
     <?php $this->endblock(); ?>
 	 
-	 <div class="col-sm-3">
+	 <div class="col-sm-4">
 	    <?php $this->block('field'); ?>
 	    <?php $this->endblock(); ?>
     </div>
@@ -11,7 +11,7 @@
     <?php $this->block('label2'); ?>
     <?php $this->endblock(); ?>
 
-    <div class=" <?php if ($this->addSubmit): ?> col-sm-4 <?php else: ?> col-sm-3 <?php endif; ?>">
+    <div class=" <?php if ($this->addSubmit): ?> col-sm-4 <?php else: ?> col-sm-4 <?php endif; ?>">
 	    <?php $this->block('field2'); ?>
 	    <?php $this->endblock(); ?>
     </div>

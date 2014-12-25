@@ -6,8 +6,8 @@
     <?php endif; ?>
 
 	<div class="form-group">
-		<label class="col-sm-3 control-label" for="ctrl_keywords_<?php echo $this->uniqueId; ?>"><?php echo $this->keywordLabel; ?></label>
-		<div class="col-sm-9">
+		<label class="col-sm-4 control-label" for="ctrl_keywords_<?php echo $this->uniqueId; ?>"><?php echo $this->keywordLabel; ?></label>
+		<div class="col-sm-8">
 			<div class="input-group">
 				<input type="search" name="keywords" id="ctrl_keywords_<?php echo $this->uniqueId; ?>" class="form-control" value="<?php echo $this->keyword; ?>">
 				<span class="input-group-btn">
@@ -20,7 +20,7 @@
 	<fieldset>
 		<legend class="hidden"><?php echo $this->optionsLabel; ?></legend>
 			<div class="form-group">
-			    <div class="col-sm-offset-3 col-sm-9">
+			    <div class="col-sm-offset-4 col-sm-8">
 					<label class="radio-inline" for="matchAll_<?php echo $this->uniqueId; ?>">
 					  <input type="radio" name="query_type" id="matchAll_<?php echo $this->uniqueId; ?>" value="and"<?php if ($this->queryType == 'and'): ?> checked="checked"<?php endif; ?>> <?php echo $this->matchAll; ?>
 					</label>
