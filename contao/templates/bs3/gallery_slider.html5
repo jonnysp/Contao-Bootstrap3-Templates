@@ -1,41 +1,55 @@
+<?php $this->counter = 0; ?>  
 
 
 <div class="thumbnail">
-<?php $this->counter = 0; ?> 
+
 	<div id="Carousel<?php echo $this->id;?>" class="carousel slide">
 		<div class="carousel-inner"> 
-			<?php foreach ($this->body as $class=>$row): ?>
-				<?php foreach ($row as $col): ?>
-				<?php if ($col->addImage): ?>
-				<?php $this->counter += 1; ?>   
-					<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
-						
-						<div class="carousel-caption">
-						    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
-						    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
-						</div>
-							  
-						<?php if ($col->href): ?><a href="<?php echo $col->href; ?>" <?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><?php endif; ?>
-							<img src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
-						<?php if ($col->href): ?> </a><?php endif; ?> 
-							
-					</div>
-				<?php endif; ?>
-				<?php endforeach; ?> 
-			<?php endforeach; ?>
-		</div>  
-		
+
 		<!-- Carousel indicators -->
-		<?php if ($this->counter > 1) :?>
+		<?php if (count($this->body) > 1) :?>
 			<ol class="carousel-indicators">
-				<?php for ($i = 0; $i < $this->counter; $i++): ?>
+				<?php for ($i = 0; $i < count($this->body); $i++): ?>
 				    <li data-target="#Carousel<?php echo $this->id;?>" data-slide-to="<?php echo $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
 			    <?php endfor; ?>
 			</ol>
 		<?php endif; ?>	
+
+
+			<?php foreach ($this->body as $class=>$row): ?>
+				<?php $this->counter += 1; ?>   
+				<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
+
+					<?php $this->currentrowcount = 0; ?>
+					<?php foreach ($row as $col): ?>
+						<?php if ($col->addImage): ?>
+							<?php $this->currentrowcount += 1; ?>
+						<?php endif; ?>
+					<?php endforeach; ?>
+
+
+					<div class="row">
+						<?php foreach ($row as $col): ?>
+							<?php if ($col->addImage): ?>
+								<div class="col-xs-<?php echo floor(12 / $this->currentrowcount) ; ?>">
+									<div class="carousel-caption">
+									    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
+									    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
+									</div>
+									<?php if ($col->href): ?><a href="<?php echo $col->href; ?>" <?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><?php endif; ?>
+										<img class="img-responsive" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
+									<?php if ($col->href): ?> </a><?php endif; ?> 
+								</div>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>  
 		
+
 		<!-- Carousel nav -->
-		<?php if ($this->counter > 1) :?>
+		<?php if (count($this->body) > 1) :?>
 		  <a class="left carousel-control" href="#Carousel<?php echo $this->id;?>" data-slide="prev">
 		    <span class="glyphicon glyphicon-chevron-left"></span>
 		  </a>
@@ -43,7 +57,8 @@
 		    <span class="glyphicon glyphicon-chevron-right"></span>
 		  </a>
 		<?php endif; ?>
+
+
 	</div>
 </div>	
-
 
