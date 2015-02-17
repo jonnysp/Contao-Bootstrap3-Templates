@@ -1,24 +1,24 @@
-    <h3 class="text-center">
-		<span class="label label-primary">
-		
-			<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
-		    
-		    <time datetime="<?php echo $this->datetime; ?>">
-		    <?php if($this->date): ?>
-		    	<?php echo $this->date; ?>
-		    <?php else: ?>	
-		    	<?php echo $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
-		    <?php endif ?>	
-		    </time> 
-		</span>
-    </h3>
-    
-	<div class="popover bottom" style="display:block;min-width:100%;position:relative;">
-		
-		<div class="arrow"></div>
 
-		<div class="popover-content clearfix">
-		 	<?php echo $this->linkHeadline; ?>
+    
+	<div class="panel class="panel <?php if (strpos($this->classList, 'panel-') === false ): echo 'panel-default '.$this->classList;  else: echo $this->classList; endif ?>">
+
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<span class="label label-primary pull-right">
+					<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
+				    <time datetime="<?php echo $this->datetime; ?>">
+				    <?php if($this->date): ?>
+				    	<?php echo $this->date; ?>
+				    <?php else: ?>	
+				    	<?php echo $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
+				    <?php endif ?>	
+				    </time> 
+				</span>
+				<?php echo $this->linkHeadline; ?><br>
+				<?php if ($this->hasSubHeadline): ?>
+					<small class="lead"><?php echo $this->subHeadline; ?></small>
+				<?php endif; ?>
+			</h3>
 		</div>
 	</div>
 	
