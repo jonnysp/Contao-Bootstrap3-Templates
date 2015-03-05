@@ -1,8 +1,5 @@
-
 <?php foreach ($this->sections as $key=>$section): ?>
- <div class="row">
-    <div class="col-md-12" id="<?php echo standardize($key, true); ?>">
+    <div class="container-fluid" id="<?php echo standardize($key, true); ?>">
         <?php echo $section; ?>
-    </div>
-  </div> 
+    </div> 
 <?php endforeach; ?>
