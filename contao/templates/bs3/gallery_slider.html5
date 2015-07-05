@@ -4,7 +4,7 @@
 <div class="thumbnail">
 
 	<div id="Carousel<?php echo $this->id;?>" class="carousel slide">
-		<div class="carousel-inner"> 
+		
 
 		<!-- Carousel indicators -->
 		<?php if (count($this->body) > 1) :?>
@@ -15,7 +15,7 @@
 			</ol>
 		<?php endif; ?>	
 
-
+		<div class="carousel-inner"> 
 			<?php foreach ($this->body as $class=>$row): ?>
 				<?php $this->counter += 1; ?>   
 				<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
@@ -60,5 +60,8 @@
 
 
 	</div>
+
 </div>	
+
+
 
