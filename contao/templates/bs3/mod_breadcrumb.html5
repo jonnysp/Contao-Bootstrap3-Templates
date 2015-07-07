@@ -7,15 +7,15 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
   <?php endif; ?>
 
-  <ol class="breadcrumb">
+  <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
     <?php foreach ($this->items as $item): ?>
       <?php if ($item['isActive']): ?>
-        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="active<?php if ($item['class']): ?> <?php echo $item['class']; ?><?php endif; ?> last"><a itemprop="url" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"><span  itemprop="title"><?php echo $item['link']; ?></span></a></li>
+        <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="active<?php if ($item['class']): ?> <?php echo $item['class']; ?><?php endif; ?> last"><a itemprop="url" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"><span  itemprop="name"><?php echo $item['link']; ?></span></a></li>
       <?php else: ?>
-        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" <?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?>><a itemprop="url" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"><span itemprop="title"><?php echo $item['link']; ?></span></a></li>
+        <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement" <?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?>><a itemprop="url" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>"><span itemprop="name"><?php echo $item['link']; ?></span></a></li>
       <?php endif; ?>
     <?php endforeach; ?>
-  </ol>
+  </ul>
   
 </div>
   

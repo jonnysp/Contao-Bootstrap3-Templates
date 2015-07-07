@@ -1,6 +1,6 @@
 
 <!-- indexer::stop -->
-<nav class="navbar navbar-inverse <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar navbar-inverse <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	<div class="container-fluid">   
 	    <div class="navbar-header">
 	      

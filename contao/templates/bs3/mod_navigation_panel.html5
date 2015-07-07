@@ -1,7 +1,7 @@
 
 	<!-- indexer::stop -->
 	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
-	<nav class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 	  <?php if ($this->headline): ?>
 	   <div class="panel-heading">
 	    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>

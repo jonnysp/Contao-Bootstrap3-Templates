@@ -27,23 +27,20 @@
 		<?php $this->endblock(); ?>
 	</head>
 
-	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>>
+	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>  itemscope itemtype="http://schema.org/WebPage">
 
 	<?php $this->block('body'); ?>
 
 		<?php if ($this->sections('top')): ?>
-			<div class="container-fluid">
 				<?php echo $this->sections('top'); ?>
-			</div>
 		<?php endif; ?>
-
 
 		<div class="container" id="page">
 
 			<?php $this->block('header'); ?>
 				<?php if ($this->header): ?>
 					<div class="row">
-						<header class="col-sm-12" id="header">
+						<header class="col-sm-12" id="header" itemscope itemtype="http://schema.org/WPHeader">
 						<!--beginn section header-->
 						<?php echo $this->header; ?>
 						<!--end section header-->
@@ -61,7 +58,7 @@
 
 				<?php $this->block('left'); ?>
 				<?php if ($this->left): ?>
-				<aside class="col-sm-3" id="left">
+				<aside class="col-sm-3" id="left" itemscope itemtype="http://schema.org/WPSideBar">
 				<!--beginn section left-->
 				<?php echo $this->left; ?>
 				<!--end section left-->
@@ -71,26 +68,26 @@
 
 			<?php $this->block('main'); ?>
 				<?php if (!$this->left and !$this->right): ?>
-					<div class="col-sm-12" id="main">
+					<main class="col-sm-12" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 						<!--beginn section main-->
 						<?php echo $this->main; ?>
 						<!--end section main-->
 						<?php echo $this->sections('main'); ?>
-					</div> 
+					</main> 
 				<?php elseif ($this->left and !$this->right) : ?>
-					<div class="col-sm-9" id="main">
+					<main class="col-sm-9" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 						<!--beginn section main-->
 						<?php echo $this->main; ?>
 						<!--end section main-->
 						<?php echo $this->sections('main'); ?>
-					</div> 
+					</main> 
 				<?php elseif (($this->left and $this->right) or (!$this->left and $this->right)): ?>
-					<div class="col-sm-6" id="main">
+					<main class="col-sm-6" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 						<!--beginn section main-->
 						<?php echo $this->main; ?>
 						<!--end section main-->
 						<?php echo $this->sections('main'); ?>
-					</div>
+					</main>
 				<?php endif; ?>
 			<?php $this->endblock(); ?>
 
@@ -98,13 +95,13 @@
 
 			<?php $this->block('right'); ?>
 				<?php if ($this->left and $this->right): ?>
-					<aside class="col-sm-3" id="right">
+					<aside class="col-sm-3" id="right" itemscope itemtype="http://schema.org/WPSideBar">
 					<!--beginn section right-->
 					<?php echo $this->right; ?>
 					<!--end section right-->
 					</aside>
 				<?php elseif (!$this->left and $this->right): ?>
-					<aside class="col-sm-6" id="right">
+					<aside class="col-sm-6" id="right" itemscope itemtype="http://schema.org/WPSideBar">
 					<!--beginn section right-->
 					<?php echo $this->right; ?>
 					<!--end section right-->
@@ -122,7 +119,7 @@
 		<?php $this->block('footer'); ?>
 			<?php if ($this->footer): ?>
 				<div class="row">  
-					<footer class="col-sm-12" id="footer">
+					<footer class="col-sm-12" id="footer" itemscope itemtype="http://schema.org/WPFooter">
 					<!--beginn section footer-->
 					<?php echo $this->footer; ?>
 					<!--beginn section footer-->
@@ -135,9 +132,7 @@
 
 
 		<?php if ($this->sections('bottom')): ?>
-			<div class="container-fluid">
 			<?php echo $this->sections('bottom'); ?>
-			</div>
 		<?php endif; ?>
 
 
