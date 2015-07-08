@@ -1,14 +1,12 @@
 <?php $this->counter = 0; ?>  
 
-
 <div class="thumbnail">
 
 	<div id="Carousel<?php echo $this->id;?>" class="carousel slide">
 		
-
 		<!-- Carousel indicators -->
 		<?php if (count($this->body) > 1) :?>
-			<ol class="carousel-indicators">
+			<ol class="carousel-indicators hidden-xs">
 				<?php for ($i = 0; $i < count($this->body); $i++): ?>
 				    <li data-target="#Carousel<?php echo $this->id;?>" data-slide-to="<?php echo $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
 			    <?php endfor; ?>
@@ -27,12 +25,11 @@
 						<?php endif; ?>
 					<?php endforeach; ?>
 
-
 					<div class="row">
 						<?php foreach ($row as $col): ?>
 							<?php if ($col->addImage): ?>
 								<figure class="col-xs-<?php echo floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
-									<figcaption class="carousel-caption" itemprop="caption">
+									<figcaption class="carousel-caption hidden-xs" itemprop="caption">
 									    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
 									    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
 									</figcaption>
@@ -46,7 +43,6 @@
 				</div>
 			<?php endforeach; ?>
 		</div>  
-		
 
 		<!-- Carousel nav -->
 		<?php if (count($this->body) > 1) :?>
@@ -58,10 +54,6 @@
 		  </a>
 		<?php endif; ?>
 
-
 	</div>
 
-</div>	
-
-
-
+</div>
