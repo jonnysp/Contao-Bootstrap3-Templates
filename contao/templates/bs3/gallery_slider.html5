@@ -15,7 +15,7 @@
 			</ol>
 		<?php endif; ?>	
 
-		<div class="carousel-inner"> 
+		<div class="carousel-inner" itemscope itemtype="http://schema.org/ImageGallery"> 
 			<?php foreach ($this->body as $class=>$row): ?>
 				<?php $this->counter += 1; ?>   
 				<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
@@ -31,15 +31,15 @@
 					<div class="row">
 						<?php foreach ($row as $col): ?>
 							<?php if ($col->addImage): ?>
-								<div class="col-xs-<?php echo floor(12 / $this->currentrowcount) ; ?>">
-									<div class="carousel-caption">
+								<figure class="col-xs-<?php echo floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+									<figcaption class="carousel-caption" itemprop="caption">
 									    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
 									    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
-									</div>
-									<?php if ($col->href): ?><a href="<?php echo $col->href; ?>" <?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><?php endif; ?>
-										<img class="img-responsive" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
+									</figcaption>
+									<?php if ($col->href): ?><a itemprop="contentURL" href="<?php echo $col->href; ?>" <?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><?php endif; ?>
+										<img itemprop="thumbnailUrl" class="img-responsive" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
 									<?php if ($col->href): ?> </a><?php endif; ?> 
-								</div>
+								</figure>
 							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
