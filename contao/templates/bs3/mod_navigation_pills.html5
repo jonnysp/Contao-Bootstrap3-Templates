@@ -1,15 +1,15 @@
-<nav itemscope itemtype="http://schema.org/SiteNavigationElement" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<?php if ($this->headline): ?>
-	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
 
 	<!-- indexer::stop -->
-    <a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
-	<ul class="nav nav-pills <?php echo $this->class; ?>">
-	 <?php echo $this->items; ?>
+    <a href="<?= $this->request; ?>#<?= $this->skipId; ?>" class="sr-only"><?= $this->skipNavigation; ?></a>
+	<ul class="nav nav-pills <?= $this->class; ?>">
+	 <?= $this->items; ?>
 	</ul>
-	<a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
+	<a id="<?= $this->skipId; ?>" class="sr-only">&nbsp;</a>
 	<!-- indexer::continue -->
 
 </nav>

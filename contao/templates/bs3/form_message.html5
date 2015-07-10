@@ -1,4 +1,4 @@
 
-  <div class="alert alert-info <?php echo $this->class; ?>">
-    <?php echo $this->message; ?>
+  <div class="alert alert-info <?= $this->class; ?>">
+    <?= $this->message; ?>
   </div>

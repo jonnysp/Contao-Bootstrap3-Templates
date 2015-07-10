@@ -5,16 +5,16 @@
 
 	<select class="form-control" onchange="location.href=this.options[this.selectedIndex].value">
 		<?php foreach ($this->items as $item): ?>
-			<option itemprop="name" <?php if ($item['isActive'] == true ): ?> selected <?php endif; ?> value="<?php echo $item['href']; ?>"><?php echo str_repeat(' &nbsp; ', $this->levelnumeric); ?><?php echo $item['link']; ?></option>
-			<?php echo $item['subitems']; ?>
+			<option itemprop="name" <?php if ($item['isActive'] == true ): ?> selected <?php endif; ?> value="<?= $item['href']; ?>"><?= str_repeat(' &nbsp; ', $this->levelnumeric); ?><?= $item['link']; ?></option>
+			<?= $item['subitems']; ?>
 		<?php endforeach; ?>
 	</select>
 
 <?php else: ?>
 	
 	<?php foreach ($this->items as $item): ?>
-		<option itemprop="name" <?php if ($item['isActive'] == true ): ?> selected <?php endif; ?> value="<?php echo $item['href']; ?>"><?php echo str_repeat(' &nbsp; ', $this->levelnumeric); ?><?php echo $item['link']; ?></option>
-		<?php echo $item['subitems']; ?>
+		<option itemprop="name" <?php if ($item['isActive'] == true ): ?> selected <?php endif; ?> value="<?= $item['href']; ?>"><?= str_repeat(' &nbsp; ', $this->levelnumeric); ?><?= $item['link']; ?></option>
+		<?= $item['subitems']; ?>
 	<?php endforeach; ?>
 
 <?php endif; ?>

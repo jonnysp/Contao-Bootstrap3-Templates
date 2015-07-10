@@ -2,16 +2,16 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 		<?php if ($this->headline): ?>
 		   <div class="panel-heading">
-		    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		    <<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 		    </div>
 		<?php endif; ?>
 		  
 		<div class="list-group">
 		    <?php foreach ($this->articles as $article): ?>
-				<a class="list-group-item" href="<?php echo $this->request; ?>#<?php echo $article['id']; ?>" title="<?php echo $article['title']; ?>"><?php echo $article['link']; ?></a>
+				<a class="list-group-item" href="<?= $this->request; ?>#<?= $article['id']; ?>" title="<?= $article['title']; ?>"><?= $article['link']; ?></a>
 		    <?php endforeach; ?>
 		</div>
 	</div>

@@ -6,17 +6,17 @@
 			<h3 class="panel-title">
 				<span class="label label-primary pull-right">
 					<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
-				    <time datetime="<?php echo $this->datetime; ?>">
+				    <time datetime="<?= $this->datetime; ?>">
 				    <?php if($this->date): ?>
-				    	<?php echo $this->date; ?>
+				    	<?= $this->date; ?>
 				    <?php else: ?>	
-				    	<?php echo $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
+				    	<?= $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
 				    <?php endif ?>	
 				    </time> 
 				</span>
-				<?php echo $this->linkHeadline; ?><br>
+				<?= $this->linkHeadline; ?><br>
 				<?php if ($this->hasSubHeadline): ?>
-					<small class="lead"><?php echo $this->subHeadline; ?></small>
+					<small class="lead"><?= $this->subHeadline; ?></small>
 				<?php endif; ?>
 			</h3>
 		</div>

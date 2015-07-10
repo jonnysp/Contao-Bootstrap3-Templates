@@ -1,5 +1,5 @@
 
-  <div class="form-group <?php if ($this->class): ?> <?php echo $this->class; ?><?php endif; ?>">
+  <div class="form-group <?php if ($this->class): ?> <?= $this->class; ?><?php endif; ?>">
     <?php $this->block('label'); ?>
     <?php $this->endblock(); ?>
 	 

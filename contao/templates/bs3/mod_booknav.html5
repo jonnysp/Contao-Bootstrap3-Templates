@@ -3,10 +3,10 @@
 <?php $this->block('content'); ?>
 
 
-<nav class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?> <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<nav class="<?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
 
@@ -15,15 +15,15 @@
 	  <ul class="pagination">
 
 	    <?php if ($this->prevHref): ?>
-	      <li class="prev"><a href="<?php echo $this->prevHref; ?>" title="<?php echo $this->prevPageTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?php echo $this->prevLink; ?></a></li>
+	      <li class="prev"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevPageTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevLink; ?></a></li>
 	    <?php endif; ?>
 
 	    <?php if ($this->upHref): ?>
-	      <li class="up"><a href="<?php echo $this->upHref; ?>" title="<?php echo $this->upPageTitle; ?>"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+	      <li class="up"><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
 	    <?php endif; ?>
 	
 	    <?php if ($this->nextHref): ?>
-	      <li class="next"><a href="<?php echo $this->nextHref; ?>" title="<?php echo $this->nextPageTitle; ?>"><?php echo $this->nextLink; ?> <span class="glyphicon glyphicon-chevron-right"></span></a></li>
+	      <li class="next"><a href="<?= $this->nextHref; ?>" title="<?= $this->nextPageTitle; ?>"><?= $this->nextLink; ?> <span class="glyphicon glyphicon-chevron-right"></span></a></li>
 	    <?php endif; ?>
 	    
 	  </ul>

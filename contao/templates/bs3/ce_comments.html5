@@ -2,14 +2,14 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<?php if ($this->headline): ?>
-		<<?php echo $this->hl; ?> class="page-header"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		<<?= $this->hl; ?> class="page-header"><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
   
-	<?php echo implode('', $this->comments); ?>
-	<?php echo $this->pagination; ?>
+	<?= implode('', $this->comments); ?>
+	<?= $this->pagination; ?>
 	<?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
 
 </div>

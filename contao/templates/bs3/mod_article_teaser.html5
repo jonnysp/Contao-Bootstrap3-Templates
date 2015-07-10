@@ -1,8 +1,8 @@
 
-<article class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
-    <h2><?php echo $this->headline; ?></h2>
+<article class="<?= $this->class; ?> block"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+    <h2><?= $this->headline; ?></h2>
     <div class="teaser">
-      <?php echo $this->teaser; ?>
-      <a class="btn btn-default" href="<?php echo $this->href; ?>" title="<?php echo $this->readMore; ?>"><?php echo $this->more; ?> <span class="hidden"><?php echo $this->headline; ?></span></a>
+      <?= $this->teaser; ?>
+      <a class="btn btn-default" href="<?= $this->href; ?>" title="<?= $this->readMore; ?>"><?= $this->more; ?> <span class="hidden"><?= $this->headline; ?></span></a>
     </div>
 </article>

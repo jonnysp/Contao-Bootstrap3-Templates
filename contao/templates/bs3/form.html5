@@ -1,22 +1,22 @@
 
 <!-- indexer::stop -->
-<div class="item <?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
-  <form class="form-horizontal" <?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="<?php echo $this->formId; ?>" method="<?php echo $this->method; ?>" enctype="<?php echo $this->enctype; ?>"<?php echo $this->attributes; ?><?php echo $this->novalidate; ?>>
+  <form class="form-horizontal" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="<?= $this->formId; ?>" method="<?= $this->method; ?>" enctype="<?= $this->enctype; ?>"<?= $this->attributes; ?><?= $this->novalidate; ?>>
       <?php if ($this->method != 'get'): ?>
-        <input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formSubmit; ?>">
+        <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formSubmit; ?>">
         <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
         <?php if ($this->maxFileSize): ?>
-          <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $this->maxFileSize; ?>">
+          <input type="hidden" name="MAX_FILE_SIZE" value="<?= $this->maxFileSize; ?>">
         <?php endif; ?>
       <?php endif; ?>
       
-      <?php echo $this->hidden; ?>
-      <?php echo $this->fields; ?>
+      <?= $this->hidden; ?>
+      <?= $this->fields; ?>
   </form>
 
 </div>

@@ -8,26 +8,26 @@
 
 			<h3 class="panel-title">
 				<span class="label label-primary pull-right">
-				    <time datetime="<?php echo $this->datetime; ?>">
+				    <time datetime="<?= $this->datetime; ?>">
 				    <?php if($this->date): ?>
-				    	<?php echo $this->date; ?>
+				    	<?= $this->date; ?>
 				    <?php else: ?>	
-				    	<?php echo $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
+				    	<?= $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
 				    <?php endif ?>	
 				    </time> 
 				</span>
-				<?php echo $this->title; ?>
+				<?= $this->title; ?>
 			</h3>
 	</div>
 
 	<div class="popover-title clearfix">
 	
 		  <?php if ($this->location): ?>
-		  	<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $this->locationLabel; ?>: <?php echo $this->location; ?></div>
+		  	<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span> <?= $this->locationLabel; ?>: <?= $this->location; ?></div>
 		  <?php endif; ?>
 
 		  <?php if ($this->recurring): ?>
-		    <span class="badge"><?php echo $this->recurring; if ($this->until): ?> <?php echo $this->until; endif; ?>.</span>
+		    <span class="badge"><?= $this->recurring; if ($this->until): ?> <?= $this->until; endif; ?>.</span>
 		  <?php endif; ?>
 	</div>
 
@@ -35,10 +35,10 @@
 	<div class="panel-body clearfix">
 
 	  <?php if ($this->details): ?>
-	    <?php echo $this->details; ?>
+	    <?= $this->details; ?>
 	  <?php else: ?>
 	    <div class="ce_text block">
-	      <?php echo $this->teaser; ?>
+	      <?= $this->teaser; ?>
 	    </div>
 	  <?php endif; ?>
 
@@ -46,7 +46,7 @@
 	  <?php if ($this->enclosure): ?>
 	    <div class="enclosure">
 	      <?php foreach ($this->enclosure as $enclosure): ?>
-	        <p><img src="<?php echo $enclosure['icon']; ?>" width="18" height="18" alt="<?php echo $enclosure['mime']; ?>" class="mime_icon"> <a href="<?php echo $enclosure['href']; ?>" title="<?php echo $enclosure['title']; ?>"><?php echo $enclosure['link']; ?> <span class="size">(<?php echo $enclosure['filesize']; ?>)</span></a></p>
+	        <p><img src="<?= $enclosure['icon']; ?>" width="18" height="18" alt="<?= $enclosure['mime']; ?>" class="mime_icon"> <a href="<?= $enclosure['href']; ?>" title="<?= $enclosure['title']; ?>"><?= $enclosure['link']; ?> <span class="size">(<?= $enclosure['filesize']; ?>)</span></a></p>
 	      <?php endforeach; ?>
 	    </div>
 	  <?php endif; ?>

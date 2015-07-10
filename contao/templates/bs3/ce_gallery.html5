@@ -2,17 +2,17 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<?php if ($this->headline): ?>
-		<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
 
-  <?php echo $this->v2warning; ?>
+  <?= $this->v2warning; ?>
 
-  <?php echo $this->images; ?>
+  <?= $this->images; ?>
 
-  <?php echo $this->pagination; ?>
+  <?= $this->pagination; ?>
   
 </div>
 <?php $this->endblock(); ?>

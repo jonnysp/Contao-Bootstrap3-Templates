@@ -3,24 +3,24 @@
 	<table class="table table-condensed">
 	<thead>
 	  <tr>
-	    <th class="text-center previous"><?php if ($this->prevHref): ?><a href="<?php echo $this->prevHref; ?>" rel="nofollow" title="<?php echo $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php else: ?>&nbsp;<?php endif; ?></th>
-	    <th colspan="5" class="text-center current"><?php echo $this->current; ?></th>
-	    <th class="text-center next"><?php if ($this->nextHref): ?><a href="<?php echo $this->nextHref; ?>" rel="nofollow" title="<?php echo $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php else: ?>&nbsp;<?php endif; ?></th>
+	    <th class="text-center previous"><?php if ($this->prevHref): ?><a href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php else: ?>&nbsp;<?php endif; ?></th>
+	    <th colspan="5" class="text-center current"><?= $this->current; ?></th>
+	    <th class="text-center next"><?php if ($this->nextHref): ?><a href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php else: ?>&nbsp;<?php endif; ?></th>
 	  </tr>
 	  <tr>
 	    <?php foreach ($this->days as $i=>$day): ?>
-	      <th class="text-center <?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?php echo utf8_substr($day['name'], $this->substr); ?></span></th>
+	      <th class="text-center <?= $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?= utf8_substr($day['name'], $this->substr); ?></span></th>
 	    <?php endforeach; ?>
 	  </tr>
 	</thead>
 	<tbody class="text-center">
 	  <?php foreach ($this->weeks as $class=>$week): ?>
-	    <tr class="<?php echo $class; ?>">
+	    <tr class="<?= $class; ?>">
 	      <?php foreach ($week as $day): ?>
 	       		<?php if ($day['href']): ?>
-			       <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="badge" href="<?php echo $day['href']; ?>" title="<?php echo $day['title']; ?>"><?php echo $day['label']; ?></a></td>
+			       <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="badge" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
 			    <?php else: ?>
-			       <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo $day['label']; ?></td>
+			       <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= $day['label']; ?></td>
 			    <?php endif; ?>
 	      <?php endforeach; ?>
 	    </tr>

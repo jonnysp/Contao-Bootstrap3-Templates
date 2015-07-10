@@ -3,14 +3,14 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="item clearfix <?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="item clearfix <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
 	  <?php if ($this->headline): ?>
-	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	  <?php endif; ?>
 	
 	  <?php if (!$this->addBefore): ?>
-	    <?php echo $this->text; ?>
+	    <?= $this->text; ?>
 	  <?php endif; ?>
 	
 		<?php 
@@ -25,27 +25,27 @@
 	
 
 	  <?php if ($this->addImage): ?>
-	    <figure class="img-thumbnail <?php echo $this->floatClass; ?>" style="<?php echo $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+	    <figure class="img-thumbnail <?= $this->floatClass; ?>" style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 	     
 	      <?php if ($this->href): ?>
-	        <a href="<?php echo $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?php echo $this->linkTitle; ?>"<?php endif; ?><?php echo $this->attributes; ?> itemprop="contentUrl">
+	        <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl">
 	      <?php endif; ?>
 
-	      <img itemprop="thumbnailUrl" class="img-responsive" src="<?php echo $this->src; ?>"<?php echo $this->imgSize; ?> alt="<?php echo $this->alt; ?>"<?php if ($this->title): ?> title="<?php echo $this->title; ?>"<?php endif; ?>>
+	      <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
 	     
 	      <?php if ($this->href): ?>
 	        </a>
 	      <?php endif; ?>
 
 	      <?php if ($this->caption): ?>
-	        <figcaption itemprop="caption" class="caption" style="margin:5px 0 4px 0;text-align:center;"><?php echo $this->caption; ?></figcaption>
+	        <figcaption itemprop="caption" class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></figcaption>
 	      <?php endif; ?>
 	
 	    </figure>
 	  <?php endif; ?>
 	
 	  <?php if ($this->addBefore): ?>
-	    <?php echo $this->text; ?>
+	    <?= $this->text; ?>
 	  <?php endif; ?>
 	
 	</div>

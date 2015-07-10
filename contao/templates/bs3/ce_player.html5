@@ -2,10 +2,10 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
   <!-- indexer::stop -->
@@ -14,7 +14,7 @@
 	<?php foreach ($this->files as $file): ?>
 	<div class="thumbnail">
 	  	<div class="embed-responsive embed-responsive-16by9">
-	  		<iframe class="embed-responsive-item" src="<?php echo str_replace('watch?v=','embed/',$file->path); ?>"></iframe>
+	  		<iframe class="embed-responsive-item" src="<?= str_replace('watch?v=','embed/',$file->path); ?>"></iframe>
 		</div>
 	</div>	
 	<?php endforeach; ?>
@@ -23,9 +23,9 @@
  
  	<div class="thumbnail">
 
-		     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?php echo $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+		     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?= $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
 		      <?php foreach ($this->files as $file): ?>
-		        <source type="<?php echo $file->mime; ?>" src="<?php echo $file->path; ?>" title="<?php echo $file->title; ?>">
+		        <source type="$file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
 		      <?php endforeach; ?>
 		      Your browser does not support the video tag.
 		    </video>
@@ -36,7 +36,7 @@
   	<div class="thumbnail">
 	    <audio style="width:100%;" preload="none"<?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
 	      <?php foreach ($this->files as $file): ?>
-	        <source type="<?php echo $file->mime; ?>" src="<?php echo $file->path; ?>" title="<?php echo $file->title; ?>">
+	        <source type="<?= $file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
 	      <?php endforeach; ?>
 	    </audio>
     </div>

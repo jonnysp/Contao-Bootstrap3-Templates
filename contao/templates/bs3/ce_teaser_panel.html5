@@ -1,16 +1,16 @@
 
-	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 		
 		<?php if ($this->headline): ?>
 			<div class="panel-heading">
-				<h3 class="panel-title"><?php echo $this->headline; ?></h3>
+				<h3 class="panel-title"><?= $this->headline; ?></h3>
 			</div>
 		<?php endif; ?>
 		
 		<div class="panel-body">
-			<?php echo $this->text; ?>
+			<?= $this->text; ?>
 			
-			<a href="<?php echo $this->href; ?>" title="<?php echo $this->readMore; ?>" class="btn btn-default"><?php echo $this->more; ?> <span class="hidden"><?php echo $this->headline; ?></span></a>
+			<a href="<?= $this->href; ?>" title="<?= $this->readMore; ?>" class="btn btn-default"><?= $this->more; ?> <span class="hidden"><?= $this->headline; ?></span></a>
 		</div>
 		
 	</div> 

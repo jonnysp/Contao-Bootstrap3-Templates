@@ -2,13 +2,13 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
 	  <?php if ($this->headline): ?>
-		<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	  <?php endif; ?>	
 
-		  <pre class="<?php echo $this->shClass; ?>"><?php echo $this->code; ?></pre>
+		  <pre class="<?= $this->shClass; ?>"><?= $this->code; ?></pre>
 </div>
 	
 

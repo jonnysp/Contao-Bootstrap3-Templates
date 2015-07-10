@@ -2,18 +2,18 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 		<?php if ($this->headline): ?>
 			<div class="panel-heading">
-				<<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+				<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 			</div>
 		<?php endif; ?>
 
 	  <?php if (!empty($this->newsletters)): ?>
 		<div class="list-group">
 		  <?php foreach($this->newsletters as $newsletter): ?>
-			<a class="list-group-item" href="<?php echo $newsletter['href']; ?>" title="<?php echo $newsletter['title']; ?>"> <span class="badge pull-right"><?php echo $newsletter['datim']; ?></span> <?php echo $newsletter['subject']; ?></a>
+			<a class="list-group-item" href="<?= $newsletter['href']; ?>" title="<?= $newsletter['title']; ?>"> <span class="badge pull-right"><?= $newsletter['datim']; ?></span> <?= $newsletter['subject']; ?></a>
 		  <?php endforeach; ?>
 		</div>
 	  <?php endif; ?>

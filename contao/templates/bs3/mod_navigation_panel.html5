@@ -1,14 +1,14 @@
 
 	<!-- indexer::stop -->
-	<a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
-	<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<a href="<?= $this->request; ?>#<?= $this->skipId; ?>" class="sr-only"><?= $this->skipNavigation; ?></a>
+	<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	  <?php if ($this->headline): ?>
 	   <div class="panel-heading">
-	    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    <<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 	    </div>
 	  <?php endif; ?>
-	  <?php echo $this->items; ?>
+	  <?= $this->items; ?>
 	</nav>
-	<a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
+	<a id="<?= $this->skipId; ?>" class="sr-only">&nbsp;</a>
 	<!-- indexer::continue -->
 

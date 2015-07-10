@@ -1,17 +1,17 @@
 
-<div class="item" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
 <div class="table-responsive">
   <table class="table">
   <tbody>
     <?php foreach ($this->record as $col): ?>
-      <tr class="<?php echo $col['class']; ?>">
-        <th><?php echo $col['label']; ?></th>
-        <td><?php echo $col['content']; ?></td>
+      <tr class="<?= $col['class']; ?>">
+        <th><?= $col['label']; ?></th>
+        <td><?= $col['content']; ?></td>
       </tr>
     <?php endforeach; ?>
   </tbody>
@@ -19,7 +19,7 @@
 </div>
 
   <!-- indexer::stop -->
-  <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
+  <a class="btn btn-default pull-right" href="<?= $this->referer; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a>
   <!-- indexer::continue -->
 
 </div>

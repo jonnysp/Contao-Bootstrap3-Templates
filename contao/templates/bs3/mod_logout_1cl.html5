@@ -1,16 +1,16 @@
 
 <!-- indexer::stop -->
-<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
-  <form<?php if ($this->action): ?> action="<?php echo $this->action; ?>"<?php endif; ?> id="tl_logout" method="post">
+  <form<?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_logout" method="post">
       <input type="hidden" name="FORM_SUBMIT" value="tl_logout">
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
       
-      <?php echo $this->loggedInAs; ?> <?php echo $this->lastLogin; ?>  <input type="submit" class="btn btn-default" value="<?php echo $this->slabel; ?>">
+      <?= $this->loggedInAs; ?> <?= $this->lastLogin; ?>  <input type="submit" class="btn btn-default" value="<?= $this->slabel; ?>">
   </form>
 
 </div>

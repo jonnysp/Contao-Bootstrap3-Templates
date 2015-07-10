@@ -1,26 +1,26 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	 <?php if ($this->headline): ?>
-	   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
 
-  <?php echo $this->event; ?>
+  <?= $this->event; ?>
   
   <br>
   <!-- indexer::stop -->
-  <a class="btn btn-default pull-right" href="<?php echo $this->referer; ?>" title="<?php echo $this->back; ?>"><?php echo $this->back; ?></a>
+  <a class="btn btn-default pull-right" href="<?= $this->referer; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a>
   <!-- indexer::continue -->
 
   <div class="clearfix"></div>
 
   <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
     <div class="ce_comments block">
-      <<?php echo $this->hlc; ?>><?php echo $this->addComment; ?></<?php echo $this->hlc; ?>>
-      <?php echo implode('', $this->comments); ?>
-      <?php echo $this->pagination; ?>
+      <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
+      <?= implode('', $this->comments); ?>
+      <?= $this->pagination; ?>
       <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
     </div>
   <?php endif; ?>

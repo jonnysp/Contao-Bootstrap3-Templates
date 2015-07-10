@@ -2,6 +2,6 @@
 
 <?php $this->block('content'); ?>
 
-  <div class="<?php echo $this->mclass; ?>"><?php echo $this->message; ?></div>
+  <div class="<?= $this->mclass; ?>"><?= $this->message; ?></div>
 
 <?php $this->endblock(); ?>

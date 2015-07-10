@@ -2,19 +2,19 @@
 
 <?php $this->block('content'); ?>
 
-<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<div class="list-group ">
 		<?php foreach ($this->items as $item): ?>
-		  <div class="list-group-item clearfix rss_default<?php echo $item['class']; ?>">
-		      <a href="<?php echo $item['link']; ?>" target="_blank">
+		  <div class="list-group-item clearfix rss_default<?= $item['class']; ?>">
+		      <a href="<?= $item['link']; ?>" target="_blank">
 		      	<h4 class="list-group-item-heading">
-		      		<?php echo 
+		      		<?= 
 					      		html_entity_decode(htmlspecialchars_decode($item['title'],ENT_QUOTES), ENT_QUOTES, 'UTF-8')
 					      	 ; ?>
 		      	</h4></a>
 		      <div class="list-group-item-text" style="text-align: justify;">
-		      		 <?php echo 
+		      		 <?= 
 				      	 		html_entity_decode(htmlspecialchars_decode($item['description'],ENT_QUOTES), ENT_QUOTES, 'UTF-8')
 				      	 	; ?>
 		      </div>
@@ -22,7 +22,7 @@
 		 <?php endforeach; ?>
  	</div> 
 
-  <?php echo $this->pagination; ?>
+  <?= $this->pagination; ?>
 
 
   

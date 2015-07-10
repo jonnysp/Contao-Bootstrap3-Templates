@@ -2,17 +2,17 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	  <?php if ($this->headline): ?>
-		   <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+		   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	  <?php endif; ?>
 
-	  <?php echo $this->embed_pre; ?>
-		<a href="<?php echo $this->href; ?>" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" title="<?php echo $this->linkTitle; ?>"<?php echo $this->attribute; ?><?php echo $this->target; ?>>
-		  <?php echo $this->link; ?>
+	  <?= $this->embed_pre; ?>
+		<a href="<?= $this->href; ?>" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" title="<?= $this->linkTitle; ?>"<?= $this->attribute; ?><?= $this->target; ?>>
+		  <?= $this->link; ?>
 		</a>
-	  <?php echo $this->embed_post; ?>
+	  <?= $this->embed_post; ?>
 
 </div> 
  

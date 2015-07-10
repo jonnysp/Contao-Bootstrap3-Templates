@@ -1,5 +1,5 @@
-<div class="row"> id="<?php echo $this->id; ?>">
+<div class="row"> id="<?= $this->id; ?>">
 	<div class="col-md-12">
-		<?php echo $this->content; ?>
+		<?= $this->content; ?>
 	</div>
 </div>

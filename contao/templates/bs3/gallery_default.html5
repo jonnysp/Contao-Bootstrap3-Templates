@@ -2,11 +2,11 @@
   <?php foreach ($this->body as $class=>$row): ?>
     <?php foreach ($row as $col): ?>
     <?php if ($col->addImage): ?>
-	     <figure class="col-xs-6 col-sm-<?php echo round((12 / sizeof($row) + 1)); ?> col-md-<?php echo round(12 / sizeof($row)); ?>" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
+	     <figure class="col-xs-6 col-sm-<?= round((12 / sizeof($row) + 1)); ?> col-md-<?= round(12 / sizeof($row)); ?>" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
 	         <?php if ($col->href): ?>
-	              <a itemprop="contentURL" class="thumbnail" href="<?php echo $col->href; ?>"<?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><img itemprop="thumbnailUrl" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>"></a>
+	              <a itemprop="contentURL" class="thumbnail" href="<?= $col->href; ?>"<?= $col->attributes; ?> title="<?= $col->alt; ?>"><img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>"></a>
 	         <?php else: ?>
-	              <div class="thumbnail" ><img itemprop="thumbnailUrl" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>"></div>
+	              <div class="thumbnail" ><img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>"></div>
 	         <?php endif; ?>
 	      </figure>   
       <?php endif; ?>

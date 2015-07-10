@@ -2,16 +2,16 @@
 
 <?php $this->block('content'); ?>
 
-<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
   <?php if (!empty($this->newsletters)): ?>
     <div class="list-group">
       <?php foreach($this->newsletters as $newsletter): ?>
-        <a class="list-group-item" href="<?php echo $newsletter['href']; ?>" title="<?php echo $newsletter['title']; ?>"> <span class="badge pull-right"><?php echo $newsletter['datim']; ?></span> <?php echo $newsletter['subject']; ?></a>
+        <a class="list-group-item" href="<?= $newsletter['href']; ?>" title="<?= $newsletter['title']; ?>"> <span class="badge pull-right"><?= $newsletter['datim']; ?></span> <?= $newsletter['subject']; ?></a>
       <?php endforeach; ?>
     </div>
   <?php endif; ?>

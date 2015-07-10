@@ -2,26 +2,26 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?php echo $this->cssID; ?> <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 		
 		  <?php if ($this->headline): ?>
 		   <div class="panel-heading">
-		    <h3 class="panel-title"><?php echo $this->headline; ?></h3>
+		    <h3 class="panel-title"><?= $this->headline; ?></h3>
 		   </div>
 		  <?php endif; ?>
 		  
 		<div class="table-responsive">
-			  <table id="<?php echo $this->id; ?>" class="table <?php if ($this->class): ?> <?php echo $this->class; ?><?php endif; ?> <?php if ($this->sortable): ?> sortable<?php endif; ?>">
+			  <table id="<?= $this->id; ?>" class="table <?php if ($this->class): ?> <?= $this->class; ?><?php endif; ?> <?php if ($this->sortable): ?> sortable<?php endif; ?>">
 			
 			    <?php if ($this->summary != ''): ?>
-			      <caption><?php echo $this->summary; ?></caption>
+			      <caption><?= $this->summary; ?></caption>
 			    <?php endif; ?>
 			
 			    <?php if ($this->useHeader): ?>
 			      <thead>
 			        <tr>
 			          <?php foreach ($this->header as $col): ?>
-			            <th class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?></th>
+			            <th class="<?= $col['class']; ?>"><?= $col['content']; ?></th>
 			          <?php endforeach; ?>
 			        </tr>
 			      </thead>
@@ -31,7 +31,7 @@
 			      <tfoot>
 			        <tr>
 			          <?php foreach ($this->footer as $col): ?>
-			            <td class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?></td>
+			            <td class="<?= $col['class']; ?>"><?= $col['content']; ?></td>
 			          <?php endforeach; ?>
 			        </tr>
 			      </tfoot>
@@ -39,12 +39,12 @@
 			
 			    <tbody>
 			      <?php foreach ($this->body as $class=>$row): ?>
-			        <tr class="<?php echo $class; ?>">
+			        <tr class="<?= $class; ?>">
 			          <?php foreach ($row as $i=>$col): ?>
 			            <?php if ($i == 0 && $this->useLeftTh): ?>
-			              <th scope="row" class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?></th>
+			              <th scope="row" class="<?= $col['class']; ?>"><?= $col['content']; ?></th>
 			            <?php else: ?>
-			              <td class="<?php echo $col['class']; ?>"><?php echo $col['content']; ?></td>
+			              <td class="<?= $col['class']; ?>"><?= $col['content']; ?></td>
 			            <?php endif; ?>
 			          <?php endforeach; ?>
 			        </tr>

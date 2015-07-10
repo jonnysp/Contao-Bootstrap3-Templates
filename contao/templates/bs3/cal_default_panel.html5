@@ -1,26 +1,26 @@
 <div class="item panel panel-default">
 
-  <div class="panel-heading text-center"><?php echo $this->current; ?></div>
+  <div class="panel-heading text-center"><?= $this->current; ?></div>
   
 	<div class="table-responsive">
 		<table class="table">
 			<thead>
 			  <tr>
 			    <?php foreach ($this->days as $i=>$day): ?>
-			      <th class="text-center <?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?php echo utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?php echo utf8_substr($day['name'], $this->substr); ?></span></th>
+			      <th class="text-center <?= $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= utf8_substr($day['name'], 0, $this->substr); ?><span class="hidden"><?= utf8_substr($day['name'], $this->substr); ?></span></th>
 			    <?php endforeach; ?>
 			  </tr>
 			</thead>
 		
 			<tbody class="text-center">
 			  <?php foreach ($this->weeks as $class=>$week): ?>
-			    <tr class="<?php echo $class; ?>">
+			    <tr class="<?= $class; ?>">
 			      <?php foreach ($week as $day): ?>
-			        <td class="<?php echo $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>">
-			          <?php echo $day['label']; ?>
+			        <td class="<?= $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>">
+			          <?= $day['label']; ?>
 			          <?php foreach ($day['events'] as $event): ?>
-			            <div class="event cal_<?php echo $event['parent']; ?><?php echo $event['class']; ?>">
-			              <a href="<?php echo $event['href']; ?>" title="<?php echo $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?php echo $event['time']; endif; ?>)"<?php echo $event['target']; ?>><?php echo $event['link']; ?></a>
+			            <div class="event cal_<?= $event['parent']; ?><?= $event['class']; ?>">
+			              <a href="<?= $event['href']; ?>" title="<?= $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?= $event['time']; endif; ?>)"<?= $event['target']; ?>><?= $event['link']; ?></a>
 			            </div>
 			          <?php endforeach; ?>
 			        </td>
@@ -34,8 +34,8 @@
 	<div class="panel-footer">
 	
 		<ul class="pager">
-		  <?php if ($this->prevHref): ?><li class="previous"><a href="<?php echo $this->prevHref; ?>" title="<?php echo $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?php echo $this->prevTitle; ?></a></li><?php endif; ?>
-		  <?php if ($this->nextHref): ?><li class="next"><a href="<?php echo $this->nextHref; ?>" title="<?php echo $this->nextTitle; ?>"><?php echo $this->nextTitle; ?> <span class="glyphicon glyphicon-chevron-right"></span> </a></li><?php endif; ?>
+		  <?php if ($this->prevHref): ?><li class="previous"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevTitle; ?></a></li><?php endif; ?>
+		  <?php if ($this->nextHref): ?><li class="next"><a href="<?= $this->nextHref; ?>" title="<?= $this->nextTitle; ?>"><?= $this->nextTitle; ?> <span class="glyphicon glyphicon-chevron-right"></span> </a></li><?php endif; ?>
 		</ul>
 	
 	</div>

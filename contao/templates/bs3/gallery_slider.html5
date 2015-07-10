@@ -2,13 +2,13 @@
 
 <div class="thumbnail">
 
-	<div id="Carousel<?php echo $this->id;?>" class="carousel slide">
+	<div id="Carousel<?= $this->id;?>" class="carousel slide">
 		
 		<!-- Carousel indicators -->
 		<?php if (count($this->body) > 1) :?>
 			<ol class="carousel-indicators hidden-xs">
 				<?php for ($i = 0; $i < count($this->body); $i++): ?>
-				    <li data-target="#Carousel<?php echo $this->id;?>" data-slide-to="<?php echo $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
+				    <li data-target="#Carousel<?= $this->id;?>" data-slide-to="<?= $i;?>" class="<?php if ($i == 0): echo 'active'; endif; ?>"></li>
 			    <?php endfor; ?>
 			</ol>
 		<?php endif; ?>	
@@ -28,13 +28,13 @@
 					<div class="row">
 						<?php foreach ($row as $col): ?>
 							<?php if ($col->addImage): ?>
-								<figure class="col-xs-<?php echo floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+								<figure class="col-xs-<?= floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 									<figcaption class="carousel-caption hidden-xs" itemprop="caption">
-									    <?php if ($col->alt): ?> <h3><?php echo $col->alt ?></h3><?php endif; ?>
-									    <?php if ($col->caption): ?> <p><?php echo $col->caption ?></p><?php endif; ?>
+									    <?php if ($col->alt): ?> <h3><?= $col->alt ?></h3><?php endif; ?>
+									    <?php if ($col->caption): ?> <p><?= $col->caption ?></p><?php endif; ?>
 									</figcaption>
-									<?php if ($col->href): ?><a itemprop="contentURL" href="<?php echo $col->href; ?>" <?php echo $col->attributes; ?> title="<?php echo $col->alt; ?>"><?php endif; ?>
-										<img itemprop="thumbnailUrl" class="img-responsive" src="<?php echo $col->src; ?>" alt="<?php echo $col->alt; ?>">  
+									<?php if ($col->href): ?><a itemprop="contentURL" href="<?= $col->href; ?>" <?= $col->attributes; ?> title="<?= $col->alt; ?>"><?php endif; ?>
+										<img itemprop="thumbnailUrl" class="img-responsive" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">  
 									<?php if ($col->href): ?> </a><?php endif; ?> 
 								</figure>
 							<?php endif; ?>
@@ -46,10 +46,10 @@
 
 		<!-- Carousel nav -->
 		<?php if (count($this->body) > 1) :?>
-		  <a class="left carousel-control" href="#Carousel<?php echo $this->id;?>" data-slide="prev">
+		  <a class="left carousel-control" href="#Carousel<?= $this->id;?>" data-slide="prev">
 		    <span class="glyphicon glyphicon-chevron-left"></span>
 		  </a>
-		  <a class="right carousel-control" href="#Carousel<?php echo $this->id;?>" data-slide="next">
+		  <a class="right carousel-control" href="#Carousel<?= $this->id;?>" data-slide="next">
 		    <span class="glyphicon glyphicon-chevron-right"></span>
 		  </a>
 		<?php endif; ?>

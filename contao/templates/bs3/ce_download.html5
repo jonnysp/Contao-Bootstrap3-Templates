@@ -1,16 +1,16 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-<div class="item <?php echo $this->class; ?>" <?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="item <?= $this->class; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
   
    <?php if ($this->headline): ?>
-	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
    <?php endif; ?>
 	  
-  <a class="btn btn-primary" href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>">
-  	<img src="<?php echo $this->icon; ?>"  alt="" class="mime_icon">
-  	<?php echo $this->link; ?> 
-  	<span class="badge"><?php echo $this->filesize; ?></span>
+  <a class="btn btn-primary" href="<?= $this->href; ?>" title="<?= $this->title; ?>">
+  	<img src="<?= $this->icon; ?>"  alt="" class="mime_icon">
+  	<?= $this->link; ?> 
+  	<span class="badge"><?= $this->filesize; ?></span>
   </a>
 
 </div>

@@ -1,27 +1,27 @@
 <?php $this->extend('block_unsearchable'); ?>
 <?php $this->block('content'); ?>
 
-<div class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
   <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
     <?php foreach ($this->items as $key=>$item): ?>
       <?php if ($item['isActive']): ?>
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active<?php if ($item['class']): ?> <?php echo $item['class']; ?><?php endif; ?> last">
-          <a itemprop="item" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>">
-            <span itemprop="name"><?php echo $item['link']; ?></span>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active<?php if ($item['class']): ?> <?= $item['class']; ?><?php endif; ?> last">
+          <a itemprop="item" href="<?= $item['href']; ?>" title="<?= $item['title']; ?>">
+            <span itemprop="name"><?= $item['link']; ?></span>
           </a>
-          <meta itemprop="position" content="<?php echo $key+1; ?>" />
+          <meta itemprop="position" content="<?= $key+1; ?>" />
         </li>
       <?php else: ?>
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" <?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?>>
-          <a itemprop="item" href="<?php echo $item['href']; ?>" title="<?php echo $item['title']; ?>">
-            <span itemprop="name"><?php echo $item['link']; ?></span>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" <?php if ($item['class']): ?> class="<?= $item['class']; ?>"<?php endif; ?>>
+          <a itemprop="item" href="<?= $item['href']; ?>" title="<?= $item['title']; ?>">
+            <span itemprop="name"><?= $item['link']; ?></span>
           </a>
-          <meta itemprop="position" content="<?php echo $key+1; ?>" />
+          <meta itemprop="position" content="<?= $key+1; ?>" />
         </li>
       <?php endif; ?>
     <?php endforeach; ?>

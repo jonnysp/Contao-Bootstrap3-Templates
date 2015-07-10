@@ -2,23 +2,23 @@
 
 <?php $this->block('content'); ?>
 
-<div <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
 		
 		<?php if ($this->headline): ?>
 			   <div class="panel-heading">
-			    <<?php echo $this->hl; ?> class="panel-title"><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+			    <<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 			    </div>
 		<?php endif; ?>
 		
 		<div class="list-group">
 			<?php foreach ($this->items as $year=>$month): ?>
 				
-				<a href="<?php echo $month['href']; ?>" title="<?php echo $month['title']; ?>" class="list-group-item <?php if($month['isActive']): ?> active <?php endif; ?>">
-					<?php if ($this->showQuantity): ?> <span class="badge"><?php echo $month['quantity']; ?></span><?php endif; ?>
+				<a href="<?= $month['href']; ?>" title="<?= $month['title']; ?>" class="list-group-item <?php if($month['isActive']): ?> active <?php endif; ?>">
+					<?php if ($this->showQuantity): ?> <span class="badge"><?= $month['quantity']; ?></span><?php endif; ?>
 				
-					<?php echo $month['link']; ?>
+					<?= $month['link']; ?>
 				</a>
 			
 			<?php endforeach; ?>

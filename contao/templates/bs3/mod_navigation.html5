@@ -1,14 +1,14 @@
 
 	<!-- indexer::stop -->
-	<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="<?php echo $this->class; ?>" <?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="<?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
 	  <?php if ($this->headline): ?>
-	    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	  <?php endif; ?>
 	  
-	  <a href="<?php echo $this->request; ?>#<?php echo $this->skipId; ?>" class="sr-only"><?php echo $this->skipNavigation; ?></a>
-	  <?php echo $this->items; ?>
-	  <a id="<?php echo $this->skipId; ?>" class="sr-only">&nbsp;</a>
+	  <a href="<?= $this->request; ?>#<?= $this->skipId; ?>" class="sr-only"><?= $this->skipNavigation; ?></a>
+	  <?= $this->items; ?>
+	  <a id="<?= $this->skipId; ?>" class="sr-only">&nbsp;</a>
 	  
 	</nav>
 	<!-- indexer::continue -->
