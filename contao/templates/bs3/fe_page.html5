@@ -4,6 +4,8 @@
 	<head>
 		<?php $this->block('head'); ?>
 			<meta charset="<?= $this->charset; ?>">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">			
 			<title><?= $this->title; ?></title>
 			<base href="<?= $this->base; ?>">
 
@@ -12,7 +14,6 @@
 				<meta name="description" content="<?= $this->description; ?>">
 				<meta name="keywords" content="<?= $this->keywords; ?>">
 				<meta name="generator" content="Contao Open Source CMS">
-				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<?php $this->endblock(); ?>
 
 			<?= $this->viewport; ?>
@@ -27,7 +28,7 @@
 		<?php $this->endblock(); ?>
 	</head>
 
-	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload; ?>"<?php endif; ?>  itemscope itemtype="http://schema.org/WebPage">
+	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
 
 	<?php $this->block('body'); ?>
 
