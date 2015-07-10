@@ -4,31 +4,37 @@
 
 <div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class;  else: echo $this->class; endif ?>">
 
+
 	<div class="panel-heading">
 
-			<h3 class="panel-title">
-				<span class="label label-primary pull-right">
-				    <time datetime="<?= $this->datetime; ?>">
-				    <?php if($this->date): ?>
-				    	<?= $this->date; ?>
-				    <?php else: ?>	
-				    	<?= $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
-				    <?php endif ?>	
-				    </time> 
-				</span>
-				<?= $this->title; ?>
-			</h3>
+			<h2 class="panel-title">
+ 				<?php if ($this->time): ?>
+					<span class="label label-primary pull-right">
+						<span class="glyphicon glyphicon-time"></span>
+					<?= $this->time; ?></span>
+				<?php endif; ?>
+
+				<span class="label label-primary">
+					<span class="glyphicon glyphicon-calendar"></span>
+				<?= $this->date; ?></span>
+			</h2>
+
 	</div>
 
 	<div class="popover-title clearfix">
 	
 		  <?php if ($this->location): ?>
-		  	<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span> <?= $this->locationLabel; ?>: <?= $this->location; ?></div>
+			  <div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>
+			  	<?= $this->locationLabel; ?>: <?= $this->location; ?>
+			  </div>
 		  <?php endif; ?>
 
-		  <?php if ($this->recurring): ?>
-		    <span class="badge"><?= $this->recurring; if ($this->until): ?> <?= $this->until; endif; ?>.</span>
-		  <?php endif; ?>
+			<h3><?= $this->title; ?></h3>
+			<!--  
+			<?php if ($this->recurring): ?>
+				<span class="badge"><?= $this->recurring; if ($this->until): ?> <?= $this->until; endif; ?>.</span>
+			<?php endif; ?>
+			-->
 	</div>
 
 
