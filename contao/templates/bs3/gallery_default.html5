@@ -4,7 +4,9 @@
     <?php if ($col->addImage): ?>
 	     <figure class="col-xs-6 col-sm-<?= round((12 / sizeof($row) + 1)); ?> col-md-<?= round(12 / sizeof($row)); ?>" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
 	         <?php if ($col->href): ?>
-	              <a itemprop="contentURL" class="thumbnail" href="<?= $col->href; ?>"<?= $col->attributes; ?> title="<?= $col->alt; ?>"><img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>"></a>
+	              <a itemprop="contentURL" class="thumbnail" href="<?= $col->href; ?>"<?= $col->attributes; ?> title="<?= $col->alt; ?>" data-title="<?= $col->alt; ?>" data-gallery="<?= $this->id ?>" data-footer="<?= $col->caption; ?>">
+	              	<img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">
+	              </a>
 	         <?php else: ?>
 	              <div class="thumbnail" ><img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>"></div>
 	         <?php endif; ?>
@@ -13,3 +15,4 @@
     <?php endforeach; ?>
   <?php endforeach; ?>
 </div>
+

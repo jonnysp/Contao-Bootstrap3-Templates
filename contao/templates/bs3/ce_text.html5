@@ -28,7 +28,7 @@
 	    <figure class="img-thumbnail <?= $this->floatClass; ?>" style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 	     
 	      <?php if ($this->href): ?>
-	        <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl">
+	        <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->alt; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
 	      <?php endif; ?>
 
 	      <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>

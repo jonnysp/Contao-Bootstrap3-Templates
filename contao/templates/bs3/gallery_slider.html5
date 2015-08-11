@@ -33,7 +33,7 @@
 									    <?php if ($col->alt): ?> <h3><?= $col->alt ?></h3><?php endif; ?>
 									    <?php if ($col->caption): ?> <p><?= $col->caption ?></p><?php endif; ?>
 									</figcaption>
-									<?php if ($col->href): ?><a itemprop="contentURL" href="<?= $col->href; ?>" <?= $col->attributes; ?> title="<?= $col->alt; ?>"><?php endif; ?>
+									<?php if ($col->href): ?><a itemprop="contentURL" href="<?= $col->href; ?>" <?= $col->attributes; ?> data-title="<?= $col->alt; ?>" data-gallery="<?= $this->id ?>" title="<?= $col->alt; ?>" data-footer="<?= $col->caption; ?>"><?php endif; ?>
 										<img itemprop="thumbnailUrl" class="img-responsive" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">  
 									<?php if ($col->href): ?> </a><?php endif; ?> 
 								</figure>

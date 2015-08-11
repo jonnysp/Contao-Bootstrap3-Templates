@@ -2,7 +2,7 @@
 
 <div class="media <?= $this->class; ?>" id="<?= $this->id; ?>">
 	<div class="pull-left"> 
-		<img class="img-circle" src="<?= "//www.gravatar.com/avatar/" . md5(strtolower(trim($this->email)))."?s=64"; ?>" alt="" />
+		<img class="img-thumbnail img-circle" src="<?= "//www.gravatar.com/avatar/" . md5(strtolower(trim($this->email)))."?s=64"; ?>" alt="" />
 		<!--<div class="text-center bg-primary img-circle" style="height:40px;width:40px;line-height:40px;font-size:20px;">
 			<span class="glyphicon glyphicon-user"></span>
 		</div>-->
