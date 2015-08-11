@@ -1,19 +1,13 @@
-
 <script>
-  
-/*
-Lightbox for Bootstrap 3 by jonnysp
-*/
 
+/* Lightbox for Bootstrap 3 by jonnysp  */
 ;(function ( $, window, document, undefined ) {
 
   "use strict";
   var $ = jQuery;
 
     var pluginName = "JSLightbox",
-      defaults = {
-        autoresize : false
-      };
+      defaults = {};
 
     function JSLightbox ( element, options ) {
       var _this = this;
@@ -24,47 +18,13 @@ Lightbox for Bootstrap 3 by jonnysp
       this._defaults = defaults;
       this._name = pluginName;
 
-
-      if (this.settings.autoresize == true){
-
-        $(this.image).on('load', function(){
-          _this.resize();
-        });
-
-        $(window).resize(function() {
-          _this.resize();
-        });
-      }
-
       this.galleryitems = $("[data-gallery="+ $(this.element).data('gallery')+"]");
       this.addModal();
       this.addGalery();
     }
 
     $.extend(JSLightbox.prototype, {
-      resize: function(){
-        var viewportWidth = $(document).width()- 20 ,
-            viewportHeight = $(window).height()- 130,
-            w = this.image.naturalWidth,
-            h = this.image.naturalHeight,
-            header = this.modal_header.height(),
-            footer = this.modal_footer.height();
 
-          viewportHeight = viewportHeight - header - footer;
-          var aspect = w / h;
-
-          if (w > viewportWidth){
-              w = viewportWidth;
-              h = w / aspect;
-          }
-          if (h > viewportHeight) {
-              aspect = w / h;
-              h = viewportHeight;
-              w = h * aspect;
-          }
-          this.modal_dialog.width(w);
-
-      },
       remove: function(){
         this.modal.remove();
       },
@@ -127,9 +87,9 @@ Lightbox for Bootstrap 3 by jonnysp
              
               if (this == _this.element){
                   _this.caruselitem.addClass('active');
-                _this.settitle(_this.caruselitem.data('title'));
-                _this.setfooter(_this.caruselitem.data('footer'));
-                _this.image.src = $(this).attr('href');
+                  _this.settitle(_this.caruselitem.data('title'));
+                  _this.setfooter(_this.caruselitem.data('footer'));
+                  _this.image.src = $(this).attr('href');
               }
 
               _this.itemimage = $('<img>').attr('src',$(this).attr('href')).addClass('img-responsive').css('display','inline-block');
@@ -173,7 +133,6 @@ Lightbox for Bootstrap 3 by jonnysp
     };
 
 })( jQuery, window, document );
-
 
 
 (function($) {
