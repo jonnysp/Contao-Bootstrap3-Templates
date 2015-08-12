@@ -13,7 +13,7 @@
 				<div itemprop="description"><?= $this->text; ?></div>
 					
 				<?php if ($this->href): ?>
-					<p><a itemprop="contentUrl" class="btn btn-default" href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->alt; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+					<p><a itemprop="contentUrl" class="btn btn-default" href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
 					<?= $this->caption; ?></a></p>
 				<?php endif; ?>
 				
