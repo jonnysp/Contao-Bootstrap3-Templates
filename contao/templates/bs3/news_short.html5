@@ -1,8 +1,8 @@
 
 
-<div class="layout_short arc_<?= $this->archive->id; ?> block<?= $this->class; ?>">
+<div class="layout_short arc_<?= $this->archive->id; ?> block">
  	  
-	<div class="panel <?php if (strpos($this->classList, 'panel-') === false ): echo 'panel-default '.$this->classList;  else: echo $this->classList; endif ?>">
+	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
 	
 		<div class="panel-heading">
 			<h3 class="panel-title">
@@ -23,14 +23,7 @@
 			</h3>
 		</div>
 
-		<?php if ($this->hasMetaFields): ?>	
-			<div class="popover-title clearfix">
-					<?php if($this->date): ?><time datetime="<?= $this->datetime; ?>"><span class="glyphicon glyphicon-time"></span> <?= $this->date; ?></time><?php endif; ?>
-					<span class="pull-right">
-						<?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <?= $this->commentCount; ?>
-		            </span> 
-			</div>
-		<?php endif; ?>	
+
 
 		<div class="panel-body clearfix">
 				
@@ -41,7 +34,14 @@
 		</div>
 
 
-
+		<?php if ($this->hasMetaFields): ?>	
+			<div class="panel-footer clearfix">
+					<?php if($this->date): ?><time datetime="<?= $this->datetime; ?>"><span class="glyphicon glyphicon-time"></span> <?= $this->date; ?></time><?php endif; ?>
+					<span class="pull-right">
+						<?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <?= $this->commentCount; ?>
+		            </span> 
+			</div>
+		<?php endif; ?>	
 
 
 

@@ -7,8 +7,26 @@
 
 	<div class="panel-heading">
 
-			<h2 class="panel-title">
- 				<?php if ($this->time): ?>
+			<h3 class="panel-title">
+				<?= $this->title; ?>
+
+		 		<?php if ($this->location): ?>
+					<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>
+					  	<?= $this->locationLabel; ?>: <?= $this->location; ?>
+					</div>
+				<?php endif; ?>
+			</h3>
+
+			<!--  
+			<?php if ($this->recurring): ?>
+				<span class="badge"><?= $this->recurring; if ($this->until): ?> <?= $this->until; endif; ?>.</span>
+			<?php endif; ?>
+			-->			
+
+	</div>
+
+	<div class="popover-title clearfix">
+	<?php if ($this->time): ?>
 					<span class="label label-primary pull-right">
 						<span class="glyphicon glyphicon-time"></span>
 					<?= $this->time; ?></span>
@@ -17,24 +35,7 @@
 				<span class="label label-primary">
 					<span class="glyphicon glyphicon-calendar"></span>
 				<?= $this->date; ?></span>
-			</h2>
-
-	</div>
-
-	<div class="popover-title clearfix">
-	
-		  <?php if ($this->location): ?>
-			  <div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>
-			  	<?= $this->locationLabel; ?>: <?= $this->location; ?>
-			  </div>
-		  <?php endif; ?>
-
-			<h3><?= $this->title; ?></h3>
-			<!--  
-			<?php if ($this->recurring): ?>
-				<span class="badge"><?= $this->recurring; if ($this->until): ?> <?= $this->until; endif; ?>.</span>
-			<?php endif; ?>
-			-->
+		
 	</div>
 
 

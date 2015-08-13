@@ -10,6 +10,10 @@
       defaults = {};
 
     function JSLightbox ( element, options ) {
+
+      //remove some old lightboxes
+      $(".JSLightbox,.modal-backdrop").remove();
+
       var _this = this;
       this.image = new Image();
       
@@ -47,7 +51,7 @@
         var _this = this;
 
         this.modal_id = 'JSLightbox-' + Math.floor((Math.random() * 1000) + 1);
-        this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade');
+        this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade JSLightbox');
         this.modal_dialog = $('<div>').addClass('modal-dialog');
         this.modal_content = $('<div>').addClass('modal-content');
         this.modal_header = $('<div>').addClass('modal-header');

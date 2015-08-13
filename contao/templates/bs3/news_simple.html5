@@ -1,6 +1,6 @@
 
     
-	<div class="panel class="panel <?php if (strpos($this->classList, 'panel-') === false ): echo 'panel-default '.$this->classList;  else: echo $this->classList; endif ?>">
+<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
 
 		<div class="panel-heading">
 			<h3 class="panel-title">
