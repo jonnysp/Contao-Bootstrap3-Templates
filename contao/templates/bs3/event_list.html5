@@ -1,32 +1,38 @@
 
-<?php if ($this->header): ?>
-  <div class="header<?= $this->classHeader; ?>">
-    <time datetime="<?= $this->datetime; ?>" class="date"><?= $this->firstDate; ?></time>
-      <?php if ($this->firstDay): ?>
-          <span class="day">(<?= $this->firstDay; ?>)</span>
-      <?php endif; ?>
-  </div>
-<?php endif; ?>
+
+	<?php if ($this->header): ?>
+	  <h3 class="page-header <?= $this->classHeader; ?>">
+	    <time datetime="<?= $this->datetime; ?>" class="date"><?= $this->firstDate; ?></time>
+	      <?php if ($this->firstDay): ?>
+	          <span class="day">(<?= $this->firstDay; ?>)</span>
+	      <?php endif; ?>
+	  </h3>
+	<?php endif; ?>
 
 
 
-<div class="event layout_list<?= $this->classList; ?>">
+<div class="panel <?php if (strpos($this->classList, 'panel-') === false ): echo 'panel-default '.$this->classList;  else: echo $this->classList; endif ?>">
 
-  <h2><a href="<?= $this->href; ?>" title="<?= $this->title; ?> <?= $this->target; ?>">
+	<div class="panel-heading">
+		 
+		<?php if ($this->time || $this->span): ?>
+		    <span class="badge pull-right"><?= $this->time . $this->span; ?></span>
+		<?php endif; ?>
 
-  (<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?= $this->time; ?> 
-  <?php endif; ?> )
-  <?= $this->link; ?>
+		<h3 class="panel-title">
+		<a href="<?= $this->href; ?>" title="<?= $this->title; ?> <?= $this->target; ?>">
+		<?= $this->link; ?>
+		(<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?= $this->time; ?> <?php endif; ?> )
+		</a></h3>
 
-  </a></h2>
+  	</div>
+		  
 
-  <?php if ($this->time || $this->span): ?>
-    <p class="time"><?= $this->time . $this->span; ?></p>
-  <?php endif; ?>
-
-  <div class="ce_text block">
-    <?= $this->details; ?>
-  </div>
+	<div class="panel-body">
+		  <div class="ce_text block">
+		    <?= $this->teaser; ?>
+		  </div>
+	</div>
 
 
 </div>

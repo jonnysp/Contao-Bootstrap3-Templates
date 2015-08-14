@@ -9,25 +9,16 @@
 
   <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
     <?php foreach ($this->items as $key=>$item): ?>
-      <?php if ($item['isActive']): ?>
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active<?php if ($item['class']): ?> <?= $item['class']; ?><?php endif; ?> last">
-          <a itemprop="item" href="<?= $item['href']; ?>" title="<?= $item['title']; ?>">
-            <span itemprop="name"><?= $item['link']; ?></span>
-          </a>
-          <meta itemprop="position" content="<?= $key+1; ?>" />
-        </li>
-      <?php else: ?>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" <?php if ($item['class']): ?> class="<?= $item['class']; ?>"<?php endif; ?>>
           <a itemprop="item" href="<?= $item['href']; ?>" title="<?= $item['title']; ?>">
-            <span itemprop="name"><?= $item['link']; ?></span>
+            <span itemprop="name"><?= $item['title']; ?></span>
           </a>
           <meta itemprop="position" content="<?= $key+1; ?>" />
         </li>
-      <?php endif; ?>
+
     <?php endforeach; ?>
   </ol>
 </div>
   
 <?php $this->endblock(); ?>
-
 
