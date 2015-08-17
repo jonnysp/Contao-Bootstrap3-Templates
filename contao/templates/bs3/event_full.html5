@@ -8,13 +8,11 @@
 	<div class="panel-heading">
 
 			<h3 class="panel-title">
-				<?= $this->title; ?>
-
-		 		<?php if ($this->location): ?>
-					<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>
-					  	<?= $this->locationLabel; ?>: <?= $this->location; ?>
-					</div>
+				<span class="badge"><span class="glyphicon glyphicon-calendar"></span> <?= $this->date; ?></span>
+				<?php if ($this->time || $this->span): ?>
+			    	<span class="badge pull-right"><span class="glyphicon glyphicon-time"></span> <?= $this->time . $this->span; ?></span>
 				<?php endif; ?>
+
 			</h3>
 
 
@@ -25,18 +23,15 @@
 
 	</div>
 
-	<div class="popover-title clearfix">
-	<?php if ($this->time): ?>
-					<span class="label label-primary pull-right">
-						<span class="glyphicon glyphicon-time"></span>
-					<?= $this->time; ?></span>
-				<?php endif; ?>
+	<h3 class="popover-title clearfix">
+			<?= $this->title; ?>
 
-				<span class="label label-primary">
-					<span class="glyphicon glyphicon-calendar"></span>
-				<?= $this->date; ?></span>
-		
-	</div>
+		 		<?php if ($this->location): ?>
+					<div class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>
+					  	<?= $this->locationLabel; ?>: <?= $this->location; ?>
+					</div>
+				<?php endif; ?>
+	</h3>
 
 
 	<div class="panel-body clearfix">

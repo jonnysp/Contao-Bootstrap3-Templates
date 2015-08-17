@@ -1,0 +1,27 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	
+
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
+					<?= $this->headline; ?>
+				</a>
+			</h3>
+		</div>
+
+
+		<div id="collapse_<?= $this->id; ?>" class="panel-collapse collapse">	
+			<div class="panel-body">
+					<?= $this->v2warning; ?>
+					<?= $this->images; ?>
+					<?= $this->pagination; ?>
+			</div>
+		</div>
+</div>
+
+<?php $this->endblock(); ?>

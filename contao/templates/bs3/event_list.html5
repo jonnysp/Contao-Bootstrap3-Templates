@@ -16,7 +16,7 @@
 	<div class="panel-heading">
 		 
 		<?php if ($this->time || $this->span): ?>
-		    <span class="badge pull-right"><?= $this->time . $this->span; ?></span>
+		    <span class="badge pull-right"><span class="glyphicon glyphicon-time"></span> <?= $this->time . $this->span; ?></span>
 		<?php endif; ?>
 
 		<h3 class="panel-title">
