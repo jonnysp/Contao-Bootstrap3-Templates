@@ -25,10 +25,13 @@
       this.galleryitems = $("[data-gallery="+ $(this.element).data('gallery')+"]");
       this.addModal();
       this.addGalery();
+      this.showModal();
     }
 
     $.extend(JSLightbox.prototype, {
-
+      showModal: function(){
+        this.modal.modal('show');
+      },
       remove: function(){
         this.modal.remove();
       },
@@ -49,7 +52,6 @@
       addModal: function(){
       
         var _this = this;
-
         this.modal_id = 'JSLightbox-' + Math.floor((Math.random() * 1000) + 1);
         this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade JSLightbox');
         this.modal_dialog = $('<div>').addClass('modal-dialog');
@@ -70,23 +72,20 @@
         });
         
         $(document.body).append(this.modal);
-        this.modal.modal('show');
-
       },
       addGalery:function(){
-
+        
         var _this = this;
-
+        
         if (this.galleryitems.length > 1){
-
           _this.carusel_id = 'carusel-' + Math.floor((Math.random() * 1000) + 1);
           _this.carusel = $('<div>').attr('id',_this.carusel_id).addClass('carousel slide');
-
+          
           _this.caruselinner = $('<div>').addClass('carousel-inner');
           _this.carusel.append( _this.caruselinner);
-
+          
           this.galleryitems.each(function(index) {
-
+            
               _this.caruselitem = $('<div>').addClass('item').data('src',$(this).attr('href')).data('title',$(this).data('title')).data('footer',$(this).data('footer'));
              
               if (this == _this.element){
@@ -95,32 +94,29 @@
                   _this.setfooter(_this.caruselitem.data('footer'));
                   _this.image.src = $(this).attr('href');
               }
-
+              
               _this.itemimage = $('<img>').attr('src',$(this).attr('href')).addClass('img-responsive').css('display','inline-block');
               _this.caruselinner.append(_this.caruselitem);
               _this.caruselitem.append( _this.itemimage);
           });
-
           //addcontrolls
           _this.leftcontrol = $('<a>').addClass("left carousel-control").attr('href','#'+_this.carusel_id).attr('data-slide','prev');
           _this.leftcontrol.append('<span class="glyphicon glyphicon-chevron-left">')
           _this.rightcontrol = $('<a>').addClass("right carousel-control").attr('href','#'+_this.carusel_id).attr('data-slide','next');
           _this.rightcontrol.append('<span class="glyphicon glyphicon-chevron-right">')
           _this.carusel.append(_this.leftcontrol).append(_this.rightcontrol);
-
           _this.carusel.carousel();
-
+          
           //onslide set title and footer
           _this.carusel.on('slid.bs.carousel', function (event) {
             _this.image.src = $(event.relatedTarget).data('src');
             _this.settitle($(event.relatedTarget).data('title'));
             _this.setfooter($(event.relatedTarget).data('footer'));
           })
-
+          
           _this.modal_body.append(_this.carusel);
-
+          
         }else{
-
           _this.image.src = $(this.element).attr('href');
           _this.carusel = $(_this.image).addClass('img-responsive').css('display','inline-block');
           _this.settitle($(_this.element).data('title'));
@@ -138,15 +134,12 @@
 
 })( jQuery, window, document );
 
-
 (function($) {
     $(document).ready(function() {
-
       $(document).delegate("*[data-lightbox]", 'click', function(event) {
           event.preventDefault();
           $(this).JSLightbox();
       });
-
     });
 })(jQuery);
 
