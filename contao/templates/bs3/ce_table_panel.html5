@@ -6,7 +6,7 @@
 		
 		  <?php if ($this->headline): ?>
 		   <div class="panel-heading">
-		    <h3 class="panel-title"><?= $this->headline; ?></h3>
+		   		<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 		   </div>
 		  <?php endif; ?>
 		  

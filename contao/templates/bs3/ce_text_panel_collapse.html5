@@ -6,11 +6,11 @@
 		  
 
 			<div class="panel-heading">
-				<h3 class="panel-title">
+				<<?= $this->hl; ?> class="panel-title">
 					<a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
 						<?= $this->headline; ?>
 					</a>
-				</h3>
+				</<?= $this->hl; ?>>
 			</div>
 	
 		<div id="collapse_<?= $this->id; ?>" class="panel-collapse collapse">
