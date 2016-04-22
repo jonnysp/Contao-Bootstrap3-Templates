@@ -5,13 +5,13 @@
 <?php $faq_counter = 0; ?>
 
 
-  <?php foreach($this->faq as $category): ?>
+<?php foreach($this->faq as $category): ?>
  <?php $faq_counter += 1; ?>
 
 
     <article class="<?= $category['class']; ?>">
      
-      <h2><?= $category['headline']; ?></h2>
+      <<?= $this->hl; ?>><?= $category['headline']; ?></<?= $this->hl; ?>>
 
 
  <div class="panel-group" id="categorie_<?= $faq_counter; ?>">
@@ -19,60 +19,64 @@
 	  
       <?php foreach ($category['items'] as $faq): ?>
  
-
   
   <div class="panel panel-default <?= $faq->class; ?>">
     <div class="panel-heading">
       <h4 class="panel-title"id="<?= $faq->alias; ?>">
         <a data-toggle="collapse" data-parent="#categorie_<?= $faq_counter; ?>" href="#faq_<?= $faq->id; ?>">
-        
-        <span class="badge pull-right"><?= $faq->info; ?></span>
-        
-			<?= $faq->question; ?>
+           <span class="badge pull-right"><?= $faq->info; ?></span>
+			     <?= $faq->question; ?>
         </a>
       </h4>
     </div>
     <div id="faq_<?= $faq->id; ?>" class="panel-collapse collapse">
       <div class="panel-body">
-     
-	      <?php if (!$faq->addBefore): ?>
-	        <?= $faq->answer; ?>
-	      <?php endif; ?>
 
+        <div class="row">
 
-		<?php
-  		if(strpos($faq->floatClass, 'float_left') !== false ){
-  			$faq->floatClass = 'pull-left';
-  		}elseif(strpos($faq->floatClass, 'float_right') !== false ){
-  			$faq->floatClass = 'pull-right';
-  		}else{
-  			$faq->floatClass = '';
-  		}
-		?>
-		
-		<?php if ($faq->addImage): ?>
-			<figure class="img-thumbnail <?= $faq->floatClass; ?>" style="<?= $faq->margin; ?>">
-				<?php if ($faq->href): ?>
-					<a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>>
-				<?php endif; ?>
-				
-				<img class="img-responsive" src="<?= $faq->src; ?>"<?= $faq->imgSize; ?> alt="<?= $faq->alt; ?>"<?php if ($faq->title): ?> title="<?= $faq->title; ?>"<?php endif; ?>>
-				
-				<?php if ($faq->href): ?>
-					</a>
-				<?php endif; ?>
-				<?php if ($faq->caption): ?>
-					<div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $faq->caption; ?></div>
-				<?php endif; ?>
-			</figure>
-		<?php endif; ?>
+          <?php 
+            $textclass = 'col-md-12';
+            if(strpos($faq->floatClass, 'float_left') !== false ){
+              $faq->floatClass = 'col-md-6';
+              $textclass = 'col-md-6';
+            }elseif(strpos($faq->floatClass, 'float_right') !== false ){
+              $faq->floatClass = 'col-md-6 col-md-push-6';
+              $textclass = 'col-md-6 col-md-pull-6';
+            }else{
+              $faq->floatClass = 'col-md-12';
+            }
+          ?>  
+          
+          <?php if (!$faq->addBefore): ?>
+                <div class="<?= $textclass; ?>"><?= $faq->answer; ?></div>
+          <?php endif; ?>
 
+          <?php if ($faq->addImage): ?>
+            <div class="<?= $faq->floatClass; ?>" >
+              <figure class="img-thumbnail" style="<?= $faq->margin; ?>">
+                <?php if ($faq->href): ?>
+                  <a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>>
+                <?php endif; ?>
+                
+                <img class="img-responsive" src="<?= $faq->src; ?>"<?= $faq->imgSize; ?> alt="<?= $faq->alt; ?>"<?php if ($faq->title): ?> title="<?= $faq->title; ?>"<?php endif; ?>>
+                
+                <?php if ($faq->href): ?>
+                  </a>
+                <?php endif; ?>
+                <?php if ($faq->caption): ?>
+                  <div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $faq->caption; ?></div>
+                <?php endif; ?>
+              </figure>
+            </div>
+          <?php endif; ?>
+          
 
-      <?php if ($faq->addBefore): ?>
-        <?= $faq->answer; ?>
-      <?php endif; ?>
-
-   <div class="clearfix"></div>
+          <?php if ($faq->addBefore): ?>
+            <div class="<?= $textclass; ?>"><?= $faq->answer; ?></div>
+          <?php endif; ?>
+       
+            
+        </div>
 
           <?php if ($faq->enclosure): ?>
             <div class="enclosure">

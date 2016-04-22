@@ -8,48 +8,62 @@
     
   <?php else: ?>
   
-    <h1><?= $this->question; ?></h1>
-    <p class="text-muted"><?= $this->info; ?></p>
-    
-    
-      <?php if (!$this->addBefore): ?>
-        <?= $this->answer; ?>
-      <?php endif; ?>
+  <div class="row">
 
 
-		<?php
-  		if(strpos($this->floatClass, 'float_left') !== false ){
-  			$this->floatClass = 'pull-left';
-  		}elseif(strpos($this->floatClass, 'float_right') !== false ){
-  			$this->floatClass = 'pull-right';
-  		}else{
-  			$this->floatClass = '';
-  		}
-		?>
-		
-		<?php if ($this->addImage): ?>
-			<figure class="img-thumbnail <?= $this->floatClass; ?>" style="<?= $this->margin; ?>">
-				<?php if ($this->href): ?>
-					<a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
-				<?php endif; ?>
-				
-				<img class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
-				
-				<?php if ($this->href): ?>
-					</a>
-				<?php endif; ?>
-				<?php if ($this->caption): ?>
-					<div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></div>
-				<?php endif; ?>
-			</figure>
-		<?php endif; ?>
+      <div class="col-md-12">
+          <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
+          <p class="text-muted"><?= $this->info; ?></p>
+      </div>  
 
 
-      <?php if ($this->addBefore): ?>
-        <?= $this->answer; ?>
-      <?php endif; ?>
+      <?php 
+        $textclass = 'col-md-12';
+        if(strpos($this->floatClass, 'float_left') !== false ){
+          $this->floatClass = 'col-md-6';
+          $textclass = 'col-md-6';
+        }elseif(strpos($this->floatClass, 'float_right') !== false ){
+          $this->floatClass = 'col-md-6 col-md-push-6';
+          $textclass = 'col-md-6 col-md-pull-6';
+        }else{
+          $this->floatClass = 'col-md-12';
+        }
+      ?>  
+  
+  <?php if (!$this->addBefore): ?>
+      <div class="<?= $textclass; ?>"><?= $this->answer; ?></div>
+  <?php endif; ?>
+  
+
+    <?php if ($this->addImage): ?>
+    <div class="<?= $this->floatClass; ?>" >
+      <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+       
+        <?php if ($this->href): ?>
+          <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+        <?php endif; ?>
+
+        <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+       
+        <?php if ($this->href): ?>
+          </a>
+        <?php endif; ?>
+
+        <?php if ($this->caption): ?>
+          <figcaption itemprop="caption" class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></figcaption>
+        <?php endif; ?>
+      </figure>
       
-	<div class="clearfix"></div>
+    </div> 
+    
+    <?php endif; ?>
+  
+    <?php if ($this->addBefore): ?>
+      <div class="<?= $textclass; ?>"><?= $this->answer; ?></div>
+    <?php endif; ?>
+    
+  </div>
+
 
 <br>
 

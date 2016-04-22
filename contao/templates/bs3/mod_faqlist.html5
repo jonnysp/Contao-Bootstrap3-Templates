@@ -4,7 +4,7 @@
 
   <?php foreach($this->faq as $category): ?>
   
-    <h2><?= $category['headline']; ?></h2>
+    <<?= $this->hl; ?>><?= $category['headline']; ?></<?= $this->hl; ?>>
     
  	<div class="list-group <?= $category['class']; ?>">   
       <?php foreach ($category['items'] as $faq): ?>

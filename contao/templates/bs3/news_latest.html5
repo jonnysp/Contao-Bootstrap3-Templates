@@ -24,48 +24,69 @@
 
 
 
-		<div class="panel-body clearfix">
+		<div class="panel-body">
 
-			<?php if (!$this->addBefore): ?>
-			    	<?= $this->teaser; ?>
-			<?php endif; ?>
-		
+			<div class="row">
+
 				<?php 
+					$textclass = 'col-md-12';
 					if(strpos($this->floatClass, 'float_left') !== false ){
-						$this->floatClass = 'pull-left';
+						$this->floatClass = 'col-md-6';
+						$textclass = 'col-md-6';
 					}elseif(strpos($this->floatClass, 'float_right') !== false ){
-						$this->floatClass = 'pull-right';
+						$this->floatClass = 'col-md-6 col-md-push-6';
+						$textclass = 'col-md-6 col-md-pull-6';
 					}else{
-						$this->floatClass = '';
+						$this->floatClass = 'col-md-12';
 					}
-				?>
-		
+				?>	
+				
+				<?php if (!$this->addBefore): ?>
+				    <div class="<?= $textclass; ?>"><?= $this->teaser; ?></div>
+				<?php endif; ?>
+				
+
+
 				  <?php if ($this->addImage): ?>
-				    <figure class="img-thumbnail <?= $this->floatClass; ?>" style="<?= $this->margin; ?>">
+				  <div class="<?= $this->floatClass; ?>" >
+				    <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+				     
 				      <?php if ($this->href): ?>
-				        <a  href="<?= $this->href; ?>"  <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?>   <?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>" >
+				        <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
 				      <?php endif; ?>
-				      <img class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+
+				      <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+				     
 				      <?php if ($this->href): ?>
 				        </a>
 				      <?php endif; ?>
+
 				      <?php if ($this->caption): ?>
-				        <div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></div>
+				        <figcaption itemprop="caption" class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></figcaption>
 				      <?php endif; ?>
-				
 				    </figure>
+				    
+				  </div> 
+				  
 				  <?php endif; ?>
 				
-			<?php if ($this->addBefore): ?>
-				    <?= $this->teaser; ?>
-			<?php endif; ?>
+				  <?php if ($this->addBefore): ?>
+				    <div class="<?= $textclass; ?>"><?= $this->teaser; ?></div>
+				  <?php endif; ?>
+
+			</div>
+
 
 
 		  <?php if ($this->text || $this->teaser): ?>
-		    <a class="btn btn-default" href="<?= $this->link; ?>"><?= $GLOBALS['TL_LANG']['MSC']['more']; ?></a>
+		    <div class="row"><div class="col-md-12"><a class="btn btn-default pull-right" href="<?= $this->link; ?>"><?= $GLOBALS['TL_LANG']['MSC']['more']; ?></a></div></div>
 		  <?php endif; ?>
+
 		</div>
 		 
+
+
+
 		<?php if ($this->hasMetaFields): ?>	
 			<div class="panel-footer clearfix">
 					<?php if($this->date): ?><time datetime="<?= $this->datetime; ?>"><span class="glyphicon glyphicon-time"></span> <?= $this->date; ?></time><?php endif; ?>
