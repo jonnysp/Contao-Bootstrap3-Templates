@@ -8,23 +8,18 @@
     
   <?php else: ?>
   
-  <div class="row">
+      <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
+      <p class="text-muted"><?= $this->info; ?></p>
 
-
-      <div class="col-md-12">
-          <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
-          <p class="text-muted"><?= $this->info; ?></p>
-      </div>  
-
-
+      <div class="row">
       <?php 
-        $textclass = 'col-md-12';
+        $textclass = 'col-sm-12';
         if(strpos($this->floatClass, 'float_left') !== false ){
-          $this->floatClass = 'col-md-6';
-          $textclass = 'col-md-6';
+          $this->floatClass = 'col-sm-6';
+          $textclass = 'col-sm-6';
         }elseif(strpos($this->floatClass, 'float_right') !== false ){
-          $this->floatClass = 'col-md-6 col-md-push-6';
-          $textclass = 'col-md-6 col-md-pull-6';
+          $this->floatClass = 'col-sm-6 col-sm-push-6';
+          $textclass = 'col-sm-6 col-sm-pull-6';
         }else{
           $this->floatClass = 'col-md-12';
         }
