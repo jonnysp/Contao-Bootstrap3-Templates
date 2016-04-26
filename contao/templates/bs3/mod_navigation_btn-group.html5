@@ -8,9 +8,12 @@
 <?= $this->skipNavigation; ?>
 </a>
 
-<div itemscope itemtype="http://schema.org/SiteNavigationElement" class="btn-group <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
-	<?= $this->items; ?>
+<div class="clearfix">
+	<div itemscope itemtype="http://schema.org/SiteNavigationElement" class="btn-group <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+		<?= $this->items; ?>
+	</div>
 </div>
+
 <a id="<?= $this->skipId; ?>" class="sr-only">&nbsp;</a>
 <!-- indexer::continue -->
 
