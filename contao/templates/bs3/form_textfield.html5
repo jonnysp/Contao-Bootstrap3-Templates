@@ -2,20 +2,19 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-     <label for="ctrl_<?= $this->id; ?>" class="col-sm-4 control-label <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
+    <label for="ctrl_<?= $this->id ?>" class="<?= $this->class ?>">
       <?php if ($this->mandatory): ?>
-        <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span> <span class="mandatory">*</span>
+        <span class="invisible"><?= $this->mandatoryField ?> </span><?= $this->label ?><span class="mandatory">*</span>
       <?php else: ?>
-        <?= $this->label; ?>
+        <?= $this->label ?>
       <?php endif; ?>
     </label>
   <?php endif; ?>
 <?php $this->endblock(); ?>
 
-
-
 <?php $this->block('field'); ?>
-  <?php if ($this->addSubmit): ?>
+
+ <?php if ($this->addSubmit): ?>
  	<div class="input-group">
       <input type="<?= $this->type; ?>" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?php if ($this->hideInput) echo ' password'; ?><?php if ($this->class) echo ' ' . $this->class; ?>" value="<?= specialchars($this->value); ?>"<?= $this->getAttributes(); ?>>
       <span class="input-group-btn">
@@ -26,9 +25,11 @@
     <input type="<?= $this->type; ?>" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?php if ($this->hideInput) echo ' password'; ?><?php if ($this->class) echo ' ' . $this->class; ?>" value="<?= specialchars($this->value); ?>"<?= $this->getAttributes(); ?>>
   <?php endif; ?>
 
+
   <?php if ($this->hasErrors()): ?>
     <span class="label label-danger"><?= $this->getErrorAsString(); ?></span>
   <?php endif; ?>
-<?php $this->endblock(); ?>
 
+
+<?php $this->endblock(); ?>
 

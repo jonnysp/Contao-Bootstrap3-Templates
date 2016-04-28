@@ -1,20 +1,49 @@
 
-  <div class="form-group <?php if ($this->class): ?> <?= $this->class; ?><?php endif; ?>">
+<?php if ($this->tableless): ?>
+
+<div class="form-group <?= $this->prefix ?><?php if ($this->class) echo ' ' . $this->class; ?>">
+ 
     <?php $this->block('label'); ?>
     <?php $this->endblock(); ?>
-	 
-	 <div class="col-sm-4">
-	    <?php $this->block('field'); ?>
-	    <?php $this->endblock(); ?>
-    </div>
-    
+
+    <?php $this->block('field'); ?>
+    <?php $this->endblock(); ?>
+
+
     <?php $this->block('label2'); ?>
     <?php $this->endblock(); ?>
 
-    <div class=" <?php if ($this->addSubmit): ?> col-sm-4 <?php else: ?> col-sm-4 <?php endif; ?>">
-	    <?php $this->block('field2'); ?>
-	    <?php $this->endblock(); ?>
+    <?php $this->block('field2'); ?>
+    <?php $this->endblock(); ?>
+ 
+</div>  
+
+<?php else: ?>
+
+<div class="form-group <?= $this->rowClass ?>">
+
+    <div class="col-sm-4 control-label">
+      <?php $this->block('label'); ?>
+      <?php $this->endblock(); ?>
+    </div>
+    
+    <div class="col-sm-3">
+      <?php $this->block('field'); ?>
+      <?php $this->endblock(); ?>
     </div>
 
-  </div>
+  	  <span class="<?= $this->rowClassConfirm ?>">
+	    <div class="col-sm-2 control-label">
+	      <?php $this->block('label2'); ?>
+	      <?php $this->endblock(); ?>
+	    </div>
+	    
+	    <div class="col-sm-3">
+	      <?php $this->block('field2'); ?>
+	      <?php $this->endblock(); ?>
+	    </div>
+	  </span>
+	  
+</div>  
 
+<?php endif; ?>
