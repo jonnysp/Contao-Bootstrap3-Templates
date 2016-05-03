@@ -5,7 +5,7 @@
     <?php if ($this->label): ?>
        <label <?php if ($this->class): ?> class="<?= $this->class; ?>"<?php endif; ?>>
         <?php if ($this->mandatory): ?>
-          <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span> <span class="mandatory">*</span>
+          <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
         <?php else: ?>
           <?= $this->label; ?>
         <?php endif; ?>

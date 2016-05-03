@@ -1,0 +1,26 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<nav class="<?= $this->class; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+  
+  <?php if ($this->headline): ?>
+     <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+  <?php endif; ?>
+  
+  <form<?php if ($this->request): ?> action="<?= $this->request; ?>"<?php endif; ?> method="post" >
+
+      <input type="hidden" name="FORM_SUBMIT" value="tl_quicklink">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+      
+      <select name="target" class="form-control" onchange="location.href=this.options[this.selectedIndex].value">
+        <option value=""><?= $this->title; ?></option>
+        <?php foreach ($this->items as $item): ?>
+            <option value="<?= $item['href'] ?>"><?= $item['link'] ?></option>
+        <?php endforeach; ?>
+      </select>
+     
+  </form>
+
+</nav> 
+<?php $this->endblock(); ?>

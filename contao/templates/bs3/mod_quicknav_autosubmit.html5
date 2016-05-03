@@ -14,18 +14,13 @@
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
       <label for="ctrl_target" class="hidden"><?= $this->targetPage; ?></label>
       
-	<div class="input-group">
-	      <select name="target" id="ctrl_target" class="form-control">
+	   	<select name="target" class="form-control" onchange="location.href=this.options[this.selectedIndex].value">
 	        <option value=""><?= $this->title; ?></option>
 	        <?php foreach ($this->items as $item): ?>
 	          <option value="<?= $item['href']; ?>"><?= str_repeat(' &nbsp; ', $item['level']); ?><?= $item['link']; ?></option>
 	        <?php endforeach; ?>
-	      </select>
-		  <span class="input-group-btn">
-	        <input type="submit" class="btn btn-default" value="<?= $this->button; ?>">
-	      </span>
-	</div>
-	
+		</select>
+		
   </form>
 
 </nav> 
