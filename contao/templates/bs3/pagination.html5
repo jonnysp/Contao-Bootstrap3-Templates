@@ -1,6 +1,6 @@
 
 <!-- indexer::stop -->
-<div class="center-block">
+<div class="text-center">
 
   <ul class="pagination">
     <?php if ($this->hasFirst): ?>

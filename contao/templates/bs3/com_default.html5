@@ -5,7 +5,7 @@
 		<img class="img-thumbnail img-circle" src="<?= "//www.gravatar.com/avatar/" . md5(strtolower(trim($this->email)))."?s=64"; ?>" alt="" />
 	</div>
 	<div class="media-body">
-		<span class="text-muted"><time datetime="<?= $this->datetime; ?>"><?= $this->date; ?></time></span>
+		<span class="text-muted pull-right"><time datetime="<?= $this->datetime; ?>"><?= $this->date; ?></time></span>
 		<h4 class="media-heading">Eintrag von <?= $this->name; ?> <?php if ($this->website): ?><a href="<?= $this->website; ?>" rel="nofollow" target="_blank"><span class="glyphicon glyphicon-link"></span></a><?php endif; ?></h4>
 		<?= $this->comment; ?>
 		<hr>
