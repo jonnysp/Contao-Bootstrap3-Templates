@@ -1,7 +1,9 @@
 <?php $this->extend('form_row'); ?>
 
 <?php $this->block('label'); ?>
-	
+	<?php if (!$this->tableless): ?>
+		<label class="col-sm-4 <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>"></label>
+	<?php endif; ?>
 <?php $this->endblock(); ?>
 
 

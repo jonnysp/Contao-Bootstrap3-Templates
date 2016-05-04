@@ -13,7 +13,7 @@
           <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId; ?>">
           <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
 
-          <div class="form-group">
+          <div class="form-group has-warning">
           	<?php $this->fields['name']->strClass = "col-sm-4 control-label" ?>
               <?= $this->fields['name']->generateLabel(); ?>
            		<div class="col-sm-8">
@@ -22,7 +22,7 @@
             	</div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group has-warning">
              <?php $this->fields['email']->strClass = "col-sm-4 control-label" ?>
              <?= $this->fields['email']->generateLabel(); ?>
 	           <div class="col-sm-8">
@@ -41,7 +41,7 @@
           </div>
                  
           <?php if (isset($this->fields['captcha'])): ?>
-	           <div class="form-group">
+	           <div class="form-group has-warning">
 					<label for="ctrl_captcha" class="col-sm-4 control-label">
 					<?= $this->fields['captcha']->generateQuestion(); ?><span class="mandatory">*</span>
 					</label>

@@ -2,7 +2,7 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-    <label for="ctrl_<?= $this->id ?>" class="<?= $this->class ?>">
+    <label for="ctrl_<?= $this->id ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
       <?php if ($this->mandatory): ?>
         <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>
@@ -18,7 +18,7 @@
  	<div class="input-group">
       <input type="<?= $this->type; ?>" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?php if ($this->hideInput) echo ' password'; ?><?php if ($this->class) echo ' ' . $this->class; ?>" value="<?= specialchars($this->value); ?>"<?= $this->getAttributes(); ?>>
       <span class="input-group-btn">
-          <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default" value="<?= $this->slabel; ?>">
+          <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
       </span>
     </div>
   <?php else : ?>

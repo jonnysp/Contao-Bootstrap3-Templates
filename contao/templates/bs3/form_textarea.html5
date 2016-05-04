@@ -2,7 +2,7 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-    <label for="ctrl_<?= $this->id; ?>" <?php if ($this->class): ?> class="<?= $this->class; ?>"<?php endif; ?>>
+    <label for="ctrl_<?= $this->id; ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
       <?php if ($this->mandatory): ?>
         <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>
@@ -24,7 +24,7 @@
 
   <?php if ($this->addSubmit): ?>
   	<br>
-    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default" value="<?= $this->slabel; ?>">
+    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
   <?php endif; ?>
   
 <?php $this->endblock(); ?>
