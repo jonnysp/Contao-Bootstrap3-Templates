@@ -6,13 +6,13 @@
   "use strict";
   var $ = jQuery;
 
-    var pluginName = "JSLightbox",
+    var pluginName = "BootstrapLightbox",
       defaults = {};
 
-    function JSLightbox ( element, options ) {
+    function BootstrapLightbox ( element, options ) {
 
       //remove some old lightboxes
-      $(".JSLightbox,.modal-backdrop").remove();
+      $(".BootstrapLightbox,.modal-backdrop").remove();
 
       var _this = this;
       this.image = new Image();
@@ -28,7 +28,7 @@
       this.showModal();
     }
 
-    $.extend(JSLightbox.prototype, {
+    $.extend(BootstrapLightbox.prototype, {
       showModal: function(){
         this.modal.modal('show');
       },
@@ -52,9 +52,9 @@
       addModal: function(){
       
         var _this = this;
-        this.modal_id = 'JSLightbox-' + Math.floor((Math.random() * 1000) + 1);
-        this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade JSLightbox');
-        this.modal_dialog = $('<div>').addClass('modal-dialog');
+        this.modal_id = 'BootstrapLightbox-' + Math.floor((Math.random() * 1000) + 1);
+        this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade BootstrapLightbox');
+        this.modal_dialog = $('<div>').addClass('modal-dialog'); //modal-sm modal-lg
         this.modal_content = $('<div>').addClass('modal-content');
         this.modal_header = $('<div>').addClass('modal-header');
         this.modal_title = $('<h4>').addClass('modal-title');
@@ -128,7 +128,7 @@
 
     $.fn[ pluginName ] = function ( options ) {
       return this.each(function() {
-        new JSLightbox( this, options);
+        new BootstrapLightbox( this, options);
       });
     };
 
@@ -138,7 +138,7 @@
     $(document).ready(function() {
       $(document).delegate("*[data-lightbox]", 'click', function(event) {
           event.preventDefault();
-          $(this).JSLightbox();
+          $(this).BootstrapLightbox();
       });
     });
 })(jQuery);
