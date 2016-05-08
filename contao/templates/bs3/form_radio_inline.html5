@@ -33,7 +33,7 @@
 
   <?php if ($this->addSubmit): ?>
   	<br>
-    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
+    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
   <?php endif; ?>
   
   
