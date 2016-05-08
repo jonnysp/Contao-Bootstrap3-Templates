@@ -13,7 +13,10 @@
 	  <hr>
 		
 	  <?php if ($this->header): ?>
-		<div class="alert alert-info"><?= $this->header; ?> (<?= $this->duration; ?>)</div>
+		<div class="alert alert-info alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+			<?= $this->header; ?> (<?= $this->duration; ?>)
+		</div>
 	  <?php endif; ?>
 
 	  <?= $this->results . $this->pagination; ?>

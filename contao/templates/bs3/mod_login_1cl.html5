@@ -8,7 +8,10 @@
 
 
    <?php if ($this->message): ?>
-        <div class="alert alert-danger"><?= $this->message; ?></div>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        	<?= $this->message; ?>
+        </div>
    <?php endif; ?>
 
 	<form class="form-inline" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_login" method="post">
