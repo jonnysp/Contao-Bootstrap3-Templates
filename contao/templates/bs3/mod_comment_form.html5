@@ -16,7 +16,7 @@
           <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId; ?>">
           <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
 
-          <div class="form-group <?php if ($this->fields['name']->mandatory): ?> has-warning <?php endif; ?>">
+          <div class="form-group <?php if ($this->fields['name']->hasErrors()): ?> has-error <?php elseif ($this->fields['name']->mandatory): ?> has-warning <?php endif; ?>">
           	<?php $this->fields['name']->strClass = "col-sm-4 control-label" ?>
               <?= $this->fields['name']->generateLabel(); ?>
            		<div class="col-sm-8">
@@ -25,7 +25,7 @@
             	</div>
           </div>
 
-          <div class="form-group <?php if ($this->fields['email']->mandatory): ?> has-warning <?php endif; ?>">
+          <div class="form-group <?php if ($this->fields['email']->hasErrors()): ?> has-error <?php elseif ($this->fields['email']->mandatory): ?> has-warning <?php endif; ?>">
              <?php $this->fields['email']->strClass = "col-sm-4 control-label" ?>
              <?= $this->fields['email']->generateLabel(); ?>
 	           <div class="col-sm-8">
@@ -34,7 +34,7 @@
 	            </div>
           </div>
           
-         <div class="form-group <?php if ($this->fields['website']->mandatory): ?> has-warning <?php endif; ?>">
+         <div class="form-group <?php if ($this->fields['website']->hasErrors()): ?> has-error <?php elseif ($this->fields['website']->mandatory): ?> has-warning <?php endif; ?>">
              <?php $this->fields['website']->strClass = "col-sm-4 control-label" ?>
              <?= $this->fields['website']->generateLabel(); ?>
 	           
@@ -45,7 +45,7 @@
           </div>
                  
           <?php if (isset($this->fields['captcha'])): ?>
-	           <div class="form-group <?php if ($this->fields['captcha']->mandatory): ?> has-warning <?php endif; ?>">
+	           <div class="form-group <?php if ($this->fields['captcha']->hasErrors()): ?> has-error <?php elseif ($this->fields['captcha']->mandatory): ?> has-warning <?php endif; ?>">
 					<label for="ctrl_captcha" class="col-sm-4 control-label">
 					<?= $this->fields['captcha']->generateQuestion(); ?><span class="mandatory">*</span>
 					</label>
@@ -57,7 +57,7 @@
 	          </div>
           <?php endif; ?>
 
-          <div class="form-group <?php if ($this->fields['comment']->mandatory): ?> has-warning <?php endif; ?>">
+          <div class="form-group <?php if ($this->fields['comment']->hasErrors()): ?> has-error <?php elseif ($this->fields['comment']->mandatory): ?> has-warning <?php endif; ?>">
             <?php $this->fields['comment']->strClass = "col-sm-4 control-label" ?>
             <?= $this->fields['comment']->generateLabel() ?>
 
@@ -68,7 +68,7 @@
 			</div>
           </div>
 
-	    <div class="form-group <?php if ($this->fields['notify']->mandatory): ?> has-warning <?php endif; ?>">
+	    <div class="form-group <?php if ($this->fields['notify']->hasErrors()): ?> has-error <?php elseif ($this->fields['notify']->mandatory): ?> has-warning <?php endif; ?>">
 			<div class="col-sm-offset-4 col-sm-8">
 		          <?= $this->fields['notify']->generateWithError(); ?>
 		    </div>
