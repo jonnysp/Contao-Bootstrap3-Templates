@@ -55,7 +55,7 @@
 				<div class="row" id="container">
 
 					<?php $this->block('main'); ?>
-							<main class="<?php if (!$this->left and !$this->right): ?>col-sm-12<?php elseif ($this->left and !$this->right): ?>col-sm-9 col-sm-push-3<?php elseif (($this->left and $this->right) or (!$this->left and $this->right)): ?>col-sm-6 col-sm-push-3<?php endif; ?>" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+							<main class="<?php if (!$this->left and !$this->right): ?>col-sm-12<?php elseif ($this->left and !$this->right): ?>col-sm-9 col-sm-push-3<?php elseif ($this->left and $this->right): ?>col-sm-6 col-sm-push-3<?php elseif (!$this->left and $this->right): ?>col-sm-6<?php endif; ?>" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 								<!--beginn section main-->
 								<?= $this->main; ?>
 								<!--end section main-->
