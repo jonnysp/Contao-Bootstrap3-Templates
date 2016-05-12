@@ -1,12 +1,12 @@
- </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#ce_slider" role="button" data-slide="prev" style="background-image:none;">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#ce_slider" role="button" data-slide="next" style="background-image:none;">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+	</div>
 
 </div>
+</div>
+
+<!-- Controls -->
+<div class="text-center">
+	<div class="btn-group" role="group" aria-label="...">
+		<a class="btn btn-default" title="<?= $this->previous; ?>" href="#ce_slider" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="btn btn-default" title="<?= $this->next; ?>" href="#ce_slider" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div>
 </div>
