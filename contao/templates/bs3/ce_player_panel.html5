@@ -1,0 +1,42 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+	<?php if ($this->headline): ?>
+		<div class="panel-heading">
+			<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
+		</div>
+	<?php endif; ?>
+
+  <!-- indexer::stop -->
+	<div class="panel-body"> 
+	  <?php if ($this->isVideo && $this->type == 'youtube'): ?>
+		<?php foreach ($this->files as $file): ?>
+		  	<div class="embed-responsive embed-responsive-16by9">
+		  		<iframe class="embed-responsive-item" src="<?= str_replace('watch?v=','embed/',$file->path); ?>"></iframe>
+			</div>
+		<?php endforeach; ?>
+
+	 <?php elseif ($this->isVideo): ?> 
+	 
+	     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?= $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+	      <?php foreach ($this->files as $file): ?>
+	        <source type="$file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
+	      <?php endforeach; ?>
+	      Your browser does not support the video tag.
+	    </video>
+	  
+	  <?php else: ?>
+	    <audio style="width:100%;" preload="none"<?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+	      <?php foreach ($this->files as $file): ?>
+	        <source type="<?= $file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
+	      <?php endforeach; ?>
+	    </audio>
+	  <?php endif; ?>
+	</div>
+  <!-- indexer::continue -->
+</div>
+
+<?php $this->endblock(); ?>

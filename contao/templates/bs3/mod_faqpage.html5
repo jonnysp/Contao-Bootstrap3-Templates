@@ -35,24 +35,21 @@
         <div class="row">
 
           <?php 
-            $textclass = 'col-md-12';
             if(strpos($faq->floatClass, 'float_left') !== false ){
-              $faq->floatClass = 'col-sm-6';
-              $textclass = 'col-sm-6';
+              $faq->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
             }elseif(strpos($faq->floatClass, 'float_right') !== false ){
-              $faq->floatClass = 'col-sm-6 col-sm-push-6';
-              $textclass = 'col-sm-6 col-sm-pull-6';
+              $faq->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
             }else{
-              $faq->floatClass = 'col-md-12';
+              $faq->floatClass = 'col-xs-12';
             }
           ?>  
           
           <?php if (!$faq->addBefore): ?>
-                <div class="<?= $textclass; ?>"><?= $faq->answer; ?></div>
+                <div class="col-xs-12" style="float:none;"><?= $faq->answer; ?></div>
           <?php endif; ?>
 
           <?php if ($faq->addImage): ?>
-            <div class="<?= $faq->floatClass; ?>" >
+            <div class="<?= $faq->floatClass; ?>" style="z-index:1;">
               <figure class="img-thumbnail" style="<?= $faq->margin; ?>">
                 <?php if ($faq->href): ?>
                   <a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>>
@@ -72,7 +69,7 @@
           
 
           <?php if ($faq->addBefore): ?>
-            <div class="<?= $textclass; ?>"><?= $faq->answer; ?></div>
+            <div class="col-xs-12" style="float:none;"><?= $faq->answer; ?></div>
           <?php endif; ?>
        
             

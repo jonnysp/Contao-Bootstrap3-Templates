@@ -34,26 +34,23 @@
 		     	<div class="row">
 
 				<?php 
-					$textclass = 'col-md-12';
 					if(strpos($this->floatClass, 'float_left') !== false ){
-						$this->floatClass = 'col-sm-6';
-						$textclass = 'col-sm-6';
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
 					}elseif(strpos($this->floatClass, 'float_right') !== false ){
-						$this->floatClass = 'col-sm-6 col-sm-push-6';
-						$textclass = 'col-sm-6 col-sm-pull-6';
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
 					}else{
-						$this->floatClass = 'col-md-12';
+						$this->floatClass = 'col-xs-12';
 					}
 				?>	
 				
 				<?php if (!$this->addBefore): ?>
-				    <div class="<?= $textclass; ?>"><?= $this->teaser; ?></div>
+				    <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
 				<?php endif; ?>
 				
 
 
 				  <?php if ($this->addImage): ?>
-				  <div class="<?= $this->floatClass; ?>" >
+				  <div class="<?= $this->floatClass; ?>" style="z-index:1;">
 				    <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 				     
 				      <?php if ($this->href): ?>
@@ -76,7 +73,7 @@
 				  <?php endif; ?>
 				
 				  <?php if ($this->addBefore): ?>
-				    <div class="<?= $textclass; ?>"><?= $this->teaser; ?></div>
+				    <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
 				  <?php endif; ?>
 
 			</div>
