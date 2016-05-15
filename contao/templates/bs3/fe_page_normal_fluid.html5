@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language; ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+
+	<head>
+		<?php $this->block('head'); ?>
+			<meta charset="<?= $this->charset; ?>">
+			<title><?= $this->title; ?></title>
+			<base href="<?= $this->base; ?>">
+
+			<?php $this->block('meta'); ?>
+				<meta name="robots" content="<?= $this->robots; ?>">
+				<meta name="description" content="<?= $this->description; ?>">
+				<meta name="keywords" content="<?= $this->keywords; ?>">
+				<meta name="generator" content="Contao Open Source CMS">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<?php $this->endblock(); ?>
+
+			<?= $this->viewport; ?>
+			<?= $this->stylesheets; ?>
+			<?= $this->framework; ?>
+			<?= $this->mooScripts; ?>
+			<?= $this->head; ?>
+
+			<?php $this->block('html5shiv'); ?>
+			<!--[if lt IE 9]><script src="<?= TL_ASSETS_URL; ?>assets/html5shiv/<?= $GLOBALS['TL_ASSETS']['HTML5SHIV']; ?>/html5shiv-printshiv.js"></script><![endif]-->
+			<?php $this->endblock(); ?>
+		<?php $this->endblock(); ?>
+	</head>
+
+	<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
+
+	<?php $this->block('body'); ?>
+
+		<?php if ($this->sections('top')): ?>
+				<?= $this->sections('top'); ?>
+		<?php endif; ?>
+
+		<div class="container-fluid" id="wrapper">
+
+			<?php $this->block('header'); ?>
+				<?php if ($this->header): ?>
+					<div class="row">
+						<header class="col-sm-12" id="header" itemscope itemtype="http://schema.org/WPHeader">
+						<!--beginn section header-->
+						<?= $this->header; ?>
+						<!--end section header-->
+						</header>
+					</div>
+				<?php endif; ?>
+			<?php $this->endblock(); ?>
+
+			<?= $this->sections('before'); ?>
+
+			<?php $this->block('container'); ?>
+				<div class="row" id="container">
+
+					<?php $this->block('main'); ?>
+							<main class="<?php if (!$this->left and !$this->right): ?>col-md-12<?php elseif ($this->left and !$this->right): ?>col-md-8 col-md-push-4<?php elseif ($this->left and $this->right): ?>col-md-6 col-md-push-3<?php elseif (!$this->left and $this->right): ?>col-md-8<?php endif; ?>" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+								<!--beginn section main-->
+								<?= $this->main; ?>
+								<!--end section main-->
+								<?= $this->sections('main'); ?>
+							</main> 
+					<?php $this->endblock(); ?>
+
+
+					<?php $this->block('left'); ?>
+						<?php if ($this->left): ?>
+							<aside class="<?php if ($this->right): ?>col-md-3 col-md-pull-6<?php elseif (!$this->right): ?>col-md-4 col-md-pull-8<?php endif; ?>" id="left" itemscope itemtype="http://schema.org/WPSideBar">
+								<!--beginn section left-->
+								<?= $this->left; ?>
+								<!--end section left-->
+							</aside> 
+						<?php endif; ?>
+					<?php $this->endblock(); ?>
+
+					<?php $this->block('right'); ?>
+						<?php if ($this->right): ?>
+							<aside class="<?php if ($this->left): ?>col-md-3	<?php else: ?>col-md-4<?php endif; ?>" id="right" itemscope itemtype="http://schema.org/WPSideBar">
+								<!--beginn section right-->
+								<?= $this->right; ?>
+								<!--end section right-->
+							</aside>
+						<?php endif; ?>
+					<?php $this->endblock(); ?>
+
+				</div>  
+			<?php $this->endblock(); ?>
+
+			<?= $this->sections('after'); ?>
+
+			<?php $this->block('footer'); ?>
+				<?php if ($this->footer): ?>
+					<div class="row">  
+						<footer class="col-sm-12" id="footer" itemscope itemtype="http://schema.org/WPFooter">
+						<!--beginn section footer-->
+						<?= $this->footer; ?>
+						<!--beginn section footer-->
+						</footer>
+					</div>    
+				<?php endif; ?> 
+			<?php $this->endblock(); ?>
+
+		</div> 
+
+		<?php if ($this->sections('bottom')): ?>
+			<?= $this->sections('bottom'); ?>
+		<?php endif; ?>
+
+	<?php $this->endblock(); ?>
+
+	<?= $this->mootools; ?>
+
+	</body>
+</html>
