@@ -40,7 +40,7 @@
 			<?php $this->block('header'); ?>
 				<?php if ($this->header): ?>
 					<div class="row">
-						<header class="col-sm-12" id="header" itemscope itemtype="http://schema.org/WPHeader">
+						<header class="col-md-12" id="header" itemscope itemtype="http://schema.org/WPHeader">
 						<!--beginn section header-->
 						<?= $this->header; ?>
 						<!--end section header-->
@@ -55,7 +55,7 @@
 				<div class="row" id="container">
 
 					<?php $this->block('main'); ?>
-							<main class="<?php if (!$this->left and !$this->right): ?>col-sm-12<?php elseif ($this->left and !$this->right): ?>col-sm-9 col-sm-push-3<?php elseif ($this->left and $this->right): ?>col-sm-6 col-sm-push-3<?php elseif (!$this->left and $this->right): ?>col-sm-6<?php endif; ?>" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+							<main class="<?php if (!$this->left and !$this->right): ?>col-md-12<?php elseif ($this->left and !$this->right): ?>col-md-9 col-md-push-3<?php elseif ($this->left and $this->right): ?>col-md-6 col-md-push-3<?php elseif (!$this->left and $this->right): ?>col-md-6<?php endif; ?>" id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 								<!--beginn section main-->
 								<?= $this->main; ?>
 								<!--end section main-->
@@ -66,7 +66,7 @@
 
 					<?php $this->block('left'); ?>
 						<?php if ($this->left): ?>
-							<aside class="col-sm-3 <?php if ($this->right): ?>col-sm-pull-6<?php elseif (!$this->right): ?>col-sm-pull-9<?php endif; ?>" id="left" itemscope itemtype="http://schema.org/WPSideBar">
+							<aside class="col-md-3 <?php if ($this->right): ?>col-md-pull-6<?php elseif (!$this->right): ?>col-md-pull-9<?php endif; ?>" id="left" itemscope itemtype="http://schema.org/WPSideBar">
 								<!--beginn section left-->
 								<?= $this->left; ?>
 								<!--end section left-->
@@ -76,7 +76,7 @@
 
 					<?php $this->block('right'); ?>
 						<?php if ($this->right): ?>
-							<aside class="<?php if ($this->left): ?>col-sm-3<?php elseif (!$this->left): ?>col-sm-6<?php endif; ?>" id="right" itemscope itemtype="http://schema.org/WPSideBar">
+							<aside class="<?php if ($this->left): ?>col-md-3<?php elseif (!$this->left): ?>col-md-6<?php endif; ?>" id="right" itemscope itemtype="http://schema.org/WPSideBar">
 								<!--beginn section right-->
 								<?= $this->right; ?>
 								<!--end section right-->
@@ -92,7 +92,7 @@
 			<?php $this->block('footer'); ?>
 				<?php if ($this->footer): ?>
 					<div class="row">  
-						<footer class="col-sm-12" id="footer" itemscope itemtype="http://schema.org/WPFooter">
+						<footer class="col-md-12" id="footer" itemscope itemtype="http://schema.org/WPFooter">
 						<!--beginn section footer-->
 						<?= $this->footer; ?>
 						<!--beginn section footer-->
