@@ -2,7 +2,9 @@
   <?php foreach ($this->body as $class=>$row): ?>
     <?php foreach ($row as $col): ?>
     <?php if ($col->addImage): ?>
-	     <figure class="col-xs-6 col-sm-<?= round((12 / sizeof($row) + 1)); ?> col-md-<?= round(12 / sizeof($row)); ?>" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
+ 
+
+ <figure class="<?php if(sizeof($row)==12 ): ?>col-xs-4 col-sm-3 col-md-2 col-lg-1<?php elseif(sizeof($row)==11 ): ?>col-xs-6 col-sm-4 col-md-2 col-lg-1<?php elseif(sizeof($row)==10 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==9 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==8 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==7 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==6 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==5 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-2<?php elseif(sizeof($row)==4 ): ?>col-xs-6 col-sm-4 col-md-3 col-lg-3<?php elseif(sizeof($row)==3 ): ?>col-xs-6 col-sm-4 col-md-4 col-lg-4<?php elseif(sizeof($row)==2 ): ?>col-xs-6<?php else: ?>col-xs-12<?php endif; ?>" itemtype="http://schema.org/ImageObject" itemscope itemprop="associatedMedia">
 	         <?php if ($col->href): ?>
 	              <a itemprop="contentURL" class="thumbnail" href="<?= $col->href; ?>"<?= $col->attributes; ?> title="<?= $col->alt; ?>" data-title="<?= $col->alt; ?>" data-gallery="<?= $this->id ?>" data-footer="<?= $col->caption; ?>">
 	              	<img itemprop="thumbnailUrl" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">
