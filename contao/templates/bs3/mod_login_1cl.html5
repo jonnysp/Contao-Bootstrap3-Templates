@@ -20,14 +20,16 @@
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
       
       
-		<div class="form-group">
+		<div class="form-group has-feedback">
 			<label class="sr-only" for="username"><?= $this->username; ?></label>
-			<input type="text" name="username" id="username" placeholder="<?= $this->username; ?>" class="form-control" value="<?= $this->value; ?>"><br>
+			<input type="text" name="username" id="username" placeholder="<?= $this->username; ?>" class="form-control" value="<?= $this->value; ?>">
+			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		</div>
       
-		<div class="form-group">
+		<div class="form-group has-feedback">
 			<label class="sr-only" for="password"><?= $this->password; ?></label>
-			<input type="password" name="password" id="password" placeholder="<?= $this->password; ?>" class="form-control" value=""><br>
+			<input type="password" name="password" id="password" placeholder="<?= $this->password; ?>" class="form-control" value="">
+			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		</div>
 
       <?php if ($this->autologin): ?>
