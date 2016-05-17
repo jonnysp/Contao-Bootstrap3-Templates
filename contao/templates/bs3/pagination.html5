@@ -1,4 +1,3 @@
-
 <!-- indexer::stop -->
 <div class="text-center">
 
@@ -11,7 +10,15 @@
       <li class="previous"><a href="<?= $this->previous['href']; ?>" class="previous" title="<?= $this->previous['title']; ?>"><span class="glyphicon glyphicon-backward"></span></a></li>
     <?php endif; ?>
 
-    <?= $this->items; ?>
+    <?php foreach ($this->pages as $page):  ?>
+      <?php if($page['href'] != ''): ?>
+        <li><a class="link" title="<?= $page['title']; ?>" href="<?= $page['href']; ?>"> <?= $page['page']; ?> </a></li>
+      <?php else: ?>
+        <li class="active"><span><?= $page['page']; ?></span></li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+
+    <?php //echo $this->items; ?>
 
     <?php if ($this->hasNext): ?>
       <li class="next"><a href="<?= $this->next['href']; ?>" class="next" title="<?= $this->next['title']; ?>"><span class="glyphicon glyphicon-forward"></span></a></li>
@@ -24,11 +31,5 @@
   <p><?= $this->total; ?></p>
 </div>
 <!-- indexer::continue -->
-
-<script>
-$(function() {
-	$('.current').parent('li').addClass('active');
-});
-</script>
 
 
