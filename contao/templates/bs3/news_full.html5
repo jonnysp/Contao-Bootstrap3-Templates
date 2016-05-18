@@ -1,37 +1,34 @@
 
-
-	<div class="panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
-
-		<div class="panel-heading">
-			<h3 class="panel-title">
-				<span class="label label-primary pull-right">
-					<?php if($this->featured) :?><span class="glyphicon glyphicon-star"></span><?php endif ?>
-				    <time datetime="<?= $this->datetime; ?>">
-				    <?php if($this->date): ?>
-				    	<?= $this->date; ?>
-				    <?php else: ?>	
-				    	<?= $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
-				    <?php endif ?>	
-				    </time> 
-				</span>
-				<?= $this->newsHeadline; ?><br>
-				<?php if ($this->hasSubHeadline): ?>
-					<small class="lead"><?= $this->subHeadline; ?></small>
-				<?php endif; ?>
-			</h3>
-		</div>
-
-
-		<div class="panel-body">
-
+<hr>
+	<div class="<?= $this->class; ?> <?php if($this->featured) :?><?php endif ?>">
 
 				
-		  <?php if ($this->text): ?>
-		    	<div class="row"><div col-md-12><?= $this->text; ?></div></div>
-		  <?php else: ?>
-		     
-		     
-		     	<div class="row">
+		<?php if ($this->hasMetaFields): ?>	
+			<span class="pull-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <?= $this->commentCount; ?></span>
+		<?php endif; ?>	
+
+		<time datetime="<?= $this->datetime; ?>">
+		 	<span class="glyphicon glyphicon-time"></span>
+		    <?php if($this->date): ?>
+		    	<?= $this->date; ?>
+		    <?php else: ?>	
+		    	<?= $this->parseDate($GLOBALS['TL_CONFIG']['datimFormat'], $this->timestamp); ?>
+		    <?php endif ?>	
+		</time> 
+
+		<h2><?= $this->newsHeadline; ?><br>
+			<?php if ($this->hasSubHeadline): ?>
+				<small ><?= $this->subHeadline; ?></small>
+			<?php endif; ?>
+		</h2>
+				
+		<?php if ($this->text): ?>
+		
+		    <div class="row"><div col-md-12><?= $this->text; ?></div></div>
+		
+		<?php else: ?>
+
+		    <div class="row">
 
 				<?php 
 					if(strpos($this->floatClass, 'float_left') !== false ){
@@ -49,7 +46,7 @@
 				
 
 
-				  <?php if ($this->addImage): ?>
+				<?php if ($this->addImage): ?>
 				  <div class="<?= $this->floatClass; ?>" style="z-index:1;">
 				    <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 				     
@@ -70,17 +67,16 @@
 				    
 				  </div> 
 				  
-				  <?php endif; ?>
+				<?php endif; ?>
 				
-				  <?php if ($this->addBefore): ?>
+				<?php if ($this->addBefore): ?>
 				    <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
-				  <?php endif; ?>
+				<?php endif; ?>
 
 			</div>
 
 		<?php endif; ?>
 		  
-
 		  <?php if ($this->enclosure): ?>
 		    <div class="enclosure">
 		      <?php foreach ($this->enclosure as $enclosure): ?>
@@ -88,17 +84,5 @@
 		      <?php endforeach; ?>
 		    </div>
 		  <?php endif; ?>
-
-		</div>
-
-		<?php if ($this->hasMetaFields): ?>	
-			<div class="panel-footer clearfix">
-					<?php if($this->date): ?><time datetime="<?= $this->datetime; ?>"><span class="glyphicon glyphicon-time"></span> <?= $this->date; ?></time><?php endif; ?>
-					<span class="pull-right">
-						<?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <?= $this->commentCount; ?>
-		            </span> 
-			</div>
-		<?php endif; ?>	
-
 
 	</div>
