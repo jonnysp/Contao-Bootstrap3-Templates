@@ -24,7 +24,7 @@
 				
 		<?php if ($this->text): ?>
 		
-		    <div class="row"><div col-md-12><?= $this->text; ?></div></div>
+		    <div class="row"><div class="col-md-12"><?= $this->text; ?></div></div>
 		
 		<?php else: ?>
 

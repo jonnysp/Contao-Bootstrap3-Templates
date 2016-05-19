@@ -20,13 +20,11 @@
 		    </time> 
 
 
-				<h2>
-				<?= $this->newsHeadline; ?>
-				<br>
+			<h2><?= $this->newsHeadline; ?><br>
 				<?php if ($this->hasSubHeadline): ?>
 					<small ><?= $this->subHeadline; ?></small>
 				<?php endif; ?>
-				</h2>
+			</h2>
 
 
 			<div class="row">
