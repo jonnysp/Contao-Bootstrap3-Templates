@@ -52,7 +52,7 @@
             <div class="<?= $faq->floatClass; ?>" style="z-index:1;">
               <figure class="img-thumbnail" style="<?= $faq->margin; ?>">
                 <?php if ($faq->href): ?>
-                  <a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>>
+                  <a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>  itemprop="contentUrl" data-title="<?= $faq->title; ?>" data-footer="<?= $faq->caption; ?>" data-gallery="<?= $faq->id ?>">
                 <?php endif; ?>
                 
                 <img class="img-responsive" src="<?= $faq->src; ?>"<?= $faq->imgSize; ?> alt="<?= $faq->alt; ?>"<?php if ($faq->title): ?> title="<?= $faq->title; ?>"<?php endif; ?>>

@@ -7,10 +7,11 @@
     <?= $this->error; ?>
     
   <?php else: ?>
-  
-      <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
-      <p class="text-muted"><?= $this->info; ?></p>
+  		
+  	  <span class="text-muted pull-right"><?= $this->info; ?></span>
 
+      <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
+      
       <div class="row">
         <?php 
           if(strpos($this->floatClass, 'float_left') !== false ){
@@ -56,9 +57,6 @@
     
   </div>
 
-
-<br>
-
     <?php if ($this->enclosure): ?>
       <div class="enclosure">
         <?php foreach ($this->enclosure as $enclosure): ?>
@@ -66,8 +64,6 @@
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
-
-    
 
     <!-- indexer::stop -->
     <nav>
@@ -82,7 +78,7 @@
     <!-- indexer::continue -->
   <?php endif; ?>
 
-<div class="clearfix"></div>
+	<hr>
 
   <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
     <div class="ce_comments block">
