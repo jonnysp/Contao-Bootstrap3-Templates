@@ -43,7 +43,7 @@
 				      <?php endif; ?>
 
 				      <?php if ($this->caption): ?>
-				        <figcaption itemprop="caption" class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></figcaption>
+				        <figcaption itemprop="caption" class="caption text-center" style="margin:5px 0 0 0;"><?= $this->caption; ?></figcaption>
 				      <?php endif; ?>
 				    </figure>
 				    

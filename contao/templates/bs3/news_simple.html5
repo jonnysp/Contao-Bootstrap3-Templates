@@ -1,8 +1,8 @@
-<hr>
-<div class="<?= $this->class; ?> <?php if($this->featured) :?><?php endif ?>">
+
+<div class="<?= $this->class; ?>">
 
 	<?php if ($this->hasMetaFields): ?>	
-		<span class="pull-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <?= $this->commentCount; ?></span>
+		<span class="pull-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
 	<?php endif; ?>	
 
 	<time datetime="<?= $this->datetime; ?>">
@@ -14,7 +14,8 @@
 		<?php endif ?>	
 	</time> 
 
-	<h2><?= $this->linkHeadline; ?><br>
+	<h2><?php if($this->featured) :?><span class="glyphicon glyphicon-star text-warning"></span> <?php endif ?>
+		<?= $this->linkHeadline; ?><br>
 		<?php if ($this->hasSubHeadline): ?>
 			<small ><?= $this->subHeadline; ?></small>
 		<?php endif; ?>

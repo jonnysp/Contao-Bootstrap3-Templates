@@ -3,6 +3,17 @@
     <h2><?= $this->headline; ?></h2>
     <div class="teaser">
       <?= $this->teaser; ?>
-      <a class="btn btn-default" href="<?= $this->href; ?>" title="<?= $this->readMore; ?>"><?= $this->more; ?> <span class="hidden"><?= $this->headline; ?></span></a>
-    </div>
+ 	</div>
+
+ 	<nav>
+        <ul class="pager">
+          <li class="next">
+            <a href="<?= $this->href ?>" title="<?= $this->readMore ?>">
+             	<?= $this->more; ?>
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+   
 </article>

@@ -3,23 +3,22 @@
 <?php $this->block('content'); ?>
 
 
-<nav class="<?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<div class="<?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
   <?php if ($this->headline): ?>
 	   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
 
-	<div class="text-center">
-	
-	  <ul class="pagination">
+<nav>
+	  <ul class="pager">
 
 	    <?php if ($this->prevHref): ?>
-	      <li class="prev"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevPageTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevLink; ?></a></li>
+	      <li class="previous"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevPageTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevLink; ?></a></li>
 	    <?php endif; ?>
 
 	    <?php if ($this->upHref): ?>
-	      <li class="up"><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+	      <li><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
 	    <?php endif; ?>
 	
 	    <?php if ($this->nextHref): ?>
@@ -27,9 +26,9 @@
 	    <?php endif; ?>
 	    
 	  </ul>
-	  
-	</div>
+</nav>	  
 
-</nav>
+
+</div>
 
 <?php $this->endblock(); ?>

@@ -1,38 +1,96 @@
 
+<?php if ($this->header): ?>
+  <h3 class="header<?= $this->classHeader ?> text-center" >
+    <?php if ($this->firstDay): ?><span class="day"><?= $this->firstDay ?>, </span><?php endif; ?><span class="date"><?= $this->firstDate ?></span>
+  </h3>
+  <hr>
+<?php endif; ?>
 
-	<?php if ($this->header): ?>
-	  <h3 class="page-header <?= $this->classHeader; ?>">
-	    <time datetime="<?= $this->datetime; ?>" class="date"><?= $this->firstDate; ?></time>
-	      <?php if ($this->firstDay): ?>
-	          <span class="day">(<?= $this->firstDay; ?>)</span>
-	      <?php endif; ?>
-	  </h3>
-	<?php endif; ?>
+<div class="event layout_list<?= $this->classList ?>">
+
+  <?php if ($this->location): ?>
+    <span class="text-muted pull-right "><span class="glyphicon glyphicon-map-marker"></span> <?= $this->locationLabel ?>: <?= $this->location ?></span>
+  <?php endif; ?> 
+
+  <time class="text-muted" datetime="<?= $this->datetime ?>">
+  <span class="glyphicon glyphicon-calendar"></span> <?= $this->date ?>
+  <?php if ($this->time): ?> , <span class="glyphicon glyphicon-time"></span> <?= $this->time ?><?php endif; ?>
+  </time>
+
+  <h2><?= $this->title ?></h2>
+
+  <?php if ($this->hasDetails): ?>
+    <?= $this->details ?>
+  <?php else: ?>
+
+      <div class="row">
+
+      <?php 
+        if(strpos($this->floatClass, 'float_left') !== false ){
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+        }elseif(strpos($this->floatClass, 'float_right') !== false ){
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+        }else{
+          $this->floatClass = 'col-xs-12';
+        }
+      ?>  
+      
+      <?php if (!$this->addBefore): ?>
+          <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
+      <?php endif; ?>
+      
+      <?php if ($this->addImage): ?>
+        <div class="<?= $this->floatClass; ?>" style="z-index:1;">
+          <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+           
+            <?php if ($this->fullsize):  ?>
+              <a href="<?= $this->imageUrl; ?> " <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+            <?php elseif ($this->href): ?>
+              <a href="<?= $this->href; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl">
+            <?php endif; ?>
+
+            <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+           
+            <?php if ($this->href || $this->fullsize): ?>
+              </a>
+            <?php endif; ?>
+
+            <?php if ($this->caption): ?>
+              <figcaption itemprop="caption" class="caption text-center" style="margin:5px 0 0 0;"><?= $this->caption; ?></figcaption>
+            <?php endif; ?>
+          </figure>
+          
+        </div> 
+        
+      <?php endif; ?>
+      
+      <?php if ($this->addBefore): ?>
+          <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
+      <?php endif; ?>
+
+    </div>
+
+  <?php endif; ?>
+
+  <?php if ($this->enclosure): ?>
+    <div class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <p><?= Image::getHtml($enclosure['icon'], '', 'class="mime_icon"') ?> <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a></p>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
 
 
-
-<div class="panel <?php if (strpos($this->classList, 'panel-') === false ): echo 'panel-default '.$this->classList;  else: echo $this->classList; endif ?>">
-
-	<div class="panel-heading">
-		 
-		<?php if ($this->time || $this->span): ?>
-		    <span class="badge pull-right"><span class="glyphicon glyphicon-time"></span> <?= $this->time . $this->span; ?></span>
-		<?php endif; ?>
-
-		<h3 class="panel-title">
-		<a href="<?= $this->href; ?>" title="<?= $this->title; ?> <?= $this->target; ?>">
-		<?= $this->link; ?>
-		(<?php if ($this->day): echo $this->day; ?>, <?php endif; echo $this->date; if ($this->time): ?>, <?= $this->time; ?> <?php endif; ?> )
-		</a></h3>
-
-  	</div>
-		  
-
-	<div class="panel-body">
-		  <div class="ce_text block">
-		    <?= $this->teaser; ?>
-		  </div>
-	</div>
+      <nav>
+        <ul class="pager">
+          <li class="next">
+            <a href="<?= $this->href ?>" title="<?= $this->title ?> (<?php if ($this->day) echo $this->day . ', '; ?><?= $this->date ?><?php if ($this->time) echo ', ' . $this->time; ?>)"<?= $this->target ?>>
+              <?= $GLOBALS['TL_LANG']['MSC']['more']; ?>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
 
 </div>
+<hr>

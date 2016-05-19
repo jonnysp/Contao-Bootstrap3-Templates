@@ -1,16 +1,25 @@
 
-	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
-		
-		<?php if ($this->headline): ?>
-			<div class="panel-heading">
-				<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
-			</div>
-		<?php endif; ?>
-		
-		<div class="panel-body">
-			<?= $this->text; ?>
-			
-			<a href="<?= $this->href; ?>" title="<?= $this->readMore; ?>" class="btn btn-default"><?= $this->more; ?> <span class="hidden"><?= $this->headline; ?></span></a>
+<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	
+	<?php if ($this->headline): ?>
+		<div class="panel-heading">
+			<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
 		</div>
+	<?php endif; ?>
+	
+	<div class="panel-body">
+		<?= $this->text; ?>
 		
-	</div> 
+		<nav>
+		    <ul class="pager">
+		      <li class="next">
+		        <a href="<?= $this->href ?>" title="<?= $this->readMore ?>">
+		         	<?= $this->more; ?>
+		        </a>
+		      </li>
+		    </ul>
+		</nav>
+
+	</div>
+	
+</div> 

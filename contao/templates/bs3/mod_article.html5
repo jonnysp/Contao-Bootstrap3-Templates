@@ -33,7 +33,15 @@
 
   <?php if ($this->backlink): ?>
     <!-- indexer::stop -->
-    <a class="btn btn-default pull-right" href="<?= $this->backlink; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a>
+      <nav>
+        <ul class="pager">
+          <li class="previous">
+            <a href="<?= $this->backlink; ?>" title="<?= $this->back; ?>">
+              <?= $this->back; ?>
+            </a>
+          </li>
+        </ul>
+      </nav>
     <!-- indexer::continue -->
   <?php endif; ?>
 

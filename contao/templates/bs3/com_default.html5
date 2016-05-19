@@ -16,7 +16,7 @@
 					<img class="img-thumbnail img-circle" src="<?= "//www.gravatar.com/avatar/" . md5(strtolower(trim($this->author->email)))."?s=64"; ?>" alt="" />
 				</div>
 				<div class="media-body">
-				<span class="text-muted"><time datetime="<?= $this->datetime; ?>"><?= $this->date; ?></time></span>
+				<span class="text-muted pull-right"><time datetime="<?= $this->datetime; ?>"><?= $this->date; ?></time></span>
 				<h4 class="media-heading"><?= $this->rby; ?> <?= $this->author->name; ?></h4>
 					<?= $this->reply; ?>
 					<hr>	

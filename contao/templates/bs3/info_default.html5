@@ -19,7 +19,15 @@
 </div>
 
   <!-- indexer::stop -->
-  <a class="btn btn-default pull-right" href="<?= $this->referer; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a>
+    <nav>
+      <ul class="pager">
+        <li class="previous">
+          <a href="<?= $this->referer; ?>">
+            <?= $this->back; ?>
+          </a>
+        </li>
+      </ul>
+    </nav>
   <!-- indexer::continue -->
-
+  
 </div>

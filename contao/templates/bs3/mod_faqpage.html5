@@ -92,8 +92,11 @@
 </div>
  
     </article>
-    
-    <a class="btn btn-default pull-right" href="<?= $this->request; ?>#top"><?= $this->topLink; ?></a>
+      <nav>
+        <ul class="pager">
+          <li><a href="<?= $this->request; ?>#top"><?= $this->topLink; ?></a></li>
+        </ul>
+      </nav>
    	<div class="clearfix"></div>
     
   <?php endforeach; ?>

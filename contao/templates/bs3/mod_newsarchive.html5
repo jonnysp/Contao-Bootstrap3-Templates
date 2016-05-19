@@ -5,19 +5,15 @@
 <div class="<?= $this->class;?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<?php if ($this->headline): ?>
-		<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+		<<?= $this->hl; ?> class="text-center" ><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
-
+	<hr>
   <?php if (empty($this->articles)): ?>
-   
-		<?= $this->empty; ?>
-
+   		<?= $this->empty; ?>
   <?php else: ?>
-  
-	<?= implode('', $this->articles); ?>
+  	<?= implode('<hr>', $this->articles); ?>
     <?= $this->pagination; ?>
-    
-  <?php endif; ?>
+ <?php endif; ?>
 
 </div>
 

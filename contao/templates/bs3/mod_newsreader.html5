@@ -9,14 +9,20 @@
 
 	<?= $this->articles; ?>
 
-	<br>
 
-	  <!-- indexer::stop -->
-	  <a class="btn btn-default pull-right" href="<?= $this->referer; ?>" title="<?= $this->back; ?>"><?= $this->back; ?></a>
-	  <!-- indexer::continue -->
-
-	<div class="clearfix"></div>
+	<!-- indexer::stop -->
+	  <nav>
+      <ul class="pager">
+        <li class="previous">
+          <a href="<?= $this->referer; ?>">
+            <?= $this->back; ?>
+          </a>
+        </li>
+      </ul>
+    </nav>
+	<!-- indexer::continue -->
 	
+	<hr>
 	  <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
 	    <div class="ce_comments block">
 	      <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
