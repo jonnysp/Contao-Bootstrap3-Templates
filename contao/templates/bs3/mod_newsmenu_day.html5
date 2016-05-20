@@ -23,7 +23,7 @@
 			    <tr class="<?= $class; ?>">
 			      <?php foreach ($week as $day): ?>
 			        <?php if ($day['href']): ?>
-			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="badge" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="btn btn-primary btn-xs" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
 			        <?php else: ?>
 			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= $day['label']; ?></td>
 			        <?php endif; ?>

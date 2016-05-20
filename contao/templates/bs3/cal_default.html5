@@ -1,8 +1,8 @@
 
-<h3 class="text-center"><?= $this->current; ?></h3>
 
 <div class="table-responsive">
 	<table class="table">
+		<caption class="text-center lead"><?= $this->current; ?></caption>
 		<thead>
 		  <tr>
 		    <?php foreach ($this->days as $i=>$day): ?>
