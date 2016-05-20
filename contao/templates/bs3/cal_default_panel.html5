@@ -1,4 +1,5 @@
-<div class="item panel panel-default">
+
+<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>">
 
   <div class="panel-heading text-center"><?= $this->current; ?></div>
   
@@ -16,13 +17,20 @@
 			  <?php foreach ($this->weeks as $class=>$week): ?>
 			    <tr class="<?= $class; ?>">
 			      <?php foreach ($week as $day): ?>
-			        <td class="<?= $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>">
-			          <?= $day['label']; ?>
-			          <?php foreach ($day['events'] as $event): ?>
-			            <div class="event cal_<?= $event['parent']; ?><?= $event['class']; ?>">
-			              <a href="<?= $event['href']; ?>" title="<?= $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?= $event['time']; endif; ?>)"<?= $event['target']; ?>><?= $event['link']; ?></a>
-			            </div>
-			          <?php endforeach; ?>
+
+			        <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>">
+						<?php if ($day['href']): ?>
+							<button data-trigger="focus" class="btn btn-primary btn-xs pop" data-container="body"  data-toggle="popover" data-html="true" data-id="#event-<?= $day['label']; ?>" title="<?= $day['title']; ?>" data-placement="top" ><?= $day['label']; ?></button >
+							<div id="event-<?= $day['label']; ?>" class="hidden">
+								<?php foreach ($day['events'] as $event): ?>
+									<div class="event cal_<?= $event['parent']; ?> <?= $event['class']; ?>">
+										<a href="<?= $event['href']; ?>" title="<?= $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?= $event['time']; endif; ?>)"<?= $event['target']; ?>><?= $event['link']; ?></a>
+									</div>
+								<?php endforeach; ?>
+							</div>
+						<?php else: ?>
+							<?= $day['label']; ?>
+						<?php endif; ?>
 			        </td>
 			      <?php endforeach; ?>
 			    </tr>
@@ -30,16 +38,20 @@
 			</tbody>
 		</table>
 	</div>
-
-	<div class="panel-footer">
-	
-		<ul class="pager">
-		  <?php if ($this->prevHref): ?><li class="previous"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevTitle; ?></a></li><?php endif; ?>
-		  <?php if ($this->nextHref): ?><li class="next"><a href="<?= $this->nextHref; ?>" title="<?= $this->nextTitle; ?>"><?= $this->nextTitle; ?> <span class="glyphicon glyphicon-chevron-right"></span> </a></li><?php endif; ?>
-		</ul>
-	
-	</div>
-
 </div>
 
+
+<script type="text/javascript">
+$(function() { $('[data-toggle=popover]').popover({
+    content: function() {
+          return $($(this).data("id")).html();
+        }
+}) });
+</script>
+	
+
+<ul class="pager">
+  <?php if ($this->prevHref): ?><li class="previous"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span> <?= $this->prevTitle; ?></a></li><?php endif; ?>
+  <?php if ($this->nextHref): ?><li class="next"><a href="<?= $this->nextHref; ?>" title="<?= $this->nextTitle; ?>"><?= $this->nextTitle; ?> <span class="glyphicon glyphicon-chevron-right"></span> </a></li><?php endif; ?>
+</ul>
 

@@ -15,7 +15,7 @@
 
   <time class="text-muted" datetime="<?= $this->datetime ?>">
   <span class="glyphicon glyphicon-calendar"></span> <?= $this->date ?>
-  <?php if ($this->time): ?> , <span class="glyphicon glyphicon-time"></span> <?= $this->time ?><?php endif; ?>
+  <?php if ($this->time): ?> <span class="glyphicon glyphicon-time"></span> <?= $this->time ?><?php endif; ?>
   </time>
 
   <h2><?= $this->title ?></h2>
