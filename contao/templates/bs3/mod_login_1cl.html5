@@ -14,20 +14,20 @@
         </div>
    <?php endif; ?>
 
-	<form class="form-inline" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_login" method="post">
+	<form class="form" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_login" method="post">
 		
       <input type="hidden" name="FORM_SUBMIT" value="tl_login">
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
       
       
 		<div class="form-group has-feedback">
-			<label class="sr-only" for="username"><?= $this->username; ?></label>
+			<label for="username"><?= $this->username; ?></label>
 			<input type="text" name="username" id="username" placeholder="<?= $this->username; ?>" class="form-control" value="<?= $this->value; ?>">
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		</div>
       
 		<div class="form-group has-feedback">
-			<label class="sr-only" for="password"><?= $this->password; ?></label>
+			<label for="password"><?= $this->password; ?></label>
 			<input type="password" name="password" id="password" placeholder="<?= $this->password; ?>" class="form-control" value="">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		</div>

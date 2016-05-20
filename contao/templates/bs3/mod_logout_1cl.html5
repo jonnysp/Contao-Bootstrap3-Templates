@@ -6,11 +6,12 @@
     <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
-  <form<?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_logout" method="post">
+  <form <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="tl_logout" method="post">
       <input type="hidden" name="FORM_SUBMIT" value="tl_logout">
       <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
       
-      <?= $this->loggedInAs; ?> <?= $this->lastLogin; ?>  <input type="submit" class="btn btn-default" value="<?= $this->slabel; ?>">
+      <?= $this->loggedInAs; ?><br><?= $this->lastLogin; ?>
+      <br><input type="submit" class="btn btn-default" value="<?= $this->slabel; ?>">
   </form>
 
 </div>
