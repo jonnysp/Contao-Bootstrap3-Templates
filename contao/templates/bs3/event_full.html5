@@ -1,4 +1,3 @@
-
 <div class="event layout_full block<?= $this->class ?>">
 
 
@@ -45,7 +44,7 @@
           <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
            
             <?php if ($this->fullsize):  ?>
-              <a href="<?= $this->imageUrl; ?> " <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+              <a href="<?= $this->singleSRC; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
             <?php elseif ($this->href): ?>
               <a href="<?= $this->href; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl">
             <?php endif; ?> 

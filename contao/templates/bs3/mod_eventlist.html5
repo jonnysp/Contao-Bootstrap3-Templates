@@ -8,7 +8,6 @@
 	<?php endif; ?>
 	<hr>
 
-
 	<?= $this->events; ?>
 	<?= $this->pagination; ?>
 
