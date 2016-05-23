@@ -9,8 +9,15 @@
   <?php endif; ?>
 
 
+
+
+
+
       <?php if ($this->message): ?>
-        <div class="<?= $this->mclass; ?>"><?= $this->message; ?></div>
+        <div class="alert <?php if(strpos($this->mclass,'error') !== false): ?> alert-danger <?php elseif(strpos($this->mclass,'confirm') !== false): ?> alert-success <?php else: ?> alert-warning <?php endif; ?> <?= $this->mclass; ?>"><?= $this->message; ?>
+        	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        	
+        </div>
       <?php endif; ?>
 
   <form class="form-horizontal" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="<?= $this->formId; ?>" method="post">
@@ -26,10 +33,11 @@
       <?php endif; ?>
 
 
-	<div class="form-group">
+	<div class="form-group has-feedback">
 	    <label for="ctrl_email_<?= $this->id; ?>" class="col-sm-3 control-label"><?= $this->emailLabel; ?></label>
 	    <div class="col-sm-9">
 	       <input type="text" name="email" id="ctrl_email_<?= $this->id; ?>" class="form-control"  value="<?= $this->email; ?>" placeholder="<?= $this->emailLabel; ?>">
+	       <span class="glyphicon glyphicon-envelope form-control-feedback" ></span>
 	    </div>
 	</div>
 
