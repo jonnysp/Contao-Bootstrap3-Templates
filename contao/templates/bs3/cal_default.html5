@@ -1,5 +1,3 @@
-
-
 <div class="table-responsive">
 	<table class="table">
 		<caption class="text-center lead"><?= $this->current; ?></caption>
@@ -17,22 +15,19 @@
 			      <?php foreach ($week as $day): ?>
 
 			        <td<?php if (!strpos($day['class'], 'weekend') === false ): ?> class="active" <?php endif; ?>>
-			         
 						<?php if ($day['href']): ?>
-							<button data-trigger="focus" class="btn btn-primary btn-xs pop" data-container="body"  data-toggle="popover" data-html="true" data-id="#event-<?= $day['label']; ?>" title="<?= $day['title']; ?>" data-placement="top" ><?= $day['label']; ?></button >
-
-						<div id="event-<?= $day['label']; ?>" class="hidden">
-							<?php foreach ($day['events'] as $event): ?>
-								<div class="event cal_<?= $event['parent']; ?> <?= $event['class']; ?>">
-									<a href="<?= $event['href']; ?>" title="<?= $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?= $event['time']; endif; ?>)"<?= $event['target']; ?>><?= $event['link']; ?></a>
-								</div>
-							<?php endforeach; ?>
-						</div>
-
+							<button data-trigger="focus" class="btn btn-primary btn-xs pop" data-container="body"  data-toggle="popover" data-html="true" data-id="#event-<?= $day['label']; ?>-content" data-title="#event-<?= $day['label']; ?>-title" data-placement="top" ><?= $day['label']; ?></button >
+							<div id="event-<?= $day['label']; ?>-title" class="hidden"><a href="<?= $day['href']; ?>"><?= $day['title']; ?></a></div>
+							<div id="event-<?= $day['label']; ?>-content" class="hidden">
+								<?php foreach ($day['events'] as $event): ?>
+									<div class="event cal_<?= $event['parent']; ?> <?= $event['class']; ?>">
+										<a href="<?= $event['href']; ?>" title="<?= $event['title']; ?> (<?php if ($event['day']): echo $event['day']; ?>, <?php endif; echo $event['date']; if ($event['time']): ?>, <?= $event['time']; endif; ?>)"<?= $event['target']; ?>><?= $event['link']; ?></a>
+									</div>
+								<?php endforeach; ?>
+							</div>
 						<?php else: ?>
 							<?= $day['label']; ?>
 						<?php endif; ?>
-
 			        </td>
 			      <?php endforeach; ?>
 			    </tr>
@@ -45,6 +40,9 @@
 $(function() { $('[data-toggle=popover]').popover({
     content: function() {
           return $($(this).data("id")).html();
+        },
+    title: function() {
+          return $($(this).data("title")).html();
         }
 }) });
 </script>
