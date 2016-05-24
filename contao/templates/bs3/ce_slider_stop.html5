@@ -2,7 +2,7 @@
 
 </div>
 
-
+<!-- indexer::stop -->
 	<!-- Controls -->
 	<div class="text-center">
 		<div class="btn-group" role="group" aria-label="...">
@@ -10,5 +10,6 @@
 			<a class="btn btn-default" title="<?= $this->next; ?>" href="#ce_slider" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		</div>
 	</div>
+<!-- indexer::continue -->
 
 </div>

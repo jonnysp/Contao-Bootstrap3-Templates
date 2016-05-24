@@ -5,15 +5,16 @@
       <?= $this->teaser; ?>
  	</div>
 
+<!-- indexer::stop -->
  	<nav>
-        <ul class="pager">
-          <li class="next">
-            <a href="<?= $this->href ?>" title="<?= $this->readMore ?>">
-             	<?= $this->more; ?>
-            </a>
-          </li>
-        </ul>
-    </nav>
-
+    <ul class="pager">
+      <li class="next">
+        <a href="<?= $this->href ?>" title="<?= $this->readMore ?>">
+         	<?= $this->more; ?>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<!-- indexer::continue -->
    
 </article>
