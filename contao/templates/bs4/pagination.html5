@@ -1,35 +1,36 @@
 <!-- indexer::stop -->
-<div class="text-center">
-
+<div class="text-xs-center">
+<nav>
   <ul class="pagination">
     <?php if ($this->hasFirst): ?>
-      <li class="first"><a href="<?= $this->first['href']; ?>" class="first" title="<?= $this->first['title']; ?>"><span class="glyphicon glyphicon-fast-backward"></span></a></li>
+      <li class="page-item"><a href="<?= $this->first['href']; ?>" class="page-link" title="<?= $this->first['title']; ?>">&#x2770;</a></li>
     <?php endif; ?>
 
     <?php if ($this->hasPrevious): ?>
-      <li class="previous"><a href="<?= $this->previous['href']; ?>" class="previous" title="<?= $this->previous['title']; ?>"><span class="glyphicon glyphicon-backward"></span></a></li>
+      <li class="page-item"><a href="<?= $this->previous['href']; ?>" class="page-link" title="<?= $this->previous['title']; ?>">&#x276C;</a></li>
     <?php endif; ?>
 
     <?php foreach ($this->pages as $page):  ?>
       <?php if($page['href'] != ''): ?>
-        <li><a class="link" title="<?= $page['title']; ?>" href="<?= $page['href']; ?>"> <?= $page['page']; ?> </a></li>
+        <li class="page-item"><a class="page-link" title="<?= $page['title']; ?>" href="<?= $page['href']; ?>"> <?= $page['page']; ?> </a></li>
       <?php else: ?>
-        <li class="active"><span><?= $page['page']; ?></span></li>
+<li class="page-item active"><span class="page-link"><?= $page['page']; ?></span></li>
       <?php endif; ?>
     <?php endforeach; ?>
 
     <?php //echo $this->items; ?>
 
     <?php if ($this->hasNext): ?>
-      <li class="next"><a href="<?= $this->next['href']; ?>" class="next" title="<?= $this->next['title']; ?>"><span class="glyphicon glyphicon-forward"></span></a></li>
+      <li class="page-item"><a href="<?= $this->next['href']; ?>" class="page-link" title="<?= $this->next['title']; ?>">&#x276D;</a></li>
     <?php endif; ?>
 
     <?php if ($this->hasLast): ?>
-      <li class="last"><a href="<?= $this->last['href']; ?>" class="last" title="<?= $this->last['title']; ?>"><span class="glyphicon glyphicon-fast-forward"></span></a></li>
+      <li class="page-item"><a href="<?= $this->last['href']; ?>" class="page-link" title="<?= $this->last['title']; ?>">&#x2771;</a></li>
     <?php endif; ?>
   </ul>
   <p><?= $this->total; ?></p>
 </div>
+</nav>
 <!-- indexer::continue -->
 
 
