@@ -1,0 +1,27 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+  <?php endif; ?>
+  
+			<figure class="img-thumbnail <?= $this->floatClass; ?>" <?php if ($this->margin): ?> style="<?= $this->margin; ?>"<?php endif; ?>>
+				<?php if ($this->href): ?>
+					<a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+				<?php endif; ?>
+				
+				<img class="img-fluid" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+				
+				<?php if ($this->href): ?>
+					</a>
+				<?php endif; ?>
+				<?php if ($this->caption): ?>
+					<div class="caption" style="margin:5px 0 4px 0;text-align:center;"><?= $this->caption; ?></div>
+				<?php endif; ?>
+			</figure>
+
+</div>
+<?php $this->endblock(); ?>

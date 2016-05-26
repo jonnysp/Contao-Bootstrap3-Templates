@@ -1,0 +1,19 @@
+<?php $this->extend('form_row'); ?>
+
+<?php $this->block('label'); ?>
+	<?php if (!$this->tableless): ?>
+		<label class="col-sm-4 form-control-label <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>"></label>
+	<?php endif; ?>
+<?php $this->endblock(); ?>
+
+
+<?php $this->block('field'); ?>
+
+  <?php if ($this->src): ?>
+    <input type="image" src="<?= $this->src; ?>" id="ctrl_<?= $this->id; ?>" class="submit<?php if ($this->class) echo ' ' . $this->class; ?>" title="<?= specialchars($this->slabel); ?>" alt="<?= specialchars($this->slabel); ?>"<?= $this->getAttributes(); ?>>
+  <?php else: ?>
+    <input type="submit" id="ctrl_<?= $this->id; ?>" class="btn btn-default <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= specialchars($this->slabel); ?>"<?= $this->getAttributes(); ?>>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+

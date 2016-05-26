@@ -1,0 +1,69 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+	<div class="item card <?= $this->class  ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+		  
+
+		<?php if ($this->headline): ?>
+				<<?= $this->hl; ?> class="card-header"><?= $this->headline; ?></<?= $this->hl; ?>>
+		<?php endif; ?>	  
+
+
+
+		<div class="card-block">
+
+
+				<?php 
+					if(strpos($this->floatClass, 'float_left') !== false ){
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+					}elseif(strpos($this->floatClass, 'float_right') !== false ){
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+					}else{
+						$this->floatClass = 'col-xs-12';
+					}
+				?>	
+				
+				<div class="row">
+
+				<?php if (!$this->addBefore): ?>
+		
+				    	<div class="col-md-12 card-text" style="float:none;"><?= $this->text; ?></div>
+			
+				<?php endif; ?>
+
+				  <?php if ($this->addImage): ?>
+				  <div class="<?= $this->floatClass; ?>" style="z-index:1;" >
+				    <figure class="figure img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+				     
+				      <?php if ($this->href): ?>
+				        <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+				      <?php endif; ?>
+
+				      <img itemprop="thumbnailUrl" class="figure-img img-fluid" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+				     
+				      <?php if ($this->href): ?>
+				        </a>
+				      <?php endif; ?>
+
+				      <?php if ($this->caption): ?>
+				        <figcaption itemprop="caption" class="figure-caption text-xs-center"><?= $this->caption; ?></figcaption>
+				      <?php endif; ?>
+				    </figure>
+				    
+				  </div> 
+				  
+				  <?php endif; ?>
+				
+				  <?php if ($this->addBefore): ?>
+			
+				    	<div class="col-md-12 card-text" style="float:none;"><?= $this->text; ?></div>
+			
+				  <?php endif; ?>
+
+				</div>
+
+		</div>	
+	</div>
+
+<?php $this->endblock(); ?>

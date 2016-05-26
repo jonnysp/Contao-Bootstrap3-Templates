@@ -1,0 +1,26 @@
+
+
+
+<?php if ($this->tableless): ?>
+
+  <div class="form-group <?php if ($this->hasErrors()): ?> has-error <?php elseif ($this->mandatory): ?> has-warning <?php endif; ?> <?= $this->prefix ?><?php if ($this->class) echo ' ' . $this->class; ?>">
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->block('field'); ?>
+    <?php $this->endblock(); ?>
+  </div>
+
+<?php else: ?>
+
+  <div class="form-group row<?php if ($this->hasErrors()): ?> has-error <?php elseif ($this->mandatory): ?> has-warning <?php endif; ?> <?= $this->rowClass ?>">
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+    
+    <div class="col-sm-8">
+      <?php $this->block('field'); ?>
+       <?php $this->endblock(); ?>
+    </div>
+  </div>
+
+<?php endif; ?>

@@ -1,0 +1,34 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+<div class="<?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+	   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+  <?php endif; ?>
+
+
+<nav>
+	  <ul class="pager">
+
+	    <?php if ($this->prevHref): ?>
+	      <li class="pager-prev"><a href="<?= $this->prevHref; ?>" title="<?= $this->prevPageTitle; ?>"> <?= $this->prevLink; ?></a></li>
+	    <?php endif; ?>
+
+	    <?php if ($this->upHref): ?>
+	      <li><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>">UP</a></li>
+	    <?php endif; ?>
+	
+	    <?php if ($this->nextHref): ?>
+	      <li class="pager-next"><a href="<?= $this->nextHref; ?>" title="<?= $this->nextPageTitle; ?>"><?= $this->nextLink; ?></a></li>
+	    <?php endif; ?>
+	    
+	  </ul>
+</nav>	  
+
+
+</div>
+
+<?php $this->endblock(); ?>

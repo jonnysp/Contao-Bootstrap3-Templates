@@ -1,0 +1,78 @@
+
+<!-- indexer::stop -->
+<div class="<?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+  <?php endif; ?>
+
+  <form <?= $this->tableless ? '':'class="form-horizontal"' ?> <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> id="<?= $this->formId; ?>" method="post" enctype="<?= $this->enctype; ?>">
+      <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId; ?>">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+
+      <?php if ($this->personal): ?>
+        <fieldset>
+          <legend><?= $this->personalData; ?></legend>
+          <?= implode('', $this->personal); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->address): ?>
+        <fieldset>
+          <legend><?= $this->addressDetails; ?></legend>
+         <?= implode('', $this->address); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->contact): ?>
+        <fieldset>
+          <legend><?= $this->contactDetails; ?></legend>
+          <?= implode('', $this->contact); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->login): ?>
+        <fieldset>
+          <legend><?= $this->loginDetails; ?></legend>
+          <?= implode('', $this->login); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->profile): ?>
+        <fieldset>
+          <legend><?= $this->profileDetails; ?></legend>
+          <?= implode('', $this->profile); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->newsletter): ?>
+        <fieldset>
+          <legend><?= $this->newsletterDetails; ?></legend>
+          <?= implode('', $this->newsletter); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->helpdesk): ?>
+        <fieldset>
+          <legend><?= $this->helpdeskDetails; ?></legend>
+          <?= implode('', $this->helpdesk); ?>
+        </fieldset>
+      <?php endif; ?>
+
+      <?php if ($this->captcha): ?>
+        <fieldset>
+          <legend><?= $this->captchaDetails; ?></legend>
+          <?= $this->captcha; ?>
+        </fieldset>
+      <?php endif; ?>
+
+	  <div class="form-group <?php if (!$this->tableless): ?>row<?php endif; ?>">
+	    <?php if (!$this->tableless): ?><div class="col-sm-offset-4 col-sm-8"><?php endif; ?>
+	      <input type="submit" class="btn btn-default" value="<?= $this->slabel; ?>">
+	    <?php if (!$this->tableless): ?></div><?php endif; ?>
+	  </div>
+
+  </form>
+
+</div>
+<!-- indexer::continue -->

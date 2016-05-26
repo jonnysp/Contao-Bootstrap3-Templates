@@ -1,0 +1,92 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if ($this->error): ?>
+  
+    <?= $this->error; ?>
+    
+  <?php else: ?>
+  		
+  	  <span class="text-muted pull-right"><?= $this->info; ?></span>
+
+      <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
+      
+      <div class="row">
+        <?php 
+          if(strpos($this->floatClass, 'float_left') !== false ){
+            $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+          }elseif(strpos($this->floatClass, 'float_right') !== false ){
+            $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+          }else{
+            $this->floatClass = 'col-xs-12';
+          }
+        ?>  
+  
+        <?php if (!$this->addBefore): ?>
+            <div class="col-xs-12" style="float:none;"><?= $this->answer; ?></div>
+        <?php endif; ?>
+        
+
+        <?php if ($this->addImage): ?>
+        <div class="<?= $this->floatClass; ?>" style="z-index:1;" >
+          <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+           
+            <?php if ($this->href): ?>
+              <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+            <?php endif; ?>
+
+            <img itemprop="thumbnailUrl" class="img-fluid" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+           
+            <?php if ($this->href): ?>
+              </a>
+            <?php endif; ?>
+
+            <?php if ($this->caption): ?>
+              <figcaption itemprop="caption" class="figure-caption text-xs-center" style="margin:5px 0 0 0;"><?= $this->caption; ?></figcaption>
+            <?php endif; ?>
+          </figure>
+          
+        </div> 
+        
+        <?php endif; ?>
+  
+      <?php if ($this->addBefore): ?>
+        <div class="col-xs-12" style="float:none;"><?= $this->answer; ?></div>
+      <?php endif; ?>
+    
+  </div>
+
+    <?php if ($this->enclosure): ?>
+      <div class="enclosure">
+        <?php foreach ($this->enclosure as $enclosure): ?>
+          <p><img src="<?= $enclosure['icon']; ?>" width="18" height="18" alt="<?= $enclosure['mime']; ?>" class="mime_icon"> <a href="<?= $enclosure['href']; ?>" title="<?= $enclosure['title']; ?>"><?= $enclosure['link']; ?> <span class="size">(<?= $enclosure['filesize']; ?>)</span></a></p>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
+
+    <!-- indexer::stop -->
+    <nav>
+      <ul class="pager">
+        <li class="pager-prev">
+          <a href="<?= $this->referer; ?>">
+            <?= $this->back; ?>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- indexer::continue -->
+  <?php endif; ?>
+
+	<hr>
+
+  <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
+    <div class="ce_comments block">
+      <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
+      <?= implode('', $this->comments); ?>
+      <?= $this->pagination; ?>
+      <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+    </div>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>

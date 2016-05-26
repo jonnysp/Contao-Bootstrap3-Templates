@@ -1,0 +1,32 @@
+
+<div class="<?= $this->class; ?>">
+
+	<span class="text-muted pull-right"><?= $this->url; ?><span class="filesize"> - <?= $this->filesize; ?> kB</span></span>
+	<span class="badge"><?= $this->relevance; ?></span>
+
+  	<h3><a href="<?= $this->href; ?>" title="<?= $this->title; ?>"><?= $this->link; ?></a> </h3>
+
+	<?php if ($this->context): ?>
+		<p class="context" style="text-align:justify;">
+		<?php 
+			$split = explode( ',',$this->matches);
+			foreach ($split as $value) {
+			 	$this->context = preg_replace('/'.$value.'/i', '<u>$0</u>', $this->context);
+			}
+			echo $this->context;
+		 ?>
+		</p>
+	<?php endif; ?>
+
+	<nav>
+		<ul class="pager">
+			<li class="pager-next">
+				<a href="<?= $this->href ?>" title="<?= $this->link ?> ">
+					<?= $GLOBALS['TL_LANG']['MSC']['more']; ?>
+				 </a>
+			</li>
+		</ul>
+	</nav>
+
+</div>
+<hr>

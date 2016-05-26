@@ -1,0 +1,85 @@
+<div class="event layout_full block<?= $this->class ?>">
+
+  <?php if ($this->location): ?>
+    <span class="text-muted pull-right "><span class="glyphicon glyphicon-map-marker"></span> <?= $this->locationLabel ?>: <?= $this->location ?></span>
+  <?php endif; ?> 
+
+  <time class="text-muted" datetime="<?= $this->datetime ?>">
+  <span class="glyphicon glyphicon-calendar"></span> <?= $this->date ?>
+  <?php if ($this->time): ?> <span class="glyphicon glyphicon-time"></span> <?= $this->time ?><?php endif; ?>
+  </time>
+
+  <?php if ($this->recurring): ?>
+    <p class="recurring"><?= $this->recurring ?><?php if ($this->until) echo ' ' . $this->until; ?>.</p>
+  <?php endif; ?>
+
+  <h2><?= $this->title ?></h2>
+
+  <?php if ($this->hasDetails): ?>
+    <?= $this->details ?>
+  <?php else: ?>
+
+        <div class="row">
+
+      <?php 
+        if(strpos($this->floatClass, 'float_left') !== false ){
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+        }elseif(strpos($this->floatClass, 'float_right') !== false ){
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+        }else{
+          $this->floatClass = 'col-xs-12';
+        }
+      ?>  
+      
+      <?php if (!$this->addBefore): ?>
+          <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
+      <?php endif; ?>
+      
+      <?php if ($this->addImage): ?>
+        <div class="<?= $this->floatClass; ?>" style="z-index:1;">
+          <figure class="figure img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+           
+            <?php if ($this->fullsize && !$this->imageUrl):  ?>
+              <a href="<?= $this->singleSRC; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?> <?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+            <?php elseif ($this->imageUrl):  ?> 
+              <a href="<?= $this->imageUrl; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?> <?= $this->attributes; ?> itemprop="contentUrl">
+            <?php elseif ($this->href): ?>
+              <a href="<?= $this->href; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?> <?= $this->attributes; ?> itemprop="contentUrl">
+            <?php endif; ?> 
+
+            <img itemprop="thumbnailUrl" class="img-fluid" src="<?= $this->src; ?>" <?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+           
+            <?php if (($this->href) || ($this->fullsize && !$this->imageUrl) || ($this->imageUrl)): ?>
+              </a>
+            <?php endif; ?>
+
+            <?php if ($this->caption): ?>
+              <figcaption itemprop="caption" class="figure-caption text-xs-center" style="margin:5px 0 0 0;"><?= $this->caption; ?></figcaption>
+            <?php endif; ?>
+          </figure>
+          
+        </div> 
+        
+      <?php endif; ?>
+      
+      <?php if ($this->addBefore): ?>
+          <div class="col-xs-12" style="float:none;"><?= $this->teaser; ?></div>
+      <?php endif; ?>
+
+    </div>
+
+
+  <?php endif; ?>
+
+
+
+  <?php if ($this->enclosure): ?>
+    <div class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <p><?= Image::getHtml($enclosure['icon'], '', 'class="mime_icon"') ?> <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a></p>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+
+</div>
+<hr>

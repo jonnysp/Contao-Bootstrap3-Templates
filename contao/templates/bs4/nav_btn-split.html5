@@ -1,0 +1,35 @@
+
+<?php if ($this->level == 'level_1'): ?>
+
+	  <?php foreach ($this->items as $item): ?>
+	     <div class="btn-group">
+	      <a class="btn btn-secondary <?= str_replace("trail","active", $item['class']); ?>" href="<?= $item['href']; ?>" title="<?= $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>" <?php if ($item['accesskey'] != ''): ?> accesskey="<?= $item['accesskey']; ?>"<?php endif; ?> <?php if ($item['tabindex']): ?> tabindex="<?= $item['tabindex']; ?>"<?php endif; ?> <?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?= $item['target']; ?> itemprop="url">
+	      	<span itemprop="name"><?= $item['link'] ?></span>
+	      </a>
+	      
+	      <?php if ($item['subpages'] > 0): ?>
+	      	 <button type="button" class="btn btn-secondary dropdown-toggle <?= str_replace("trail","active", $item['class']); ?>" data-toggle="dropdown">
+			    <span class="caret"></span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			 </button>
+	      <?php endif; ?>
+
+     	  <?= $item['subitems']; ?>
+
+		 </div>
+	  <?php endforeach; ?>
+
+<?php else: ?>
+	
+	<div class="<?= $this->level; ?> dropdown-menu">	 	  
+		  <?php foreach ($this->items as $item): ?>
+
+			     <a href="<?= $item['href']; ?>" title="<?= $item['pageTitle'] ? $item['pageTitle'] : $item['title']; ?>" class="dropdown-item <?= str_replace("trail","active", $item['class']); ?> <?php if ($item['class']): ?> <?= $item['class']; ?><?php endif; ?>"<?php if ($item['accesskey'] != ''): ?> accesskey="<?= $item['accesskey']; ?>"<?php endif; ?><?php if ($item['tabindex']): ?> tabindex="<?= $item['tabindex']; ?>"<?php endif; ?><?php if ($item['nofollow']): ?> rel="nofollow"<?php endif; ?><?= $item['target']; ?> itemprop="url">
+			     	<span itemprop="name"><?= $item['link'] ?></span>
+			     </a>
+		  <?php endforeach; ?> 
+	</div>	
+
+<?php endif; ?>
+
+

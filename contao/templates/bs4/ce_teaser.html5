@@ -1,0 +1,19 @@
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+	<?php if ($this->headline): ?>
+		<h1><?= $this->headline; ?></h1>
+	<?php endif; ?>
+
+	<?= $this->text; ?>
+
+	<nav>
+	    <ul class="pager">
+	      <li class="pager-next">
+	        <a href="<?= $this->href ?>" title="<?= $this->readMore ?>">
+	         	<?= $this->more; ?>
+	        </a>
+	      </li>
+	    </ul>
+	</nav>
+  
+</div>

@@ -1,0 +1,26 @@
+
+<!-- indexer::stop -->
+<nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar navbar-light bg-faded <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+
+		<div class="collapse navbar-collapse" id="navbar-collapse_<?= $this->id; ?>">
+			<div class="container">
+			<ul class="nav navbar-nav">
+				<?= $this->items; ?>
+			</ul>
+		</div>		
+		</div>
+
+	<div class="container">
+	    <div class="navbar-header">
+     	     		<button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#navbar-collapse_<?= $this->id; ?>">&#9776;</button>
+
+	
+		  <?php if ($this->headline): ?>
+		    <a class="navbar-brand" href="#"><?= $this->headline; ?></a>
+		  <?php endif; ?> 
+	    </div>
+	
+
+	</div>
+</nav>
+<!-- indexer::continue -->

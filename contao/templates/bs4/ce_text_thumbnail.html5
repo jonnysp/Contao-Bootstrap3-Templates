@@ -1,0 +1,48 @@
+<?php $this->extend('block_searchable'); ?>
+<?php $this->block('content'); ?>
+
+	<div class="card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+		
+		<?php if (!$this->addBefore): ?>
+			<div class="card-block">
+							
+				<?php if ($this->headline): ?>
+					<<?= $this->hl; ?> itemprop="caption" class="card-title"><?= $this->headline; ?></<?= $this->hl; ?>>
+				<?php endif; ?>
+					
+				<div itemprop="description" class="card-text"><?= $this->text; ?></div>
+					
+				<?php if ($this->href): ?>
+					<p class="card-text"><a itemprop="contentUrl" class="btn btn-secondary" href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+						<?= $this->caption; ?>
+					</a></p>
+				<?php endif; ?>
+
+			</div>
+		<?php endif; ?>
+			
+		
+
+		<img itemprop="thumbnailUrl" class="<?php if ($this->addBefore): ?> card-img-top <?php elseif (!$this->addBefore):?> card-img-bottom<?php endif;?> img-fluid" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+			     
+		<?php if ($this->addBefore): ?>
+			<div class="card-block">
+
+				<?php if ($this->headline): ?>
+					<<?= $this->hl; ?> itemprop="caption"><?= $this->headline; ?></<?= $this->hl; ?>>
+				<?php endif; ?>
+					
+				<div itemprop="description"><?= $this->text; ?></div>
+					
+				<?php if ($this->href): ?>
+					<p><a itemprop="contentUrl" class="btn btn-secondary" href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
+						<?= $this->caption; ?>
+					</a></p>
+				<?php endif; ?>
+
+			</div>
+		<?php endif; ?>
+		
+	</div>
+
+<?php $this->endblock(); ?>

@@ -1,0 +1,35 @@
+
+<form class="form-horizontal" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> method="get">
+
+    <?php if ($this->id): ?>
+      <input type="hidden" name="id" value="<?= $this->id; ?>">
+    <?php endif; ?>
+
+	<div class="form-group row">
+		<label class="col-sm-4 control-label" for="ctrl_keywords_<?= $this->uniqueId; ?>"><?= $this->keywordLabel; ?></label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId; ?>" class="form-control" value="<?= $this->keyword; ?>">
+				<span class="input-group-btn">
+					    <input type="submit" id="ctrl_submit_<?= $this->uniqueId; ?>" class="btn btn-default" value="<?= $this->search; ?>">
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<fieldset>
+		<legend class="hidden"><?= $this->optionsLabel; ?></legend>
+			<div class="form-group row">
+			    <div class="col-sm-offset-4 col-sm-8">
+					<label class="radio-inline" for="matchAll_<?= $this->uniqueId; ?>">
+					  <input type="radio" name="query_type" id="matchAll_<?= $this->uniqueId; ?>" value="and"<?php if ($this->queryType == 'and'): ?> checked="checked"<?php endif; ?>> <?= $this->matchAll; ?>
+					</label>
+					
+					<label class="radio-inline" for="matchAny_<?= $this->uniqueId; ?>">
+					  <input type="radio" name="query_type" id="matchAny_<?= $this->uniqueId; ?>" value="or"<?php if ($this->queryType == 'or'): ?> checked="checked"<?php endif; ?>> <?= $this->matchAny; ?>
+					</label>
+			    </div>
+			</div>
+	</fieldset>   
+
+</form>

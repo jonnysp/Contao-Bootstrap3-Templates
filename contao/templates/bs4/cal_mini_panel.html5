@@ -1,0 +1,39 @@
+
+<div class="item card <?= $this->class; ?>">
+  <div class="card-header text-xs-center">
+ 	<?php if ($this->nextHref): ?><a class="pull-xs-right" href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>">&#x2771;</a><?php endif; ?> 
+	<?php if ($this->prevHref): ?><a class="pull-xs-left" href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>">&#x2770;</a><?php endif; ?>
+  	<?= $this->current; ?>
+  </div>
+	<div class="table-responsive">  
+		<table class="table table-sm">
+			<thead>
+			  <tr>
+			    <?php foreach ($this->days as $i=>$day): ?>
+			      <th class="text-xs-center <?= $day['class']; ?> <?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= utf8_substr($day['name'], 0, $this->substr); ?><span class="invisible"><?= utf8_substr($day['name'], $this->substr); ?></span></th>
+			    <?php endforeach; ?>
+			  </tr>
+			</thead>
+	
+			<tbody class="text-xs-center">
+			  <?php foreach ($this->weeks as $class=>$week): ?>
+			    <tr class="<?= $class; ?>">
+			      <?php foreach ($week as $day): ?>
+			        <?php if ($day['href']): ?>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="btn btn-primary btn-sm" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
+			        <?php else: ?>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= $day['label']; ?></td>
+			        <?php endif; ?>
+			      <?php endforeach; ?>
+			    </tr>
+			  <?php endforeach; ?>
+			</tbody>
+		
+		</table>
+	</div>
+</div>
+
+
+
+
+

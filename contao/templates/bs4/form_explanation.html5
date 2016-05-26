@@ -1,0 +1,16 @@
+
+<?php if ($this->tableless): ?>
+
+  <div class="form-group <?= $this->prefix ?> explanation">
+    <span class="help-block"><?= $this->generate() ?></span>
+  </div>
+
+<?php else: ?>
+
+  <div class="form-group row <?= $this->rowClass ?>">
+    <div class="col-sm-offset-4 col-sm-8 explanation">
+    	<span class="help-block"><?= $this->generate() ?></span>
+    </div>
+  </div>
+
+<?php endif; ?>
