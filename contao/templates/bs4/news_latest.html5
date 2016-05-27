@@ -3,11 +3,11 @@
 
 
 	<?php if ($this->hasMetaFields): ?>	
-		<span class="text-muted pull-xs-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
+		<span class="text-muted pull-xs-right"><?php if($this->author): ?> &#128100; <?= $this->author; ?><?php endif; ?> &#x2709; <?= $this->commentCount; ?></span>
 	<?php endif; ?>	
 
 	    <time class="text-muted" datetime="<?= $this->datetime; ?>">
-	    <span class="glyphicon glyphicon-time"></span>
+	    &#128336;
 	    <?php if($this->date): ?>
 	    	<?= $this->date; ?>
 	    <?php else: ?>	
@@ -16,7 +16,7 @@
 	    </time> 
 
 
-		<h2><?php if($this->featured) :?><span class="glyphicon glyphicon-star text-warning"></span> <?php endif ?>
+		<h2><?php if($this->featured) :?><span class="text-warning">&bigstar;</span> <?php endif ?>
 			<?= $this->newsHeadline; ?><br>
 			<?php if ($this->hasSubHeadline): ?>
 				<small ><?= $this->subHeadline; ?></small>

@@ -6,7 +6,7 @@
 	</div>
 	<div class="media-body">
 		<span class="text-muted pull-xs-right"><time datetime="<?= $this->datetime; ?>"><?= $this->date; ?></time></span>
-		<h4 class="media-heading">Eintrag von <?= $this->name; ?> <?php if ($this->website): ?><a href="<?= $this->website; ?>" rel="nofollow" target="_blank"><span class="glyphicon glyphicon-link"></span></a><?php endif; ?></h4>
+		<h4 class="media-heading">Eintrag von <?= $this->name; ?> <?php if ($this->website): ?><a href="<?= $this->website; ?>" rel="nofollow" target="_blank">&#128279; </a><?php endif; ?></h4>
 		<?= $this->comment; ?>
 
 

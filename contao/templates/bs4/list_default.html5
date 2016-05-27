@@ -84,7 +84,7 @@
         <?php if ($this->details): ?>
         
           <?php if ($col['details']): ?>
-            <td class="<?= $this->col_last; ?> col_last text-center"><a href="<?= $col['url']; ?>"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+            <td class="<?= $this->col_last; ?> col_last text-xs-center"><a href="<?= $col['url']; ?>"><span class="glyphicon glyphicon-info-sign"></span></a></td>
           <?php else: ?>
             <td class="<?= $this->col_last; ?> col_last">&nbsp;</td>
           <?php endif; ?>

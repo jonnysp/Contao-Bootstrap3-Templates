@@ -2,14 +2,14 @@
 
 <?php $this->block('content'); ?>
 
-<div class="panel panel-default">
-  <div class="panel-heading text-center">
- 	<?php if ($this->nextHref): ?><a class="pull-xs-right" href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
-	<?php if ($this->prevHref): ?><a class="pull-xs-left" href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>
+<div class="card">
+  <div class="card-header text-xs-center">
+ 	<?php if ($this->nextHref): ?><a class="pull-xs-right" href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>">&#10097;</a><?php endif; ?> 
+	<?php if ($this->prevHref): ?><a class="pull-xs-left" href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>">&#10096; </a><?php endif; ?>
   	<?= $this->current; ?>
   </div>
 	<div class="table-responsive">  
-		<table class="table table-condensed">
+		<table class="table table-sm">
 			<thead>
 			  <tr>
 			     <?php foreach ($this->days as $day): ?>
@@ -18,7 +18,7 @@
 			  </tr>
 			</thead>
 	
-			<tbody class="text-center">
+			<tbody class="text-xs-center">
 			  <?php foreach ($this->weeks as $class=>$week): ?>
 			    <tr class="<?= $class; ?>">
 			      <?php foreach ($week as $day): ?>

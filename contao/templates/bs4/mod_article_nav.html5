@@ -7,7 +7,7 @@
     <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
   <?php endif; ?>
 
-	<div class="text-center">
+	<div class="text-xs-center">
 		
 		  <ul class="pagination">
 		    <?php if ($this->first): ?>

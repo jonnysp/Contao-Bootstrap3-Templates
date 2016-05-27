@@ -1,5 +1,5 @@
 <?php if ($this->header): ?>
-  <h3 class="header<?= $this->classHeader ?> text-center" >
+  <h3 class="header<?= $this->classHeader ?> text-xs-center" >
     <?php if ($this->firstDay): ?><span class="day"><?= $this->firstDay ?>, </span><?php endif; ?><span class="date"><?= $this->firstDate ?></span>
   </h3>
   <hr>

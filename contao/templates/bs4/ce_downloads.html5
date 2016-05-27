@@ -16,7 +16,7 @@
 			
 		<div class="col-xs-6 col-sm-4 col-md-3">
 		<div class="well" style="text-align:center;">
-		   <a href="<?= $file['href']; ?>" title="<?= $file['title']; ?>"><span class="glyphicon glyphicon-file" style="font-size:70px;"> </span><br><?= $file['link']; ?> <br/><span class="size">(<?= $file['filesize']; ?>)</span></a>
+		   <a href="<?= $file['href']; ?>" title="<?= $file['title']; ?>"> &#128194; <?= $file['link']; ?> <br/><span class="size">(<?= $file['filesize']; ?>)</span></a>
 		</div>
 		</div>
 

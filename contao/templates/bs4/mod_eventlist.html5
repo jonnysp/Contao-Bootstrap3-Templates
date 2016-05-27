@@ -4,7 +4,7 @@
 <div class="<?= $this->class;?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	 <?php if ($this->headline): ?>
-	   <<?= $this->hl; ?> class="text-center"><?= $this->headline; ?></<?= $this->hl; ?>>
+	   <<?= $this->hl; ?> class="text-xs-center"><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
 	<hr>
 
