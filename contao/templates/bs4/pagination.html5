@@ -3,11 +3,11 @@
 <nav>
   <ul class="pagination">
     <?php if ($this->hasFirst): ?>
-      <li class="page-item"><a href="<?= $this->first['href']; ?>" class="page-link" title="<?= $this->first['title']; ?>">&#x2770;</a></li>
+      <li class="page-item"><a href="<?= $this->first['href']; ?>" class="page-link" title="<?= $this->first['title']; ?>">&laquo;</a></li>
     <?php endif; ?>
 
     <?php if ($this->hasPrevious): ?>
-      <li class="page-item"><a href="<?= $this->previous['href']; ?>" class="page-link" title="<?= $this->previous['title']; ?>">&#x276C;</a></li>
+      <li class="page-item"><a href="<?= $this->previous['href']; ?>" class="page-link" title="<?= $this->previous['title']; ?>">&lsaquo;</a></li>
     <?php endif; ?>
 
     <?php foreach ($this->pages as $page):  ?>
@@ -21,11 +21,11 @@
     <?php //echo $this->items; ?>
 
     <?php if ($this->hasNext): ?>
-      <li class="page-item"><a href="<?= $this->next['href']; ?>" class="page-link" title="<?= $this->next['title']; ?>">&#x276D;</a></li>
+      <li class="page-item"><a href="<?= $this->next['href']; ?>" class="page-link" title="<?= $this->next['title']; ?>">&rsaquo;</a></li>
     <?php endif; ?>
 
     <?php if ($this->hasLast): ?>
-      <li class="page-item"><a href="<?= $this->last['href']; ?>" class="page-link" title="<?= $this->last['title']; ?>">&#x2771;</a></li>
+      <li class="page-item"><a href="<?= $this->last['href']; ?>" class="page-link" title="<?= $this->last['title']; ?>">&raquo;</a></li>
     <?php endif; ?>
   </ul>
   <p><?= $this->total; ?></p>

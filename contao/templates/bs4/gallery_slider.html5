@@ -16,7 +16,7 @@
 		<div class="carousel-inner" itemscope itemtype="http://schema.org/ImageGallery"> 
 			<?php foreach ($this->body as $class=>$row): ?>
 				<?php $this->counter += 1; ?>   
-				<div class="item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
+				<div class="carousel-item <?php if ($this->counter == 1): echo 'active'; endif; ?>">
 
 					<?php $this->currentrowcount = 0; ?>
 					<?php foreach ($row as $col): ?>
@@ -28,15 +28,15 @@
 					<div class="row">
 						<?php foreach ($row as $col): ?>
 							<?php if ($col->addImage): ?>
-								<figure class="col-xs-<?= floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
-									<figcaption class="carousel-caption hidden-xs" itemprop="caption">
+								<div class="text-xs-center col-xs-<?= floor(12 / $this->currentrowcount) ; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+									<div class="carousel-caption hidden-xs" itemprop="caption">
 									    <?php if ($col->alt): ?> <h3><?= $col->alt ?></h3><?php endif; ?>
 									    <?php if ($col->caption): ?> <p><?= $col->caption ?></p><?php endif; ?>
-									</figcaption>
+									</div>
 									<?php if ($col->href): ?><a itemprop="contentURL" href="<?= $col->href; ?>" <?= $col->attributes; ?> data-title="<?= $col->alt; ?>" data-gallery="<?= $this->id ?>" title="<?= $col->alt; ?>" data-footer="<?= $col->caption; ?>"><?php endif; ?>
-										<img itemprop="thumbnailUrl" class="img-fluid" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">  
+										<img itemprop="thumbnailUrl" class="img-thumbnail img-fluid" src="<?= $col->src; ?>" alt="<?= $col->alt; ?>">  
 									<?php if ($col->href): ?> </a><?php endif; ?> 
-								</figure>
+								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
@@ -46,12 +46,14 @@
 
 		<!-- Carousel nav -->
 		<?php if (count($this->body) > 1) :?>
-		  <a class="left carousel-control" href="#Carousel<?= $this->id;?>" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left"></span>
-		  </a>
-		  <a class="right carousel-control" href="#Carousel<?= $this->id;?>" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right"></span>
-		  </a>
+			<a class="left carousel-control" href="#Carousel<?= $this->id;?>" role="button" data-slide="prev">
+			    <span class="icon-prev" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#Carousel<?= $this->id;?>" role="button" data-slide="next">
+			    <span class="icon-next" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			</a>
 		<?php endif; ?>
 
 	</div>

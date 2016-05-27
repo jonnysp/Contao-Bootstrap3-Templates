@@ -2,13 +2,13 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<div class="carousel-item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	<?php if ($this->headline): ?>
 		<<?= $this->hl; ?> class="page-header"><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
   
-	<?= implode('', $this->comments); ?>
+	<?= implode('<hr>', $this->comments); ?>
 	<?= $this->pagination; ?>
 	<?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
 

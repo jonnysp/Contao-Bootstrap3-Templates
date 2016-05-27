@@ -1,7 +1,7 @@
 
 <div class="<?= $this->class; ?>">
 
-	<span class="text-muted pull-right"><?= $this->url; ?><span class="filesize"> - <?= $this->filesize; ?> kB</span></span>
+	<span class="text-muted pull-xs-right"><?= $this->url; ?><span class="filesize"> - <?= $this->filesize; ?> kB</span></span>
 	<span class="badge"><?= $this->relevance; ?></span>
 
   	<h3><a href="<?= $this->href; ?>" title="<?= $this->title; ?>"><?= $this->link; ?></a> </h3>

@@ -3,7 +3,7 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="item clearfix <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="carousel-item clearfix <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
 	  <?php if ($this->headline): ?>
 	    <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
@@ -13,9 +13,9 @@
 
 				<?php 
 					if(strpos($this->floatClass, 'float_left') !== false ){
-						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-left';
 					}elseif(strpos($this->floatClass, 'float_right') !== false ){
-						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+						$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-right';
 					}else{
 						$this->floatClass = 'col-xs-12';
 					}

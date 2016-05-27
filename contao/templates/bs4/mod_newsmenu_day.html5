@@ -4,8 +4,8 @@
 
 <div class="panel panel-default">
   <div class="panel-heading text-center">
- 	<?php if ($this->nextHref): ?><a class="pull-right" href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
-	<?php if ($this->prevHref): ?><a class="pull-left" href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>
+ 	<?php if ($this->nextHref): ?><a class="pull-xs-right" href="<?= $this->nextHref; ?>" rel="nofollow" title="<?= $this->nextTitle; ?>"><span class="glyphicon glyphicon-chevron-right"></span></a><?php endif; ?> 
+	<?php if ($this->prevHref): ?><a class="pull-xs-left" href="<?= $this->prevHref; ?>" rel="nofollow" title="<?= $this->prevTitle; ?>"><span class="glyphicon glyphicon-chevron-left"></span></a><?php endif; ?>
   	<?= $this->current; ?>
   </div>
 	<div class="table-responsive">  
@@ -13,7 +13,7 @@
 			<thead>
 			  <tr>
 			     <?php foreach ($this->days as $day): ?>
-			      <th class="text-center"><?= utf8_substr($day, 0, 2); ?></th>
+			      <th class="text-xs-center"><?= utf8_substr($day, 0, 2); ?></th>
 			    <?php endforeach; ?>
 			  </tr>
 			</thead>
@@ -23,7 +23,7 @@
 			    <tr class="<?= $class; ?>">
 			      <?php foreach ($week as $day): ?>
 			        <?php if ($day['href']): ?>
-			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="btn btn-primary btn-xs" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
+			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><a class="btn btn-primary btn-sm" href="<?= $day['href']; ?>" title="<?= $day['title']; ?>"><?= $day['label']; ?></a></td>
 			        <?php else: ?>
 			          <td class="<?php if (!strpos($day['class'], 'weekend') === false ): echo 'active'; endif ?>"><?= $day['label']; ?></td>
 			        <?php endif; ?>

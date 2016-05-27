@@ -27,7 +27,7 @@
 
 
 	<div class="form-group row">
-	    <label for="ctrl_email_<?= $this->id; ?>" class="col-sm-3 control-label"><?= $this->emailLabel; ?></label>
+	    <label for="ctrl_email_<?= $this->id; ?>" class="col-sm-3 form-control-label"><?= $this->emailLabel; ?></label>
 	    <div class="col-sm-9">
 	       <input type="text" name="email" id="ctrl_email_<?= $this->id; ?>" class="form-control"  value="<?= $this->email; ?>" placeholder="<?= $this->emailLabel; ?>">
 	    </div>
@@ -38,8 +38,10 @@
 			    <label class="col-sm-3 control-label" for="ctrl_channels_<?= $this->id; ?>"><?= $this->channelsLabel; ?></label>
 			    <div id="ctrl_channels_<?= $this->id; ?>" class="col-sm-9 checkbox_container">
 			          <?php foreach ($this->channels as $id=>$title): ?>
-						<label class="checkbox-inline" for="opt_<?= $this->id; ?>_<?= $id; ?>">        
-						  <input type="checkbox" name="channels[]" id="opt_<?= $this->id; ?>_<?= $id; ?>" value="<?= $id; ?>"> <?= $title; ?>
+						<label class="c-input c-checkbox" for="opt_<?= $this->id; ?>_<?= $id; ?>">        
+						  	<input type="checkbox" name="channels[]" id="opt_<?= $this->id; ?>_<?= $id; ?>" value="<?= $id; ?>">
+						  	<span class="c-indicator"></span>
+						  	<?= $title; ?>
 						</label>      
 			          <?php endforeach; ?>
 			    </div>
@@ -49,7 +51,7 @@
 
 	 <div class="form-group row">
 	    <div class="col-sm-offset-3 col-sm-9">
-	       <input type="submit" name="submit"  class="btn btn-default" value="<?= $this->submit; ?>">
+	       <input type="submit" name="submit"  class="btn btn-primary" value="<?= $this->submit; ?>">
 	    </div>
 	  </div>
 

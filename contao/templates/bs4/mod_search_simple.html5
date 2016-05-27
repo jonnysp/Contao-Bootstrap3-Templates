@@ -6,12 +6,12 @@
     <?php endif; ?>
 
 	<div class="form-group row">
-		<label class="col-sm-4 control-label" for="ctrl_keywords_<?= $this->uniqueId; ?>"><?= $this->keywordLabel; ?></label>
+		<label class="col-sm-4 form-control-label" for="ctrl_keywords_<?= $this->uniqueId; ?>"><?= $this->keywordLabel; ?></label>
 		<div class="col-sm-8">
 			<div class="input-group">
 				<input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId; ?>" class="form-control" value="<?= $this->keyword; ?>">
 				<span class="input-group-btn">
-					    <input type="submit" id="ctrl_submit_<?= $this->uniqueId; ?>" class="btn btn-default" value="<?= $this->search; ?>">
+					    <input type="submit" id="ctrl_submit_<?= $this->uniqueId; ?>" class="btn btn-primary" value="<?= $this->search; ?>">
 				</span>
 			</div>
 		</div>

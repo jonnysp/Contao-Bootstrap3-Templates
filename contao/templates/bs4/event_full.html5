@@ -1,12 +1,12 @@
 <div class="event layout_full block<?= $this->class ?>">
 
   <?php if ($this->location): ?>
-    <span class="text-muted pull-right "><span class="glyphicon glyphicon-map-marker"></span> <?= $this->locationLabel ?>: <?= $this->location ?></span>
+    <span class="text-muted pull-xs-right "> &#128681; <?= $this->locationLabel ?>: <?= $this->location ?></span>
   <?php endif; ?> 
 
   <time class="text-muted" datetime="<?= $this->datetime ?>">
-  <span class="glyphicon glyphicon-calendar"></span> <?= $this->date ?>
-  <?php if ($this->time): ?> <span class="glyphicon glyphicon-time"></span> <?= $this->time ?><?php endif; ?>
+    &#x1F4C5; <?= $this->date ?>
+  <?php if ($this->time): ?> &#128336; <?= $this->time ?><?php endif; ?>
   </time>
 
   <?php if ($this->recurring): ?>
@@ -23,9 +23,9 @@
 
       <?php 
         if(strpos($this->floatClass, 'float_left') !== false ){
-          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-left';
         }elseif(strpos($this->floatClass, 'float_right') !== false ){
-          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+          $this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-right';
         }else{
           $this->floatClass = 'col-xs-12';
         }

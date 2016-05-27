@@ -14,7 +14,7 @@
     <?= $this->loggedInAs; ?><br />
     <?= $this->lastLogin; ?><br />
     
-	<input type="submit" class="btn btn-default" value="<?= $this->slabel; ?>" />
+	<input type="submit" class="btn btn-primary" value="<?= $this->slabel; ?>" />
 
   </form>
 

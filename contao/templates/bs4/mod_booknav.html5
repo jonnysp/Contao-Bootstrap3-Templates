@@ -18,7 +18,7 @@
 	    <?php endif; ?>
 
 	    <?php if ($this->upHref): ?>
-	      <li><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>">UP</a></li>
+	      <li><a href="<?= $this->upHref; ?>" title="<?= $this->upPageTitle; ?>">&#708;</a></li>
 	    <?php endif; ?>
 	
 	    <?php if ($this->nextHref): ?>

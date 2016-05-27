@@ -1,7 +1,7 @@
 <?php $this->extend('block_searchable'); ?>
 <?php $this->block('content'); ?>
 
-	<div class="card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+	<div class="carousel-item card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?> itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 		
 		<?php if (!$this->addBefore): ?>
 			<div class="card-block">

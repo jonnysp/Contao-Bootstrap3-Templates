@@ -3,7 +3,7 @@
 
 
 	<?php if ($this->hasMetaFields): ?>	
-		<span class="text-muted pull-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
+		<span class="text-muted pull-xs-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
 	<?php endif; ?>	
 
 	    <time class="text-muted" datetime="<?= $this->datetime; ?>">
@@ -28,9 +28,9 @@
 
 			<?php 
 				if(strpos($this->floatClass, 'float_left') !== false ){
-					$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-left';
+					$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-left';
 				}elseif(strpos($this->floatClass, 'float_right') !== false ){
-					$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-right';
+					$this->floatClass = 'col-lg-4 col-md-5 col-sm-6 col-xs-6 pull-xs-right';
 				}else{
 					$this->floatClass = 'col-xs-12';
 				}

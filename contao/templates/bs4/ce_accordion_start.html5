@@ -1,17 +1,15 @@
 
   
- <div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+ <div class="carousel-item card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
     
-    <div class="panel-heading" <?php if ($this->headlineStyle): ?> style="<?= $this->headlineStyle; ?>"<?php endif; ?>>
-      <h4 class="panel-title">
+    <div class="card-header" <?php if ($this->headlineStyle): ?> style="<?= $this->headlineStyle; ?>"<?php endif; ?>>
         <a data-toggle="collapse" data-parent="article" href="#accordion_<?= $this-id?>">
           <?= $this->headline; ?>
         </a>
-      </h4>
     </div>
     
     <div id="accordion_<?= $this-id?>" class="panel-collapse collapse">
-      <div class="panel-body">
+      <div class="card-block">
     
 
 

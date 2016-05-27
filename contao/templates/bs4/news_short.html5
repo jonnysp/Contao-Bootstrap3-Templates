@@ -2,7 +2,7 @@
 <div class="layout_short arc_<?= $this->archive->id; ?> block <?= $this->class; ?> ">
 	
 	<?php if ($this->hasMetaFields): ?>	
-		<span class="text-muted pull-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
+		<span class="text-muted pull-xs-right"><?php if($this->author): ?><span class="glyphicon glyphicon-user"></span> <?= $this->author; ?><?php endif; ?> <span class="glyphicon glyphicon-comment"></span> <?= $this->commentCount; ?></span>
 	<?php endif; ?>	
 
 	<time class="text-muted" datetime="<?= $this->datetime; ?>">

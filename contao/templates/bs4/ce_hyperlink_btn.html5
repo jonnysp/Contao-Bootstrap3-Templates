@@ -2,14 +2,14 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<div class="carousel-item" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	  <?php if ($this->headline): ?>
 		   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	  <?php endif; ?>
 
 	  <?= $this->embed_pre; ?>
-		<a href="<?= $this->href; ?>" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" title="<?= $this->linkTitle; ?>"<?= $this->attribute; ?><?= $this->target; ?>>
+		<a href="<?= $this->href; ?>" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-secondary '.$this->class ;  else: echo $this->class; endif ?>" title="<?= $this->linkTitle; ?>"<?= $this->attribute; ?><?= $this->target; ?>>
 		  <?= $this->link; ?>
 		</a>
 	  <?= $this->embed_post; ?>

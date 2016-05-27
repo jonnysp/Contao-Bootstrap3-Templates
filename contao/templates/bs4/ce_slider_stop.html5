@@ -4,10 +4,10 @@
 
 <!-- indexer::stop -->
 	<!-- Controls -->
-	<div class="text-center">
+	<div class="text-xs-center">
 		<div class="btn-group" role="group" aria-label="...">
-			<a class="btn btn-default" title="<?= $this->previous; ?>" href="#ce_slider" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-			<a class="btn btn-default" title="<?= $this->next; ?>" href="#ce_slider" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			<a class="btn btn-secondary" title="<?= $this->previous; ?>" href="#ce_slider" role="button" data-slide="prev">&lsaquo;</a>
+			<a class="btn btn-secondary" title="<?= $this->next; ?>" href="#ce_slider" role="button" data-slide="next">&rsaquo;</a>
 		</div>
 	</div>
 <!-- indexer::continue -->

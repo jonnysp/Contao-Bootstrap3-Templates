@@ -6,7 +6,7 @@
 	<?php endif; ?>
 
 	  <?php if ($this->per_page): ?>
-	      <form class="form-inline pull-right" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> method="get">
+	      <form class="form-inline pull-xs-right" <?php if ($this->action): ?> action="<?= $this->action; ?>"<?php endif; ?> method="get">
 	          <input type="hidden" name="order_by" value="<?= $this->order_by; ?>">
 	          <input type="hidden" name="sort" value="<?= $this->sort; ?>">
 	          <input type="hidden" name="search" value="<?= $this->search; ?>">
@@ -47,7 +47,7 @@
 					<div class="input-group">
 						<input type="text" name="for" id="ctrl_for"  class="form-control" value="<?= $this->for; ?>">
 						<span class="input-group-btn">
-							<input type="submit" class="btn btn-default" value="<?= $this->search_label; ?>">
+							<input type="submit" class="btn btn-secondary" value="<?= $this->search_label; ?>">
 						</span>
 					</div> 
 			</div>

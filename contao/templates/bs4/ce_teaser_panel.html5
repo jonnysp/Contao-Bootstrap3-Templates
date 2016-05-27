@@ -1,11 +1,11 @@
 
-<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<div class="carousel-item card <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
 	<?php if ($this->headline): ?>
-		<div class="panel-heading">
-			<<?= $this->hl; ?> class="panel-title"><?= $this->headline; ?></<?= $this->hl; ?>>
-		</div>
-	<?php endif; ?>
+		<div class="card-header">
+			<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+		</div>	
+	<?php endif; ?>	 
 	
 	<div class="panel-body">
 		<?= $this->text; ?>

@@ -2,7 +2,7 @@
 
 <?php $this->block('content'); ?>
 
-<div class="item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<div class="carousel-item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 
 	 <?= $this->v2warning; ?>
 

@@ -1,10 +1,12 @@
 <?php $this->extend('block_searchable'); ?>
 <?php $this->block('content'); ?>
-	<div class="item card <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="carousel-item card <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 	
-		<?php if ($this->headline): ?>
-			<<?= $this->hl; ?> class="card-header"><?= $this->headline; ?></<?= $this->hl; ?>>
-		<?php endif; ?>
+	<?php if ($this->headline): ?>
+		<div class="card-header">
+			<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+		</div>	
+	<?php endif; ?>	 
 		  
 	  <<?= $this->tag; ?> class="list-group list-group-flush">
 	    <?php foreach ($this->items as $item): ?>

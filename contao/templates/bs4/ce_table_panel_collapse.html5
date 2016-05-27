@@ -2,13 +2,15 @@
 
 <?php $this->block('content'); ?>
 
-	<div class="item card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<div class="carousel-item card <?= $this->class; ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 		
-		<<?= $this->hl; ?> class="card-header">
-			<a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
-				<?= $this->headline; ?>
-			</a>
-		</<?= $this->hl; ?>>
+		<div class="card-header">
+			<<?= $this->hl; ?> >
+				<a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
+					<?= $this->headline; ?>
+				</a>
+			</<?= $this->hl; ?>>
+		</div>
 		  
 				<div class="table-responsive panel-collapse collapse" id="collapse_<?= $this->id; ?>">
 					  <table id="<?= $this->id; ?>" class="table <?php if ($this->class): ?> <?= $this->class; ?><?php endif; ?> <?php if ($this->sortable): ?> sortable<?php endif; ?>">

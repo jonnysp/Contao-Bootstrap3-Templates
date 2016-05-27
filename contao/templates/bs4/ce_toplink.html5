@@ -1,7 +1,7 @@
 
 <!-- indexer::stop -->
-<div class="item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
-<a id="up" href="<?= $this->request; ?>#top" style="display:none;margin-top:-10px;" title="<?= $this->title; ?>" class="btn btn-default" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
+<div class="carousel-item <?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+<a id="up" href="<?= $this->request; ?>#top" style="display:none;margin-top:-10px;" title="<?= $this->title; ?>" class="btn btn-secondary" href="#">&#708;</a>
 </div>
 <!-- indexer::continue -->
 
