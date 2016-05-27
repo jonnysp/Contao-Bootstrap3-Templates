@@ -2,9 +2,9 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-     <label class="control-label <?php if (!$this->tableless): ?> col-sm-4 form-control-label<?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
+     <label class="control-label <?php if (!$this->tableless): ?> col-sm-4 form-control-label text-xs-right <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
       <?php if ($this->mandatory): ?>
-        <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
+        <?= $this->label; ?><span class="invisible"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>
         <?= $this->label; ?>
       <?php endif; ?>
@@ -18,9 +18,10 @@
 
 	<?php foreach ($this->getOptions() as $option): ?>
 
-		<label class="radio-inline" id="lbl_<?= $option['id']; ?>" for="opt_<?= $option['id']; ?>">
+		<label class="c-input c-radio" id="lbl_<?= $option['id']; ?>" for="opt_<?= $option['id']; ?>">
 		  <input type="radio" name="<?= $option['name']; ?>" id="opt_<?= $option['id']; ?>" value="<?= $option['value']; ?>"<?= $option['checked']; ?><?= $option['attributes']; ?>> 
-		  <?= $option['label']; ?>
+		  <span class="c-indicator"></span>
+      <?= $option['label']; ?>
 		</label> 
 
 	<?php endforeach; ?>
@@ -33,7 +34,7 @@
 
   <?php if ($this->addSubmit): ?>
   	<br>
-    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
+    <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning  <?php else: ?> btn-primary <?php endif; ?>" value="<?= $this->slabel; ?>">
   <?php endif; ?>
   
   

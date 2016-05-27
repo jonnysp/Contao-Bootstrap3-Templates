@@ -2,9 +2,9 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-     <label for="ctrl_<?= $this->id; ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 form-control-label<?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
+     <label for="ctrl_<?= $this->id; ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 form-control-label text-xs-right <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
       <?php if ($this->mandatory): ?>
-        <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
+        <?= $this->label; ?><span class="invisible"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>
         <?= $this->label; ?>
       <?php endif; ?>
@@ -17,13 +17,13 @@
 
 	<?php if ($this->addSubmit): ?>
  	<div class="input-group">
-  		<input style="padding:0px;overflow:hidden;" class="form-control" type="file" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="<?php if ($this->class) echo ' ' . $this->class; ?>"<?= $this->getAttributes(); ?>>
+  		<input style="padding:3.5px;overflow:hidden;" class="form-control" type="file" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="<?php if ($this->class) echo ' ' . $this->class; ?>"<?= $this->getAttributes(); ?>>
       <span class="input-group-btn">
-          <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn btn-default <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning <?php endif; ?>" value="<?= $this->slabel; ?>">
+          <input type="submit" id="ctrl_<?= $this->id; ?>_submit" class="btn <?php if ($this->hasErrors()): ?> btn-danger <?php elseif ($this->mandatory): ?> btn-warning  <?php else: ?> btn-primary <?php endif; ?>" value="<?= $this->slabel; ?>">
       </span>
     </div>
   <?php else : ?>
-      <input style="padding:0px;overflow:hidden;" class="form-control" type="file" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="<?php if ($this->class) echo ' ' . $this->class; ?>"<?= $this->getAttributes(); ?>>
+      <input style="padding:3.5px;overflow:hidden;" class="form-control" type="file" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="<?php if ($this->class) echo ' ' . $this->class; ?>"<?= $this->getAttributes(); ?>>
   <?php endif; ?>
 
   <?php if ($this->hasErrors()): ?>
