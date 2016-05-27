@@ -27,8 +27,8 @@
 				
 				<?php foreach ($months as $month): ?>
 				<a title="<?= $month['title']; ?>" href="<?= $this->url; ?>month=<?= $month['date']; ?>" class="list-group-item <?php if($month['isActive']): ?> active <?php endif; ?>">
-					<?php if ($this->showQuantity): ?> <span class="badge"><?= $month['quantity']; ?></span><?php endif; ?>
-					&#10097; <?= $month['link']; ?>
+					<?php if ($this->showQuantity): ?> <span class="pull-xs-right label label-default"><?= $month['quantity']; ?></span><?php endif; ?>
+					 <?= $month['link']; ?>
 				</a>
 				<?php endforeach; ?>
 				

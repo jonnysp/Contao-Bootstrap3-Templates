@@ -6,6 +6,7 @@
 		<span class="text-muted pull-xs-right"><?php if($this->author): ?> &#128100; <?= $this->author; ?><?php endif; ?> &#x2709; <?= $this->commentCount; ?></span>
 	<?php endif; ?>	
 
+
 	    <time class="text-muted" datetime="<?= $this->datetime; ?>">
 	    &#128336;
 	    <?php if($this->date): ?>
