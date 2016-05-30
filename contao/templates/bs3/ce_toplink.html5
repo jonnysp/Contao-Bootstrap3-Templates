@@ -2,7 +2,7 @@
 <!-- indexer::stop -->
 <nav class="<?= $this->class; ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
   <ul class="pager">
-    <li id="<?= $this->id ?>" style="display:none;"><a href="<?= $this->request; ?>#top" title="<?= $this->title; ?>">
+    <li id="toplink_<?= $this->id ?>" style="display:none;"><a href="<?= $this->request; ?>#top" title="<?= $this->title; ?>">
     <?php if($this->linkTitle == ''): ?>
 		<span class="glyphicon glyphicon-arrow-up"></span>
 	<?php else: ?>
@@ -18,12 +18,12 @@
 	$( document ).ready(function() {
 		$(window).scroll(function(){
 			if ($(this).scrollTop() > 10) {
-				$('#<?= $this->id ?>').fadeIn();
+				$('#toplink_<?= $this->id ?>').fadeIn();
 			} else {
-				$('#<?= $this->id ?>').fadeOut();
+				$('#toplink_<?= $this->id ?>').fadeOut();
 			}
 		});	
-		$('#<?= $this->id ?>').click(function(){
+		$('#toplink_<?= $this->id ?>').click(function(){
 			$('html, body').animate({scrollTop : 0},500);
 			return false;
 		});
