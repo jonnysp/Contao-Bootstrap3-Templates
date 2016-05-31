@@ -11,7 +11,10 @@
   <?php if (!empty($this->newsletters)): ?>
     <div class="list-group">
       <?php foreach($this->newsletters as $newsletter): ?>
-        <a class="list-group-item" href="<?= $newsletter['href']; ?>" title="<?= $newsletter['title']; ?>"> <span class="badge pull-right"><?= $newsletter['datim']; ?></span> <?= $newsletter['subject']; ?></a>
+        <a class="list-group-item" href="<?= $newsletter['href']; ?>" title="<?= $newsletter['title']; ?>"> 
+        <span class="badge pull-right"><?= $newsletter['datim']; ?></span> 
+        <span class="glyphicon glyphicon-envelope"> </span> <?= $newsletter['subject']; ?>
+        </a>
       <?php endforeach; ?>
     </div>
   <?php endif; ?>

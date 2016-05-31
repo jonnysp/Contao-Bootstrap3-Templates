@@ -1,0 +1,15 @@
+<!-- indexer::stop -->
+<div class="<?= $this->class ?> block" <?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+   <a style="margin-top:-10px;" class="pull-left" id="toplink_<?= $this->id ?>" href="<?= $this->request ?>#top" title="<?= $this->title ?>"> <span class="glyphicon glyphicon-triangle-top"> </span> <?= $this->label ?></a>
+  <hr style="margin-left: 10px;" >
+</div>
+
+<script>
+	$( document ).ready(function() {
+		$('#toplink_<?= $this->id ?>').click(function(){
+			$('html, body').animate({scrollTop : 0},500);
+			return false;
+		});
+	});
+</script>
+<!-- indexer::continue -->

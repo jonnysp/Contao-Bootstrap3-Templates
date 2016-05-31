@@ -2,6 +2,10 @@
 
 <?php $this->block('content'); ?>
 
+<style type="text/css">
+	 .panel-heading a .chevron:after { content: "\2212";} .panel-heading a.collapsed .chevron:after { content: "\002b";} 
+</style>
+
 	<div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?> <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
 		  
 
@@ -9,6 +13,7 @@
 				<<?= $this->hl; ?> class="panel-title">
 					<a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
 						<?= $this->headline; ?>
+						<span style="float:right" class="glyphicon chevron" ></span>
 					</a>
 				</<?= $this->hl; ?>>
 			</div>

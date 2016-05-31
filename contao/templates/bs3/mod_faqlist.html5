@@ -8,7 +8,7 @@
     
  	<div class="list-group <?= $category['class']; ?>">   
       <?php foreach ($category['items'] as $faq): ?>
-       	<a class="list-group-item <?= $faq['class']; ?>" href="<?= $faq['href']; ?>" title="<?= $faq['title']; ?>"><?= $faq['question']; ?></a>
+       	<a class="list-group-item <?= $faq['class']; ?>" href="<?= $faq['href']; ?>" title="<?= $faq['title']; ?>"><span class="glyphicon glyphicon-question-sign"> </span> <?= $faq['question']; ?></a>
       <?php endforeach; ?>
 	</div>
 	

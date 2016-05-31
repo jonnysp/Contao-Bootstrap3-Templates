@@ -2,6 +2,10 @@
 
 <?php $this->block('content'); ?>
 
+<style type="text/css">
+   .panel-heading a .chevron:after { content: "\2212";} .panel-heading a.collapsed .chevron:after { content: "\002b";} 
+</style>
+
 <?php $faq_counter = 0; ?>
 
 
@@ -22,10 +26,11 @@
   
   <div class="panel panel-default <?= $faq->class; ?>">
     <div class="panel-heading">
-      <h4 class="panel-title"id="<?= $faq->alias; ?>">
-        <a data-toggle="collapse" data-parent="#categorie_<?= $faq_counter; ?>" href="#faq_<?= $faq->id; ?>">
-           <span class="badge pull-right"><?= $faq->info; ?></span>
-			     <?= $faq->question; ?>
+      <h4 class="panel-title" id="<?= $faq->alias; ?>"><span class="glyphicon glyphicon-question-sign"> </span>
+        <a class="collapsed" data-toggle="collapse" data-parent="#categorie_<?= $faq_counter; ?>" href="#faq_<?= $faq->id; ?>">
+           
+			      <?= $faq->question; ?>
+            <span style="float:right" class="glyphicon chevron" ></span>
         </a>
       </h4>
     </div>
@@ -83,6 +88,8 @@
             </div>
           <?php endif; ?>
 
+          <span class="text-muted"><?= $faq->info; ?></span>
+          
       </div>
     </div>
   </div>

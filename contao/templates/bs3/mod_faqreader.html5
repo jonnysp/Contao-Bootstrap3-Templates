@@ -10,7 +10,7 @@
   		
   	  <span class="text-muted pull-right"><?= $this->info; ?></span>
 
-      <<?= $this->hl; ?>><?= $this->question; ?></<?= $this->hl; ?>>
+      <<?= $this->hl; ?>><span class="glyphicon glyphicon-question-sign"> </span> <?= $this->question; ?></<?= $this->hl; ?>>
       
       <div class="row">
         <?php 
