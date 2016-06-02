@@ -7,8 +7,8 @@
     <div class="panel-heading" <?php if ($this->headlineStyle): ?> style="<?= $this->headlineStyle; ?>"<?php endif; ?>>
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="article" href="#accordion_<?= $this-id?>">
-          <?= $this->headline; ?>
-          <span style="float:right" class="glyphicon chevron" ></span>
+        	<span style="float:right" class="glyphicon chevron" ></span>
+        	<?= $this->headline; ?>
         </a>
       </h4>
     </div>

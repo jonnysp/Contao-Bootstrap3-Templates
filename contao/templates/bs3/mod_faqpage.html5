@@ -28,9 +28,8 @@
     <div class="panel-heading">
       <h4 class="panel-title" id="<?= $faq->alias; ?>"><span class="glyphicon glyphicon-question-sign"> </span>
         <a class="collapsed" data-toggle="collapse" data-parent="#categorie_<?= $faq_counter; ?>" href="#faq_<?= $faq->id; ?>">
-           
-			      <?= $faq->question; ?>
-            <span style="float:right" class="glyphicon chevron" ></span>
+			<span style="float:right" class="glyphicon chevron" ></span>
+			<?= $faq->question; ?>
         </a>
       </h4>
     </div>

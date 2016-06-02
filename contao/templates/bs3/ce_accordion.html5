@@ -7,8 +7,8 @@
       <<?= $this->hl; ?> class="panel-title"> 
     
         <a class="collapsed" data-toggle="collapse" data-parent="article" href="#collapse_<?= $this->id; ?>">
-          <?= $this->headline; ?>
-          	<span style="float:right" class="glyphicon chevron" ></span>
+        	<span style="float:right" class="glyphicon chevron" ></span>
+        	<?= $this->headline; ?>
         </a>
 
       </<?= $this->hl; ?>>
