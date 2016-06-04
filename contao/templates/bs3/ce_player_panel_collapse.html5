@@ -24,7 +24,7 @@
 			  <?php if ($this->isVideo && $this->type == 'youtube'): ?>
 				<?php foreach ($this->files as $file): ?>
 				  	<div class="embed-responsive embed-responsive-16by9">
-				  		<iframe class="embed-responsive-item" src="<?= str_replace('watch?v=','embed/',$file->path); ?>" frameborder="0" allowfullscreen></iframe>
+				  		<iframe class="embed-responsive-item" src="<?= str_replace('watch?v=','embed/',$file->path); ?>?<?php if ($this->autoplay): ?>autoplay=1<?php endif; ?>" frameborder="0" allowfullscreen></iframe>
 					</div>
 				<?php endforeach; ?>
 
