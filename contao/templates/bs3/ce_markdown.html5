@@ -1,0 +1,14 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="item <?= $this->class; ?>"<?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	
+	<?php if ($this->headline): ?>
+		<<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
+	<?php endif; ?>	
+	<?= $this->content ?>
+		 
+</div>
+
+<?php $this->endblock(); ?>
