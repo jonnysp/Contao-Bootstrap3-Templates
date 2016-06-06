@@ -21,9 +21,6 @@
 	</div>	
 	<?php endforeach; ?>
 
-<?php if ($this->autoplay): ?>autoplay=1<?php endif; ?>
-
-
  <?php elseif ($this->isVideo): ?> 
  
  	<div class="thumbnail">
