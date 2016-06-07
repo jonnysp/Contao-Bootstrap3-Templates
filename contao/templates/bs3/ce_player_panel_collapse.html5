@@ -32,7 +32,7 @@
 			 
 			     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?= $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
 			      <?php foreach ($this->files as $file): ?>
-			        <source type="$file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
+			        <source type="<?= $file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
 			      <?php endforeach; ?>
 			      Your browser does not support the video tag.
 			    </video>
