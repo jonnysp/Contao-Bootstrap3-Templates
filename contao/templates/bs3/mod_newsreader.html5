@@ -6,10 +6,9 @@
 	   <<?= $this->hl; ?>><?= $this->headline; ?></<?= $this->hl; ?>>
 	<?php endif; ?>
 
-
 	<?= $this->articles; ?>
 
-
+	<hr>
 	<!-- indexer::stop -->
 	  <nav>
       <ul class="pager">
@@ -22,8 +21,9 @@
     </nav>
 	<!-- indexer::continue -->
 	
-	<hr>
+	
 	  <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
+	  	<hr>
 	    <div class="ce_comments block">
 	      <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
 	      <?= implode('', $this->comments); ?>

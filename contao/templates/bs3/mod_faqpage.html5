@@ -10,15 +10,14 @@
 
 
 <?php foreach($this->faq as $category): ?>
- <?php $faq_counter += 1; ?>
+<?php $faq_counter += 1; ?>
 
 
-    <article class="<?= $category['class']; ?>">
+<article class="<?= $category['class']; ?>">
      
-      <<?= $this->hl; ?>><?= $category['headline']; ?></<?= $this->hl; ?>>
+<<?= $this->hl; ?>><?= $category['headline']; ?></<?= $this->hl; ?>>
 
-
- <div class="panel-group" id="categorie_<?= $faq_counter; ?>">
+<div class="panel-group" id="categorie_<?= $faq_counter; ?>">
   	  
 	  
       <?php foreach ($category['items'] as $faq): ?>
@@ -97,13 +96,14 @@
       
 </div>
  
-    </article>
+</article>
+
+<hr>
       <nav>
         <ul class="pager">
           <li><a href="<?= $this->request; ?>#top"><?= $this->topLink; ?></a></li>
         </ul>
       </nav>
-   	<div class="clearfix"></div>
     
   <?php endforeach; ?>
 

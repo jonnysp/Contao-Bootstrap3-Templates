@@ -65,6 +65,8 @@
       </div>
     <?php endif; ?>
 
+	<hr>
+
     <!-- indexer::stop -->
     <nav>
       <ul class="pager">
@@ -78,9 +80,9 @@
     <!-- indexer::continue -->
   <?php endif; ?>
 
-	<hr>
 
   <?php if ($this->allowComments && ($this->comments || !$this->requireLogin)): ?>
+  	<hr>
     <div class="ce_comments block">
       <<?= $this->hlc; ?>><?= $this->addComment; ?></<?= $this->hlc; ?>>
       <?= implode('', $this->comments); ?>
@@ -88,5 +90,6 @@
       <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
     </div>
   <?php endif; ?>
+
 
 <?php $this->endblock(); ?>
