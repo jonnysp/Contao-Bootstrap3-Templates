@@ -1,0 +1,38 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+<button <?= $this->cssID; ?> type="button" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" data-toggle="modal" data-target="#Modal<?= $this->id; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<?php if ($this->headline): ?><?= $this->headline; ?><?php endif; ?>    
+</button>
+
+	<div class="modal fade" id="Modal<?= $this->id; ?>" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	
+	    	<div class="modal-header">
+	    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<?php if ($this->headline): ?>
+					<<?= $this->hl; ?> class="modal-title"><?= $this->headline; ?></<?= $this->hl; ?>>
+				<?php endif; ?>    
+	    	</div>
+	      
+	      	<div class="modal-body">
+				<?= $this->v2warning; ?>
+				<?= $this->images; ?>
+				<?= $this->pagination; ?>
+	    	</div>
+
+			<div class="modal-footer">
+					<?php if ($this->summary != ''): ?>
+				      <caption><?= $this->summary; ?></caption>
+				    <?php endif; ?>
+			</div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+<?php $this->endblock(); ?>

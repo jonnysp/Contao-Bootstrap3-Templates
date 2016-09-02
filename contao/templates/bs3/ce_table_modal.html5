@@ -1,0 +1,84 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+
+
+<button <?= $this->cssID; ?> type="button" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" data-toggle="modal" data-target="#Modal<?= $this->id; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<?php if ($this->headline): ?><?= $this->headline; ?><?php endif; ?>    
+</button>
+
+
+
+
+<div class="modal fade" id="Modal<?= $this->id; ?>" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	
+
+    	<div class="modal-header">
+    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<?php if ($this->headline): ?>
+				<<?= $this->hl; ?> class="modal-title"><?= $this->headline; ?></<?= $this->hl; ?>>
+			<?php endif; ?>    
+    	</div>
+      
+      	<div class="modal-body">
+
+
+			<div class="table-responsive">
+			  <table id="<?= $this->id; ?>" class="table <?php if ($this->sortable): ?> sortable<?php endif; ?>">
+			
+
+			
+			    <?php if ($this->useHeader): ?>
+			      <thead>
+			        <tr>
+			          <?php foreach ($this->header as $col): ?>
+			            <th class="<?= $col['class']; ?>"><?= $col['content']; ?></th>
+			          <?php endforeach; ?>
+			        </tr>
+			      </thead>
+			    <?php endif; ?>
+			
+			    <?php if ($this->useFooter): ?>
+			      <tfoot>
+			        <tr>
+			          <?php foreach ($this->footer as $col): ?>
+			            <td class="<?= $col['class']; ?>"><?= $col['content']; ?></td>
+			          <?php endforeach; ?>
+			        </tr>
+			      </tfoot>
+			    <?php endif; ?>
+			
+			    <tbody>
+			      <?php foreach ($this->body as $class=>$row): ?>
+			        <tr class="<?= $class; ?>">
+			          <?php foreach ($row as $i=>$col): ?>
+			            <?php if ($i == 0 && $this->useLeftTh): ?>
+			              <th scope="row" class="<?= $col['class']; ?>"><?= $col['content']; ?></th>
+			            <?php else: ?>
+			              <td class="<?= $col['class']; ?>"><?= $col['content']; ?></td>
+			            <?php endif; ?>
+			          <?php endforeach; ?>
+			        </tr>
+			      <?php endforeach; ?>
+			    </tbody>
+			
+			  	</table>
+			</div>
+
+
+    	</div>
+		<div class="modal-footer">
+				<?php if ($this->summary != ''): ?>
+			      <caption><?= $this->summary; ?></caption>
+			    <?php endif; ?>
+		</div>
+    </div>
+  </div>
+</div>
+
+
+<?php $this->endblock(); ?>

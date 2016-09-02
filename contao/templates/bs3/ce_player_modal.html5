@@ -1,0 +1,58 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+
+<button <?= $this->cssID; ?> type="button" class="btn <?php if (strpos($this->class, 'btn-') === false ): echo 'btn-default '.$this->class ;  else: echo $this->class; endif ?>" data-toggle="modal" data-target="#Modal<?= $this->id; ?>" <?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
+	<?php if ($this->headline): ?><?= $this->headline; ?><?php endif; ?>    
+</button>
+
+
+<div class="modal fade" id="Modal<?= $this->id; ?>" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    	
+
+	    <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<?php if ($this->headline): ?>
+					<<?= $this->hl; ?> class="modal-title"><?= $this->headline; ?></<?= $this->hl; ?>>
+			<?php endif; ?>    
+	    </div>
+
+	    <div class="modal-body">
+
+			  <?php if ($this->isVideo && $this->type == 'youtube'): ?>
+				<?php foreach ($this->files as $file): ?>
+				  	<div class="embed-responsive embed-responsive-16by9">
+				  		<iframe class="embed-responsive-item" src="<?= str_replace('watch?v=','embed/',$file->path); ?>?<?php if ($this->autoplay): ?>autoplay=1<?php endif; ?>" frameborder="0" allowfullscreen></iframe>
+					</div>
+				<?php endforeach; ?>
+
+			 <?php elseif ($this->isVideo): ?> 
+			 
+			     <video style="width:100%;" <?php if ($this->poster): ?> poster="<?= $this->poster; ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+			      <?php foreach ($this->files as $file): ?>
+			        <source type="<?= $file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
+			      <?php endforeach; ?>
+			      Your browser does not support the video tag.
+			    </video>
+			  
+			  <?php else: ?>
+			    <audio style="width:100%;" preload="none"<?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+			      <?php foreach ($this->files as $file): ?>
+			        <source type="<?= $file->mime; ?>" src="<?= $file->path; ?>" title="<?= $file->title; ?>">
+			      <?php endforeach; ?>
+			    </audio>
+			  <?php endif; ?>
+
+	    </div>
+
+		<div class="modal-footer"></div>
+		
+    </div>
+  </div>
+</div>
+
+
+<?php $this->endblock(); ?>
