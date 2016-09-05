@@ -30,7 +30,7 @@
 
         <?php if ($this->addImage): ?>
         <div class="<?= $this->floatClass; ?>" style="z-index:1;" >
-          <figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+          <figure class="img-thumbnail center-block" style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
            
             <?php if ($this->href): ?>
               <a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">

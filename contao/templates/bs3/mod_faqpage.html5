@@ -53,7 +53,7 @@
 
           <?php if ($faq->addImage): ?>
             <div class="<?= $faq->floatClass; ?>" style="z-index:1;">
-              <figure class="img-thumbnail" style="<?= $faq->margin; ?>">
+              <figure class="img-thumbnail center-block" style="<?= $faq->margin; ?>">
                 <?php if ($faq->href): ?>
                   <a href="<?= $faq->href; ?>"<?php if ($faq->linkTitle): ?> title="<?= $faq->linkTitle; ?>"<?php endif; ?><?= $faq->attributes; ?>  itemprop="contentUrl" data-title="<?= $faq->title; ?>" data-footer="<?= $faq->caption; ?>" data-gallery="<?= $faq->id ?>">
                 <?php endif; ?>
