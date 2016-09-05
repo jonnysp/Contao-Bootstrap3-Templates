@@ -118,7 +118,7 @@
           
         }else{
           _this.image.src = $(this.element).attr('href');
-          _this.carusel = $(_this.image).addClass('img-responsive').css('display','inline-block');
+          _this.carusel = $(_this.image).addClass('img-responsive center-block').css('display','inline-block');
           _this.settitle($(_this.element).data('title'));
           _this.setfooter($(_this.element).data('footer'));
           _this.modal_body.append(_this.carusel);

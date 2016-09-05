@@ -41,7 +41,7 @@
 		<?php elseif( $image->get_link() !== null): ?>
 			<?php $hasimage = true; ?>
 			<div class="media-left">
-				<img style="max-width:200px" class="img-thumbnail media-object" src="<?= $image->get_link(); ?>" alt="<?= $image->get_title();  ?>" />
+				<img style="max-width:200px" class="img-thumbnail center-block media-object" src="<?= $image->get_link(); ?>" alt="<?= $image->get_title();  ?>" />
 			</div>
 		<?php endif; ?>
 

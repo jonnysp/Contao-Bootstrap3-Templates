@@ -50,7 +50,7 @@
               <a href="<?= $this->href; ?>" <?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?> <?= $this->attributes; ?> itemprop="contentUrl">
             <?php endif; ?> 
 
-            <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>" <?= $this->imgSize; ?> alt="<?= $this->alt; ?>" <?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+            <img itemprop="thumbnailUrl" class="img-responsive center-block" src="<?= $this->src; ?>" <?= $this->imgSize; ?> alt="<?= $this->alt; ?>" <?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
            
             <?php if (($this->href) || ($this->fullsize && !$this->imageUrl) || ($this->imageUrl)): ?>
               </a>

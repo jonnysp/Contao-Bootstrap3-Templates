@@ -6,6 +6,9 @@
 	<?php if ($this->headline): ?><?= $this->headline; ?><?php endif; ?>    
 </button>
 
+
+
+
 <div class="modal fade" id="Modal<?= $this->id; ?>" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -39,13 +42,13 @@
 			<?php if ($this->addImage): ?>
 			<div class="<?= $this->floatClass; ?>" style="z-index:1;" >
 				
-				<figure class="img-thumbnail " style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
+				<figure class="img-thumbnail" style="<?= $this->margin; ?>" itemscope itemtype="http://schema.org/ImageObject" itemprop="associatedMedia">
 				     
 					<?php if ($this->href): ?>
 						<a href="<?= $this->href; ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle; ?>"<?php endif; ?><?= $this->attributes; ?> itemprop="contentUrl" data-title="<?= $this->title; ?>" data-footer="<?= $this->caption; ?>" data-gallery="<?= $this->id ?>">
 					<?php endif; ?>
 
-				    <img itemprop="thumbnailUrl" class="img-responsive" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
+				    <img itemprop="thumbnailUrl" class="img-responsive center-block" src="<?= $this->src; ?>"<?= $this->imgSize; ?> alt="<?= $this->alt; ?>"<?php if ($this->title): ?> title="<?= $this->title; ?>"<?php endif; ?>>
 				     
 					<?php if ($this->href): ?>
 					  </a>
