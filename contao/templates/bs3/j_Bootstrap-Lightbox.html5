@@ -58,7 +58,7 @@
         this.modal_content = $('<div>').addClass('modal-content');
         this.modal_header = $('<div>').addClass('modal-header');
         this.modal_title = $('<h4>').addClass('modal-title');
-        this.modal_body = $('<div>').addClass('modal-body text-center');
+        this.modal_body = $('<div>').addClass('modal-body text-center center-block');
         this.modal_footer = $('<div>').addClass('modal-footer').css('text-align','center');       
         this.modal_close = $('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 
@@ -81,11 +81,17 @@
           _this.carusel_id = 'carusel-' + Math.floor((Math.random() * 1000) + 1);
           _this.carusel = $('<div>').attr('id',_this.carusel_id).addClass('carousel slide');
           
+          _this.caruselidicators = $('<ol>').addClass('carousel-indicators hidden-xs');
+          _this.carusel.append( _this.caruselidicators);
+
           _this.caruselinner = $('<div>').addClass('carousel-inner');
           _this.carusel.append( _this.caruselinner);
           
           this.galleryitems.each(function(index) {
             
+              _this.indicator = $('<li>');
+              _this.indicator.attr('data-slide-to', index).attr('data-target', '#'+_this.carusel_id);
+
               _this.caruselitem = $('<div>').addClass('item').data('src',$(this).attr('href')).data('title',$(this).data('title')).data('footer',$(this).data('footer'));
              
               if (this == _this.element){
@@ -93,12 +99,16 @@
                   _this.settitle(_this.caruselitem.data('title'));
                   _this.setfooter(_this.caruselitem.data('footer'));
                   _this.image.src = $(this).attr('href');
+                  _this.indicator.addClass('active');
               }
               
-              _this.itemimage = $('<img>').attr('src',$(this).attr('href')).addClass('img-responsive').css('display','inline-block');
+              _this.itemimage = $('<img>').attr('src',$(this).attr('href')).addClass('img-responsive center-block');
               _this.caruselinner.append(_this.caruselitem);
               _this.caruselitem.append( _this.itemimage);
+              _this.caruselidicators.append(_this.indicator);
+
           });
+          
           //addcontrolls
           _this.leftcontrol = $('<a>').addClass("left carousel-control").attr('href','#'+_this.carusel_id).attr('data-slide','prev');
           _this.leftcontrol.append('<span class="glyphicon glyphicon-chevron-left">')
@@ -118,7 +128,7 @@
           
         }else{
           _this.image.src = $(this.element).attr('href');
-          _this.carusel = $(_this.image).addClass('img-responsive center-block').css('display','inline-block');
+          _this.carusel = $(_this.image).addClass('img-responsive center-block');
           _this.settitle($(_this.element).data('title'));
           _this.setfooter($(_this.element).data('footer'));
           _this.modal_body.append(_this.carusel);
