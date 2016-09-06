@@ -1,27 +1,18 @@
 <script>
-
 /* Lightbox for Bootstrap 3 by jonnysp  */
 ;(function ( $, window, document, undefined ) {
 
   "use strict";
   var $ = jQuery;
 
-    var pluginName = "BootstrapLightbox",
-      defaults = {};
+    var pluginName = "BootstrapLightbox";
 
-    function BootstrapLightbox ( element, options ) {
+    function BootstrapLightbox ( element ) {
 
       //remove some old lightboxes
       $(".BootstrapLightbox,.modal-backdrop").remove();
 
-      var _this = this;
-      this.image = new Image();
-      
       this.element = element;
-      this.settings = $.extend( {}, defaults, options );
-      this._defaults = defaults;
-      this._name = pluginName;
-
       this.galleryitems = $("[data-gallery="+ $(this.element).data('gallery')+"]");
       this.addModal();
       this.addGalery();
@@ -32,9 +23,11 @@
       showModal: function(){
         this.modal.modal('show');
       },
+
       remove: function(){
         this.modal.remove();
       },
+
       settitle: function(text){
         if (text=='' || typeof(text)  === "undefined"){
           this.modal_title.html("&nbsp;");
@@ -42,6 +35,7 @@
           this.modal_title.html(text);  
         }
       },
+
       setfooter: function(text){
         if (text=='' || typeof(text)  === "undefined"){
           this.modal_footer.html("&nbsp;"); 
@@ -49,9 +43,9 @@
           this.modal_footer.html('<span>'+ text +'</span>').show(); 
         }
       },
+
       addModal: function(){
       
-        var _this = this;
         this.modal_id = 'BootstrapLightbox-' + Math.floor((Math.random() * 1000) + 1);
         this.modal = $('<div>').attr('id',this.modal_id).addClass('modal fade BootstrapLightbox');
         this.modal_dialog = $('<div>').addClass('modal-dialog'); //modal-sm modal-lg
@@ -68,77 +62,74 @@
         this.modal_header.append(this.modal_close).append(this.modal_title);
         
         this.modal.on('hidden.bs.modal', function () {
-          _this.remove();
+          this.remove();
         });
         
         $(document.body).append(this.modal);
       },
+
       addGalery:function(){
         
-        var _this = this;
+        var modal = this;
         
-        if (this.galleryitems.length > 1){
-          _this.carusel_id = 'carusel-' + Math.floor((Math.random() * 1000) + 1);
-          _this.carusel = $('<div>').attr('id',_this.carusel_id).addClass('carousel slide');
-          
-          _this.caruselidicators = $('<ol>').addClass('carousel-indicators hidden-xs');
-          _this.carusel.append( _this.caruselidicators);
+        if (modal.galleryitems.length > 1){
 
-          _this.caruselinner = $('<div>').addClass('carousel-inner');
-          _this.carusel.append( _this.caruselinner);
+          var carusel_id = 'carousel-' + Math.floor((Math.random() * 10000) + 1);
+          var carusel = $('<div>').attr('id',carusel_id).addClass('carousel slide');
           
-          this.galleryitems.each(function(index) {
-            
-              _this.indicator = $('<li>');
-              _this.indicator.attr('data-slide-to', index).attr('data-target', '#'+_this.carusel_id);
+          var caruselidicators = $('<ol>').addClass('carousel-indicators hidden-xs');
+          carusel.append(caruselidicators);
 
-              _this.caruselitem = $('<div>').addClass('item').data('src',$(this).attr('href')).data('title',$(this).data('title')).data('footer',$(this).data('footer'));
-             
-              if (this == _this.element){
-                  _this.caruselitem.addClass('active');
-                  _this.settitle(_this.caruselitem.data('title'));
-                  _this.setfooter(_this.caruselitem.data('footer'));
-                  _this.image.src = $(this).attr('href');
-                  _this.indicator.addClass('active');
-              }
+          var caruselinner = $('<div>').addClass('carousel-inner');
+          carusel.append( caruselinner);
+
+          modal.galleryitems.each(function(index) {
               
-              _this.itemimage = $('<img>').attr('src',$(this).attr('href')).addClass('img-responsive center-block');
-              _this.caruselinner.append(_this.caruselitem);
-              _this.caruselitem.append( _this.itemimage);
-              _this.caruselidicators.append(_this.indicator);
+              var caruselindicator = $('<li>').attr('data-slide-to', index).attr('data-target', '#'+carusel_id);
+              var caruselitem = $('<div>').addClass('item').data('src',$(this).attr('href')).data('title',$(this).data('title')).data('footer',$(this).data('footer'));
+             
+              caruselitem.append($('<img>').attr('src',$(this).attr('href')).addClass('img-responsive center-block'));
+
+              if (this == modal.element){
+                  caruselitem.addClass('active');
+                  caruselindicator.addClass('active');
+                  modal.settitle(caruselitem.data('title'));
+                  modal.setfooter(caruselitem.data('footer'));
+              }
+
+              caruselinner.append(caruselitem);
+              caruselidicators.append(caruselindicator);
 
           });
           
           //addcontrolls
-          _this.leftcontrol = $('<a>').addClass("left carousel-control").attr('href','#'+_this.carusel_id).attr('data-slide','prev');
-          _this.leftcontrol.append('<span class="glyphicon glyphicon-chevron-left">')
-          _this.rightcontrol = $('<a>').addClass("right carousel-control").attr('href','#'+_this.carusel_id).attr('data-slide','next');
-          _this.rightcontrol.append('<span class="glyphicon glyphicon-chevron-right">')
-          _this.carusel.append(_this.leftcontrol).append(_this.rightcontrol);
-          _this.carusel.carousel();
+          var leftcontrol = $('<a>').addClass("left carousel-control").attr('href','#'+carusel_id).attr('data-slide','prev').append('<span class="glyphicon glyphicon-chevron-left">');
+          var rightcontrol = $('<a>').addClass("right carousel-control").attr('href','#'+carusel_id).attr('data-slide','next').append('<span class="glyphicon glyphicon-chevron-right">');
+          carusel.append(leftcontrol).append(rightcontrol);
+
+          //start carousel
+          carusel.carousel();
           
           //onslide set title and footer
-          _this.carusel.on('slid.bs.carousel', function (event) {
-            _this.image.src = $(event.relatedTarget).data('src');
-            _this.settitle($(event.relatedTarget).data('title'));
-            _this.setfooter($(event.relatedTarget).data('footer'));
+          carusel.on('slid.bs.carousel', function (event) {
+            modal.settitle($(event.relatedTarget).data('title'));
+            modal.setfooter($(event.relatedTarget).data('footer'));
           })
           
-          _this.modal_body.append(_this.carusel);
+          modal.modal_body.append(carusel);
           
         }else{
-          _this.image.src = $(this.element).attr('href');
-          _this.carusel = $(_this.image).addClass('img-responsive center-block');
-          _this.settitle($(_this.element).data('title'));
-          _this.setfooter($(_this.element).data('footer'));
-          _this.modal_body.append(_this.carusel);
+          //setup image only
+          modal.modal_body.append($('<img>').attr('src',$(modal.element).attr('href')).addClass('img-responsive center-block'));
+          modal.settitle($(modal.element).data('title'));
+          modal.setfooter($(modal.element).data('footer'));
         }
       }
     });
 
-    $.fn[ pluginName ] = function ( options ) {
+    $.fn[ pluginName ] = function () {
       return this.each(function() {
-        new BootstrapLightbox( this, options);
+        new BootstrapLightbox( this);
       });
     };
 
