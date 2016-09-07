@@ -2,7 +2,7 @@
 
 <?php $this->block('content'); ?>
 <style type="text/css">
-	 .panel-heading a .chevron:after { content: "\2212";} .panel-heading a.collapsed .chevron:after { content: "\002b";} 
+   .panel-heading a .chevron:after { content: "\e113";} .panel-heading a.collapsed .chevron:after { content: "\e114";} 
 </style>
 
 <div class="item panel <?php if (strpos($this->class, 'panel-') === false ): echo 'panel-default '.$this->class ;  else: echo $this->class; endif ?>" <?= $this->cssID; ?><?php if ($this->style): ?> style="<?= $this->style; ?>"<?php endif; ?>>
