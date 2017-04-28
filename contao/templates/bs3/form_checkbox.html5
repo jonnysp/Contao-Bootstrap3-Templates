@@ -2,7 +2,7 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-     <label class="control-label <?php if (!$this->tableless): ?> col-sm-4 <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
+     <label class="control-label <?php if (!$this->tableless): ?> col-sm-4<?php endif; ?>">
       <?php if ($this->mandatory): ?>
         <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>

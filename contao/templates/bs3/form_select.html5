@@ -2,7 +2,7 @@
 
 <?php $this->block('label'); ?>
   <?php if ($this->label): ?>
-    <label for="ctrl_<?= $this->id; ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 <?php endif; ?>  <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
+    <label for="ctrl_<?= $this->id; ?>" class="control-label <?php if (!$this->tableless): ?> col-sm-4 <?php endif; ?>">
       <?php if ($this->mandatory): ?>
          <?= $this->label; ?><span class="hidden"><?= $this->mandatoryField; ?></span><span class="mandatory">*</span>
       <?php else: ?>
@@ -17,7 +17,7 @@
 
  <?php if ($this->addSubmit && trim($this->getAttribute('multiple')) == 'multiple'): ?>
 
-	<select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?= $this->class; ?>"<?= $this->getAttributes(); ?>>
+	<select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control" <?= $this->getAttributes(); ?>>
 	    <?php foreach ($this->getOptions() as $option): ?>
 	      <?php if ($option['type'] == 'group_start'): ?>
 	        <optgroup label="<?= $option['label']; ?>">
@@ -37,7 +37,7 @@
  <?php elseif ($this->addSubmit): ?>
  	
  	<div class="input-group">
-		  <select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?= $this->class; ?>"<?= $this->getAttributes(); ?>>
+		  <select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control"<?= $this->getAttributes(); ?>>
 		    <?php foreach ($this->getOptions() as $option): ?>
 		      <?php if ($option['type'] == 'group_start'): ?>
 		        <optgroup label="<?= $option['label']; ?>">
@@ -57,7 +57,7 @@
 
   <?php else : ?>
 
-	  <select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control <?= $this->class; ?>"<?= $this->getAttributes(); ?>>
+	  <select name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control"<?= $this->getAttributes(); ?>>
 	    <?php foreach ($this->getOptions() as $option): ?>
 	      <?php if ($option['type'] == 'group_start'): ?>
 	        <optgroup label="<?= $option['label']; ?>">
