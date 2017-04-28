@@ -8,7 +8,7 @@
       <?php else: ?>
         <?= $this->label; ?>
       <?php endif; ?>
-    </label>
+    </label><?php if ($this->tableless): ?><br><?php endif; ?>
   <?php endif; ?>
 <?php $this->endblock(); ?>
 

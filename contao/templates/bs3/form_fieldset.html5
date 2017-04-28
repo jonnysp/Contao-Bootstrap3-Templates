@@ -1,0 +1,19 @@
+
+<?php if ($this->fsType == 'fsStart'): ?>
+
+  <fieldset<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?>>
+  <?php if ($this->label): ?>
+
+  	<?php if (strpos($this->class, 'row') === false ):  ?>
+  	    <legend><?= $this->label ?></legend>
+	<?php else: ?>
+		<div class="col-xs-12"> <legend><?= $this->label ?></legend></div>
+  	<?php endif; ?>
+
+  <?php endif; ?>
+
+<?php else: ?>
+
+  </fieldset>
+
+<?php endif; ?>
