@@ -1,3 +1,3 @@
-  <div class="headline">
+  <div class="headline <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
     <?= $this->generate(); ?>
   </div>

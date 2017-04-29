@@ -1,7 +1,7 @@
 
 <?php if ($this->tableless): ?>
 
-  <div class="form-group <?= $this->prefix ?> explanation">
+  <div class="form-group <?= $this->prefix ?> explanation <?php if ($this->class): ?><?= $this->class; ?><?php endif; ?>">
     <span class="help-block"><?= $this->generate() ?></span>
   </div>
 
