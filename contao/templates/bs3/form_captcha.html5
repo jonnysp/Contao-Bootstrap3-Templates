@@ -30,7 +30,7 @@
 	 <input type="text" name="<?= $this->name; ?>" id="ctrl_<?= $this->id; ?>" class="form-control" value=""<?= $this->getAttributes(); ?>>
   <?php endif; ?>
 
-  <p class="help-block <?php if ($this->class) echo ' ' . $this->class; ?>"><?= $this->getQuestion(); ?></p>
+  <p class="help-block"><?= $this->getQuestion(); ?></p>
 
   <?php if ($this->hasErrors()): ?>
     <span class="label label-danger"><?= $this->getErrorAsString(); ?></span>
